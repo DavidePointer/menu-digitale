@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ristorante Da Mario - Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/menu_digitale/css/style.css">
+    <link rel="icon" type="image/x-icon" href="/menu_digitale/images/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="/menu_digitale/images/logo.png" alt="Logo Ristorante" class="logo">
+            </div>
+            <div class="header-content">
+                <h1>Ristorante Da Mario</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="search-bar">
+        <div class="search-input-container">
+            <input type="text" id="searchInput" placeholder="Cerca nel menu...">
+            <button class="search-clear" id="searchClear"></button>
+        </div>
+        <div id="searchResults" class="search-results"> </div>
+    </div>
+
+    <div id="categoriesView" class="categories-grid">
+        <div class="loading">Caricamento categorie...</div>
+    </div>
+
+    <div class="menu-list" id="menuView" style="display: none;">
+        <a href="#" class="back-button" onclick="ui.showCategories()">
+            ←
+            <span>Torna al menu</span>
+        </a>
+        <h2 id="categoryTitle"></h2>
+        <div id="menuItems"></div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="footer-section">
+                    <h3>Dove Siamo</h3>
+                    <p>📍 Via Roma 123, Milano</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contatti</h3>
+                    <p>📞 02 1234567</p>
+                    <p>✉️ info@ristorantemario.it</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Orari</h3>
+                    <p>Lun-Ven: 12:00-15:00, 19:00-23:00</p>
+                    <p>Sab-Dom: 12:00-23:00</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/menu_digitale/js/utils.js"></script>
+    <script src="/menu_digitale/js/api.js"></script>
+    <script src="/menu_digitale/js/ui.js"></script>
+    <script>
+        const api = new MenuAPI();
+        const ui = new MenuUI(api);
+    </script>
+</body>
+</html>
