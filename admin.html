@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Menu - Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .admin-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"], textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        .preview-image {
+            max-width: 200px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <h2>Gestione Categorie</h2>
+        <form id="categoryForm">
+            <div class="form-group">
+                <label for="categoryName">Nome Categoria:</label>
+                <input type="text" id="categoryName" required>
+            </div>
+            <div class="form-group">
+                <label for="categoryImage">Immagine Categoria:</label>
+                <input type="file" id="categoryImage" accept="image/*" required>
+                <img id="categoryPreview" class="preview-image" style="display: none;">
+            </div>
+            <button type="submit">Aggiungi Categoria</button>
+        </form>
+
+        <h2>Gestione Articoli</h2>
+        <form id="articleForm">
+            <div class="form-group">
+                <label for="articleCategory">Categoria:</label>
+                <select id="articleCategory" required></select>
+            </div>
+            <div class="form-group">
+                <label for="articleName">Nome Articolo:</label>
+                <input type="text" id="articleName" required>
+            </div>
+            <div class="form-group">
+                <label for="articleDescription">Descrizione:</label>
+                <textarea id="articleDescription" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="articlePrice">Prezzo:</label>
+                <input type="number" id="articlePrice" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="articleImage">Immagine Articolo:</label>
+                <input type="file" id="articleImage" accept="image/*" required>
+                <img id="articlePreview" class="preview-image" style="display: none;">
+            </div>
+            <button type="submit">Aggiungi Articolo</button>
+        </form>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html> 

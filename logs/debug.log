@@ -1,0 +1,27 @@
+[17-Mar-2025 22:58:22 Europe/Berlin] === Inizio elaborazione add_category.php ===
+[17-Mar-2025 22:58:22 Europe/Berlin] Directory corrente: C:\xampp\htdocs\menu_digitale\api
+[17-Mar-2025 22:58:22 Europe/Berlin] Document root: C:/xampp/htdocs
+[17-Mar-2025 22:58:22 Europe/Berlin] POST data: Array
+(
+    [name] => PIZZE
+)
+
+[17-Mar-2025 22:58:22 Europe/Berlin] FILES data: Array
+(
+    [image] => Array
+        (
+            [name] => PIZZA-MARGHERITA.jpg
+            [full_path] => PIZZA-MARGHERITA.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php52A3.tmp
+            [error] => 0
+            [size] => 230628
+        )
+
+)
+
+[17-Mar-2025 22:58:22 Europe/Berlin] Directory upload: C:\xampp\htdocs\menu_digitale\api/../images/categories/
+[17-Mar-2025 22:58:22 Europe/Berlin] Tentativo di upload del file in: C:\xampp\htdocs\menu_digitale\api/../images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+[17-Mar-2025 22:58:22 Europe/Berlin] File caricato con successo in: C:\xampp\htdocs\menu_digitale\api/../images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+[17-Mar-2025 22:58:22 Europe/Berlin] Categoria inserita con successo nel database
+[17-Mar-2025 22:58:22 Europe/Berlin] === Fine elaborazione add_category.php ===
