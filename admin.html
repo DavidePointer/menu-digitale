@@ -20,6 +20,8 @@
             --success-color: #2ecc71;
             --warning-color: #f39c12;
             --error-color: #e74c3c;
+            --tab-inactive: #ecf0f1;
+            --tab-hover: #e0e6e8;
         }
 
         body {
@@ -78,6 +80,45 @@
             margin: 20px auto;
             padding: 20px;
         }
+        
+        /* Tab navigation */
+        .tab-navigation {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--input-border);
+        }
+        
+        .tab-button {
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            background-color: var(--tab-inactive);
+            border: 1px solid var(--input-border);
+            border-bottom: none;
+            border-radius: 4px 4px 0 0;
+            margin-right: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .tab-button:hover {
+            background-color: var(--tab-hover);
+        }
+        
+        .tab-button.active {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--card-bg);
+            margin-bottom: -1px;
+        }
+        
+        /* Tab content */
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
 
         .admin-card {
             background-color: var(--card-bg);
@@ -107,6 +148,7 @@
 
         input[type="text"], 
         input[type="number"], 
+        input[type="password"],
         textarea, 
         select {
             width: 100%;
@@ -217,67 +259,79 @@
         </header>
 
         <div class="admin-container">
-            <div class="admin-card">
-                <h2>Gestione Account</h2>
-                <form id="passwordForm">
-                    <div class="form-group">
-                        <label for="currentPassword">Password attuale:</label>
-                        <input type="password" id="currentPassword" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="newPassword">Nuova password:</label>
-                        <input type="password" id="newPassword" required minlength="8">
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmPassword">Conferma password:</label>
-                        <input type="password" id="confirmPassword" required minlength="8">
-                    </div>
-                    <button type="submit">Aggiorna Password</button>
-                </form>
+            <!-- Navigation Tabs -->
+            <div class="tab-navigation">
+                <button class="tab-button active" data-tab="menu-tab">Gestione Menu</button>
+                <button class="tab-button" data-tab="settings-tab">Impostazioni</button>
             </div>
+            
+            <!-- Menu Tab Content -->
+            <div id="menu-tab" class="tab-content active">
+                <div class="admin-card">
+                    <h2>Gestione Categorie</h2>
+                    <form id="categoryForm">
+                        <div class="form-group">
+                            <label for="categoryName">Nome Categoria:</label>
+                            <input type="text" id="categoryName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="categoryImage">Immagine Categoria:</label>
+                            <input type="file" id="categoryImage" accept="image/*" required>
+                            <img id="categoryPreview" class="preview-image">
+                        </div>
+                        <button type="submit">Aggiungi Categoria</button>
+                    </form>
+                </div>
 
-            <div class="admin-card">
-                <h2>Gestione Categorie</h2>
-                <form id="categoryForm">
-                    <div class="form-group">
-                        <label for="categoryName">Nome Categoria:</label>
-                        <input type="text" id="categoryName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="categoryImage">Immagine Categoria:</label>
-                        <input type="file" id="categoryImage" accept="image/*" required>
-                        <img id="categoryPreview" class="preview-image">
-                    </div>
-                    <button type="submit">Aggiungi Categoria</button>
-                </form>
+                <div class="admin-card">
+                    <h2>Gestione Articoli</h2>
+                    <form id="articleForm">
+                        <div class="form-group">
+                            <label for="articleCategory">Categoria:</label>
+                            <select id="articleCategory" required></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="articleName">Nome Articolo:</label>
+                            <input type="text" id="articleName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="articleDescription">Descrizione:</label>
+                            <textarea id="articleDescription" required rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="articlePrice">Prezzo:</label>
+                            <input type="number" id="articlePrice" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="articleImage">Immagine Articolo:</label>
+                            <input type="file" id="articleImage" accept="image/*" required>
+                            <img id="articlePreview" class="preview-image">
+                        </div>
+                        <button type="submit">Aggiungi Articolo</button>
+                    </form>
+                </div>
             </div>
-
-            <div class="admin-card">
-                <h2>Gestione Articoli</h2>
-                <form id="articleForm">
-                    <div class="form-group">
-                        <label for="articleCategory">Categoria:</label>
-                        <select id="articleCategory" required></select>
-                    </div>
-                    <div class="form-group">
-                        <label for="articleName">Nome Articolo:</label>
-                        <input type="text" id="articleName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="articleDescription">Descrizione:</label>
-                        <textarea id="articleDescription" required rows="4"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="articlePrice">Prezzo:</label>
-                        <input type="number" id="articlePrice" step="0.01" min="0" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="articleImage">Immagine Articolo:</label>
-                        <input type="file" id="articleImage" accept="image/*" required>
-                        <img id="articlePreview" class="preview-image">
-                    </div>
-                    <button type="submit">Aggiungi Articolo</button>
-                </form>
+            
+            <!-- Settings Tab Content -->
+            <div id="settings-tab" class="tab-content">
+                <div class="admin-card">
+                    <h2>Gestione Account</h2>
+                    <form id="passwordForm">
+                        <div class="form-group">
+                            <label for="currentPassword">Password attuale:</label>
+                            <input type="password" id="currentPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">Nuova password:</label>
+                            <input type="password" id="newPassword" required minlength="8">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Conferma password:</label>
+                            <input type="password" id="confirmPassword" required minlength="8">
+                        </div>
+                        <button type="submit">Aggiorna Password</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -289,6 +343,9 @@
             
             // Setup logout
             document.getElementById('logoutBtn').addEventListener('click', logout);
+            
+            // Setup tab navigation
+            setupTabs();
             
             // Aggiungi gestore per form password
             document.getElementById('passwordForm').addEventListener('submit', function(e) {
@@ -330,6 +387,25 @@
                 });
             });
         });
+        
+        // Setup tab navigation
+        function setupTabs() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    button.classList.add('active');
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        }
         
         function checkAuthentication() {
             fetch('/menu_digitale/api/check_auth.php')
