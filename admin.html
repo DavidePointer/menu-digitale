@@ -703,12 +703,14 @@
             
             let html = '';
             categories.forEach(category => {
+                // Usiamo .replace per evitare problemi con caratteri speciali
+                const categoryName = category.name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
                 html += `
                 <div class="item-card" data-id="${category.category_id}">
                     <div class="item-info">
-                        <img src="/menu_digitale/images/categories/${category.image}" alt="${category.name}" class="item-image">
+                        <img src="/menu_digitale/images/categories/${category.image}" alt="${categoryName}" class="item-image">
                         <div class="item-details">
-                            <div class="item-name">${category.name}</div>
+                            <div class="item-name">${categoryName}</div>
                         </div>
                     </div>
                     <div class="item-actions">
@@ -752,15 +754,20 @@
             
             let html = '';
             articles.forEach(article => {
+                // Sanifichiamo tutti i testi per evitare problemi di parsing
+                const articleName = article.name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                const articleDescription = article.description.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                const categoryName = article.category_name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                
                 html += `
                 <div class="item-card" data-id="${article.article_id}">
                     <div class="item-info">
-                        <img src="/menu_digitale/images/articles/${article.image}" alt="${article.name}" class="item-image">
+                        <img src="/menu_digitale/images/articles/${article.image}" alt="${articleName}" class="item-image">
                         <div class="item-details">
-                            <div class="item-name">${article.name}</div>
-                            <div class="item-description">${article.description}</div>
+                            <div class="item-name">${articleName}</div>
+                            <div class="item-description">${articleDescription}</div>
                             <div class="item-price">${parseFloat(article.price).toFixed(2)} €</div>
-                            <div class="item-category">${article.category_name}</div>
+                            <div class="item-category">${categoryName}</div>
                         </div>
                     </div>
                     <div class="item-actions">

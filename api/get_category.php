@@ -1,7 +1,8 @@
 <?php
 // Carica la configurazione e le utilities
 require_once '../config.php';
-require_once 'auth_check.php';
+// Rimuovo il controllo dell'autenticazione perché anche la pagina principale deve accedere alle categorie
+// require_once 'auth_check.php';
 
 // Configura CORS
 header("Access-Control-Allow-Origin: *");
