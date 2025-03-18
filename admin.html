@@ -235,6 +235,172 @@
             border: 1px solid var(--error-color);
             color: var(--error-color);
         }
+
+        /* Stili per le liste di elementi */
+        .items-list {
+            margin-top: 20px;
+        }
+
+        .item-card {
+            background-color: #f5f7f8;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .item-info {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .item-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .item-price {
+            font-weight: 500;
+            color: var(--button-bg);
+        }
+
+        .item-category {
+            font-size: 0.85rem;
+            background-color: #eaeaea;
+            padding: 3px 8px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .item-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .edit-btn, .delete-btn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .edit-btn {
+            background-color: var(--button-bg);
+            color: white;
+        }
+
+        .edit-btn:hover {
+            background-color: var(--button-hover);
+        }
+
+        .delete-btn {
+            background-color: var(--button-danger);
+            color: white;
+        }
+
+        .delete-btn:hover {
+            background-color: var(--button-danger-hover);
+        }
+
+        .loader-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 0;
+        }
+
+        .loader-container p {
+            margin-top: 15px;
+            color: #666;
+        }
+
+        /* Stili per il modal di modifica */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: 10% auto;
+            padding: 25px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: modalFadeIn 0.3s;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--input-border);
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .close-modal {
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #aaa;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--text-color);
+        }
+
+        .no-items {
+            text-align: center;
+            padding: 30px 0;
+            color: #666;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -284,6 +450,16 @@
                 </div>
 
                 <div class="admin-card">
+                    <h2>Categorie Esistenti</h2>
+                    <div id="categoriesList" class="items-list">
+                        <div class="loader-container">
+                            <div class="spinner"></div>
+                            <p>Caricamento categorie...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-card">
                     <h2>Gestione Articoli</h2>
                     <form id="articleForm">
                         <div class="form-group">
@@ -309,6 +485,22 @@
                         </div>
                         <button type="submit">Aggiungi Articolo</button>
                     </form>
+                </div>
+
+                <div class="admin-card">
+                    <h2>Articoli Esistenti</h2>
+                    <div class="form-group">
+                        <label for="filterCategory">Filtra per categoria:</label>
+                        <select id="filterCategory">
+                            <option value="all">Tutte le categorie</option>
+                        </select>
+                    </div>
+                    <div id="articlesList" class="items-list">
+                        <div class="loader-container">
+                            <div class="spinner"></div>
+                            <p>Caricamento articoli...</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -464,6 +656,7 @@
         function loadAdminData() {
             // Carica i dati necessari per il pannello admin
             loadCategories();
+            loadArticles();
             setupImagePreviews();
             setupFormSubmissions();
         }
@@ -472,16 +665,417 @@
             fetch('/menu_digitale/api/get_categories.php')
                 .then(response => response.json())
                 .then(categories => {
+                    // Popola il select per l'aggiunta di articoli
                     const select = document.getElementById('articleCategory');
                     select.innerHTML = '';
+                    
+                    // Popola il select per il filtro articoli
+                    const filterSelect = document.getElementById('filterCategory');
+                    filterSelect.innerHTML = '<option value="all">Tutte le categorie</option>';
+                    
                     categories.forEach(category => {
+                        // Aggiungi al select per creazione articoli
                         const option = document.createElement('option');
                         option.value = category.category_id;
                         option.textContent = category.name;
                         select.appendChild(option);
+                        
+                        // Aggiungi al select per filtraggio
+                        const filterOption = document.createElement('option');
+                        filterOption.value = category.category_id;
+                        filterOption.textContent = category.name;
+                        filterSelect.appendChild(filterOption);
                     });
+                    
+                    // Visualizza le categorie nella lista
+                    displayCategories(categories);
                 })
                 .catch(error => console.error('Errore nel caricamento delle categorie:', error));
+        }
+        
+        function displayCategories(categories) {
+            const categoriesList = document.getElementById('categoriesList');
+            
+            if (categories.length === 0) {
+                categoriesList.innerHTML = '<div class="no-items">Nessuna categoria presente</div>';
+                return;
+            }
+            
+            let html = '';
+            categories.forEach(category => {
+                html += `
+                <div class="item-card" data-id="${category.category_id}">
+                    <div class="item-info">
+                        <img src="/menu_digitale/images/categories/${category.image}" alt="${category.name}" class="item-image">
+                        <div class="item-details">
+                            <div class="item-name">${category.name}</div>
+                        </div>
+                    </div>
+                    <div class="item-actions">
+                        <button class="edit-btn" onclick="editCategory(${category.category_id})">Modifica</button>
+                        <button class="delete-btn" onclick="deleteCategory(${category.category_id})">Elimina</button>
+                    </div>
+                </div>`;
+            });
+            
+            categoriesList.innerHTML = html;
+        }
+        
+        function loadArticles() {
+            fetch('/menu_digitale/api/get_articles.php')
+                .then(response => response.json())
+                .then(articles => {
+                    displayArticles(articles);
+                    
+                    // Aggiungi event listener per il filtro
+                    document.getElementById('filterCategory').addEventListener('change', function() {
+                        const categoryId = this.value;
+                        if (categoryId === 'all') {
+                            displayArticles(articles);
+                        } else {
+                            const filteredArticles = articles.filter(article => 
+                                article.category_id == categoryId);
+                            displayArticles(filteredArticles);
+                        }
+                    });
+                })
+                .catch(error => console.error('Errore nel caricamento degli articoli:', error));
+        }
+        
+        function displayArticles(articles) {
+            const articlesList = document.getElementById('articlesList');
+            
+            if (articles.length === 0) {
+                articlesList.innerHTML = '<div class="no-items">Nessun articolo presente</div>';
+                return;
+            }
+            
+            let html = '';
+            articles.forEach(article => {
+                html += `
+                <div class="item-card" data-id="${article.article_id}">
+                    <div class="item-info">
+                        <img src="/menu_digitale/images/articles/${article.image}" alt="${article.name}" class="item-image">
+                        <div class="item-details">
+                            <div class="item-name">${article.name}</div>
+                            <div class="item-description">${article.description}</div>
+                            <div class="item-price">${parseFloat(article.price).toFixed(2)} €</div>
+                            <div class="item-category">${article.category_name}</div>
+                        </div>
+                    </div>
+                    <div class="item-actions">
+                        <button class="edit-btn" onclick="editArticle(${article.article_id})">Modifica</button>
+                        <button class="delete-btn" onclick="deleteArticle(${article.article_id})">Elimina</button>
+                    </div>
+                </div>`;
+            });
+            
+            articlesList.innerHTML = html;
+        }
+        
+        function editCategory(categoryId) {
+            // Carica i dati della categoria
+            fetch(`/menu_digitale/api/get_category.php?id=${categoryId}`)
+                .then(response => response.json())
+                .then(category => {
+                    // Crea e mostra il modal di modifica
+                    showEditCategoryModal(category);
+                })
+                .catch(error => {
+                    console.error('Errore nel caricamento della categoria:', error);
+                    alert('Errore nel caricamento dei dati della categoria');
+                });
+        }
+        
+        function showEditCategoryModal(category) {
+            // Crea il modal se non esiste
+            let modal = document.getElementById('editCategoryModal');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'editCategoryModal';
+                modal.className = 'modal';
+                
+                modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Modifica Categoria</h3>
+                        <span class="close-modal">&times;</span>
+                    </div>
+                    <form id="editCategoryForm">
+                        <input type="hidden" id="editCategoryId">
+                        <div class="form-group">
+                            <label for="editCategoryName">Nome Categoria:</label>
+                            <input type="text" id="editCategoryName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editCategoryImage">Nuova Immagine (opzionale):</label>
+                            <input type="file" id="editCategoryImage" accept="image/*">
+                            <p class="help-text">Lascia vuoto per mantenere l'immagine attuale</p>
+                            <img id="editCategoryPreview" class="preview-image" style="display: block; margin-top: 10px;">
+                        </div>
+                        <button type="submit">Salva Modifiche</button>
+                    </form>
+                </div>`;
+                
+                document.body.appendChild(modal);
+                
+                // Event listener per chiudere il modal
+                modal.querySelector('.close-modal').addEventListener('click', function() {
+                    modal.style.display = 'none';
+                });
+                
+                // Event listener per il form
+                document.getElementById('editCategoryForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    updateCategory();
+                });
+                
+                // Event listener per l'anteprima dell'immagine
+                document.getElementById('editCategoryImage').addEventListener('change', function() {
+                    const file = this.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            document.getElementById('editCategoryPreview').src = e.target.result;
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+            
+            // Popola il form con i dati della categoria
+            document.getElementById('editCategoryId').value = category.category_id;
+            document.getElementById('editCategoryName').value = category.name;
+            document.getElementById('editCategoryPreview').src = `/menu_digitale/images/categories/${category.image}`;
+            
+            // Mostra il modal
+            modal.style.display = 'block';
+        }
+        
+        function updateCategory() {
+            const categoryId = document.getElementById('editCategoryId').value;
+            const formData = new FormData();
+            formData.append('category_id', categoryId);
+            formData.append('name', document.getElementById('editCategoryName').value);
+            
+            const imageInput = document.getElementById('editCategoryImage');
+            if (imageInput.files.length > 0) {
+                formData.append('image', imageInput.files[0]);
+            }
+            
+            fetch('/menu_digitale/api/update_category.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Categoria aggiornata con successo!');
+                    document.getElementById('editCategoryModal').style.display = 'none';
+                    loadCategories(); // Ricarica le categorie
+                } else {
+                    alert('Errore: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Errore:', error);
+                alert('Errore nella comunicazione con il server');
+            });
+        }
+        
+        function deleteCategory(categoryId) {
+            if (confirm('Sei sicuro di voler eliminare questa categoria? Tutti gli articoli associati saranno eliminati.')) {
+                fetch('/menu_digitale/api/delete_category.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ category_id: categoryId })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Categoria eliminata con successo!');
+                        loadCategories(); // Ricarica le categorie
+                        loadArticles();   // Ricarica gli articoli
+                    } else {
+                        alert('Errore: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Errore:', error);
+                    alert('Errore nella comunicazione con il server');
+                });
+            }
+        }
+        
+        function editArticle(articleId) {
+            // Carica i dati dell'articolo
+            fetch(`/menu_digitale/api/get_article.php?id=${articleId}`)
+                .then(response => response.json())
+                .then(article => {
+                    // Crea e mostra il modal di modifica
+                    showEditArticleModal(article);
+                })
+                .catch(error => {
+                    console.error('Errore nel caricamento dell\'articolo:', error);
+                    alert('Errore nel caricamento dei dati dell\'articolo');
+                });
+        }
+        
+        function showEditArticleModal(article) {
+            // Crea il modal se non esiste
+            let modal = document.getElementById('editArticleModal');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'editArticleModal';
+                modal.className = 'modal';
+                
+                modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Modifica Articolo</h3>
+                        <span class="close-modal">&times;</span>
+                    </div>
+                    <form id="editArticleForm">
+                        <input type="hidden" id="editArticleId">
+                        <div class="form-group">
+                            <label for="editArticleCategory">Categoria:</label>
+                            <select id="editArticleCategory" required></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editArticleName">Nome Articolo:</label>
+                            <input type="text" id="editArticleName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editArticleDescription">Descrizione:</label>
+                            <textarea id="editArticleDescription" required rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="editArticlePrice">Prezzo:</label>
+                            <input type="number" id="editArticlePrice" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editArticleImage">Nuova Immagine (opzionale):</label>
+                            <input type="file" id="editArticleImage" accept="image/*">
+                            <p class="help-text">Lascia vuoto per mantenere l'immagine attuale</p>
+                            <img id="editArticlePreview" class="preview-image" style="display: block; margin-top: 10px;">
+                        </div>
+                        <button type="submit">Salva Modifiche</button>
+                    </form>
+                </div>`;
+                
+                document.body.appendChild(modal);
+                
+                // Event listener per chiudere il modal
+                modal.querySelector('.close-modal').addEventListener('click', function() {
+                    modal.style.display = 'none';
+                });
+                
+                // Event listener per il form
+                document.getElementById('editArticleForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    updateArticle();
+                });
+                
+                // Event listener per l'anteprima dell'immagine
+                document.getElementById('editArticleImage').addEventListener('change', function() {
+                    const file = this.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            document.getElementById('editArticlePreview').src = e.target.result;
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+            
+            // Popola il select delle categorie
+            const categorySelect = document.getElementById('editArticleCategory');
+            fetch('/menu_digitale/api/get_categories.php')
+                .then(response => response.json())
+                .then(categories => {
+                    categorySelect.innerHTML = '';
+                    categories.forEach(category => {
+                        const option = document.createElement('option');
+                        option.value = category.category_id;
+                        option.textContent = category.name;
+                        categorySelect.appendChild(option);
+                    });
+                    
+                    // Seleziona la categoria corrente dell'articolo
+                    categorySelect.value = article.category_id;
+                });
+            
+            // Popola il form con i dati dell'articolo
+            document.getElementById('editArticleId').value = article.article_id;
+            document.getElementById('editArticleName').value = article.name;
+            document.getElementById('editArticleDescription').value = article.description;
+            document.getElementById('editArticlePrice').value = article.price;
+            document.getElementById('editArticlePreview').src = `/menu_digitale/images/articles/${article.image}`;
+            
+            // Mostra il modal
+            modal.style.display = 'block';
+        }
+        
+        function updateArticle() {
+            const articleId = document.getElementById('editArticleId').value;
+            const formData = new FormData();
+            formData.append('article_id', articleId);
+            formData.append('category_id', document.getElementById('editArticleCategory').value);
+            formData.append('name', document.getElementById('editArticleName').value);
+            formData.append('description', document.getElementById('editArticleDescription').value);
+            formData.append('price', document.getElementById('editArticlePrice').value);
+            
+            const imageInput = document.getElementById('editArticleImage');
+            if (imageInput.files.length > 0) {
+                formData.append('image', imageInput.files[0]);
+            }
+            
+            fetch('/menu_digitale/api/update_article.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Articolo aggiornato con successo!');
+                    document.getElementById('editArticleModal').style.display = 'none';
+                    loadArticles(); // Ricarica gli articoli
+                } else {
+                    alert('Errore: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Errore:', error);
+                alert('Errore nella comunicazione con il server');
+            });
+        }
+        
+        function deleteArticle(articleId) {
+            if (confirm('Sei sicuro di voler eliminare questo articolo?')) {
+                fetch('/menu_digitale/api/delete_article.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ article_id: articleId })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Articolo eliminato con successo!');
+                        loadArticles(); // Ricarica gli articoli
+                    } else {
+                        alert('Errore: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Errore:', error);
+                    alert('Errore nella comunicazione con il server');
+                });
+            }
         }
 
         function setupImagePreviews() {
