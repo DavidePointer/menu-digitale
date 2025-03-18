@@ -34,10 +34,10 @@ $response = [
     'message' => '',
     'data' => null,
     'debug' => [
-        'dbHost' => $dbHost,
-        'dbName' => $dbName,
-        'dbUser' => $dbUser,
-        'dbPass' => '******', // nascosto per sicurezza
+        'db_server' => DB_SERVER,
+        'db_name' => DB_NAME,
+        'db_user' => DB_USER,
+        'db_pass' => '******', // nascosto per sicurezza
         'php_version' => PHP_VERSION,
         'tables_check' => []
     ]
@@ -47,8 +47,7 @@ $response = [
 try {
     // Test connessione database
     try {
-        $db = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db = getDBConnection();
         $response['debug']['connection'] = 'success';
     } catch (PDOException $e) {
         $response['debug']['connection'] = 'failed';
@@ -73,7 +72,7 @@ try {
     }
     
     if (!$allTablesExist) {
-        $response['message'] = 'Alcune tabelle necessarie non esistono nel database.';
+        $response['message'] = 'Alcune tabelle necessarie non esistono nel database. Apri /menu_digitale/api/create_tables.php per crearle.';
         http_response_code(500);
         echo json_encode($response);
         exit;
