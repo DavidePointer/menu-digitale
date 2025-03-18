@@ -35,8 +35,8 @@ $categoryId = $_GET['id'];
 
 // Connessione al database
 try {
-    $db = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Utilizza la funzione dal config.php invece di creare una nuova connessione
+    $db = getDBConnection();
     
     // Prepara e esegui la query
     $stmt = $db->prepare("SELECT * FROM categories WHERE category_id = :category_id");
@@ -47,7 +47,7 @@ try {
     
     if ($category) {
         // Categoria trovata, restituisci i dati
-        echo json_encode($category);
+        echo json_encode(['success' => true, 'data' => $category]);
     } else {
         // Categoria non trovata
         http_response_code(404); // Not Found
@@ -57,5 +57,9 @@ try {
     // Errore di database
     error_log("Database error: " . $e->getMessage());
     http_response_code(500); // Internal Server Error
-    echo json_encode(['success' => false, 'message' => 'Errore del server']);
+    echo json_encode([
+        'success' => false, 
+        'message' => 'Errore del server', 
+        'debug' => $e->getMessage()
+    ]);
 } 

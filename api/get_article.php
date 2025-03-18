@@ -35,8 +35,8 @@ $articleId = $_GET['id'];
 
 // Connessione al database
 try {
-    $db = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Utilizza la funzione dal config.php invece di creare una nuova connessione
+    $db = getDBConnection();
     
     // Prepara e esegui la query
     $stmt = $db->prepare("
@@ -52,7 +52,7 @@ try {
     
     if ($article) {
         // Articolo trovato, restituisci i dati
-        echo json_encode($article);
+        echo json_encode(['success' => true, 'data' => $article]);
     } else {
         // Articolo non trovato
         http_response_code(404); // Not Found
@@ -62,5 +62,9 @@ try {
     // Errore di database
     error_log("Database error: " . $e->getMessage());
     http_response_code(500); // Internal Server Error
-    echo json_encode(['success' => false, 'message' => 'Errore del server']);
+    echo json_encode([
+        'success' => false, 
+        'message' => 'Errore del server', 
+        'debug' => $e->getMessage()
+    ]);
 } 
