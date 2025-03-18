@@ -1,7 +1,7 @@
 # Menu Digitale - Pointer
 
 ## Panoramica del Progetto
-Sistema di visualizzazione menu digitale per ristoranti/locali, personalizzato per Pointer. L'applicazione permette di visualizzare categorie e articoli di menu in un'interfaccia responsiva e user-friendly.
+Sistema di visualizzazione menu digitale per ristoranti/locali, personalizzato per Pointer. L'applicazione permette di visualizzare categorie e articoli di menu in un'interfaccia responsiva e user-friendly, con un pannello amministrativo protetto da autenticazione.
 
 ## Architettura del Sistema
 
@@ -9,31 +9,45 @@ Sistema di visualizzazione menu digitale per ristoranti/locali, personalizzato p
 - **HTML/CSS/JavaScript**: Applicazione web responsive
 - **Design moderno**: Animazioni CSS e interfaccia intuitiva
 - **Ricerca in tempo reale**: Funzionalità di ricerca istantanea per gli articoli
+- **Pannello Admin**: Interfaccia sicura per la gestione dei contenuti
 
 ### Backend
 - **PHP**: API RESTful per la gestione dei dati
 - **MySQL**: Database per categorie e articoli
 - **Architettura modulare**: Separazione tra logica di business e presentazione
+- **Autenticazione sicura**: Sistema di login basato su sessioni PHP
+- **Auto-manutenzione DB**: Creazione automatica delle strutture necessarie se mancanti
 
 ## Struttura del Repository
 
 ```
 menu_digitale/
-├── api/                  # API per l'interazione con il database
-│   ├── menu.php          # Endpoint principale per menu e categorie
-│   ├── categories.php    # Gestione categorie
-│   └── articles.php      # Gestione articoli
-├── css/                  # Stili dell'applicazione
-│   ├── style.css         # Stile principale
-│   └── responsive.css    # Stili per responsive design
-├── js/                   # Script JavaScript
-│   ├── ui.js             # Gestione interfaccia utente
-│   ├── api.js            # Interazione con le API
-│   └── utils.js          # Funzioni di utilità
-├── images/               # Immagini e risorse
-├── config.php            # Configurazione database
-├── index.html            # Pagina principale (visualizzazione menu)
-└── admin.html            # Pannello amministrativo (in sviluppo)
+├── api/                      # API per l'interazione con il database
+│   ├── add_article.php       # Aggiunta di articoli
+│   ├── add_category.php      # Aggiunta di categorie
+│   ├── update_article.php    # Aggiornamento articoli
+│   ├── update_category.php   # Aggiornamento categorie 
+│   ├── auth_check.php        # Verifica autenticazione
+│   ├── check_auth.php        # Helper autenticazione
+│   ├── login.php             # Login amministratore
+│   ├── logout.php            # Logout amministratore
+│   ├── change_password.php   # Cambio password
+│   ├── menu.php              # Endpoint principale per menu e categorie
+│   └── articles.php          # Gestione articoli 
+├── css/                      # Stili dell'applicazione
+│   ├── style.css             # Stile principale
+│   └── responsive.css        # Stili per responsive design
+├── js/                       # Script JavaScript
+│   ├── ui.js                 # Gestione interfaccia utente
+│   ├── api.js                # Interazione con le API
+│   └── utils.js              # Funzioni di utilità
+├── images/                   # Immagini e risorse
+│   ├── categories/           # Immagini delle categorie
+│   └── articles/             # Immagini degli articoli
+├── config.php                # Configurazione database
+├── index.html                # Pagina principale (visualizzazione menu)
+├── login.html                # Pagina di login amministratore
+└── admin.html                # Pannello amministrativo
 ```
 
 ## Funzionalità Principali
@@ -44,11 +58,15 @@ menu_digitale/
 - Ricerca articoli in tempo reale
 - Layout responsivo per tutti i dispositivi
 - Ottimizzazione performance (animazioni ottimizzate)
+- Link discreto all'area amministrativa nel footer
 
-### Pannello Amministrativo (In Sviluppo)
-- Gestione categorie e articoli
-- Caricamento immagini
+### Pannello Amministrativo
+- Autenticazione sicura con username e password
+- Gestione completa categorie e articoli (CRUD)
+- Caricamento immagini per categorie e articoli
 - Modifica prezzi e descrizioni
+- Cambio password dell'amministratore
+- Sistema auto-resiliente con auto-riparazione della struttura del database
 
 ## Requisiti Tecnici
 
@@ -61,20 +79,38 @@ menu_digitale/
 ### Database
 - Tabella `categories`: Gestione categorie menu
 - Tabella `articles`: Gestione articoli con relazioni alle categorie
+- Tabella `users`: Gestione utenti amministratori
 
 ## Setup e Installazione
 
 1. Clonare il repository nella cartella root del webserver
-2. Importare `database.sql` nel database MySQL
+2. Importare `database.sql` nel database MySQL (opzionale, la struttura si crea automaticamente)
 3. Configurare il file `config.php` con i parametri corretti di connessione
 4. Accedere all'applicazione via browser: `http://localhost/menu_digitale/`
+5. Per accedere all'area admin: `http://localhost/menu_digitale/login.html`
+   - Username predefinito: `admin`
+   - Password predefinita: `admin123`
+   - **IMPORTANTE**: Si raccomanda di cambiare la password predefinita dopo il primo accesso
+
+## Funzionalità di Auto-manutenzione
+
+Il sistema è progettato per essere auto-resiliente:
+- Verifica automatica della struttura del database
+- Creazione automatica di tabelle e colonne mancanti
+- Gestione errori con messaggi informativi
+- Logging delle operazioni critiche
 
 ## Roadmap di Sviluppo
 
 ### In Corso
-- Completamento pannello amministrativo
 - Ottimizzazione performance
 - Miglioramento UX/UI
+
+### Completato
+- Pannello amministrativo sicuro
+- Sistema di autenticazione
+- CRUD completo per categorie e articoli
+- Auto-riparazione struttura database
 
 ### Futuro
 - Sistema multi-tenant per più clienti
