@@ -25,12 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     exit;
 }
 
-// Verifica l'autenticazione (funzione importata da auth_check.php)
-if (!isAuthenticated()) {
-    http_response_code(401);
-    echo json_encode(['success' => false, 'message' => 'Non autorizzato']);
-    exit;
-}
+// La verifica dell'autenticazione è già inclusa in auth_check.php
+// Non serve chiamare isAuthenticated() perché il controllo è già fatto quando si include auth_check.php
 
 // Verifica che sia una richiesta POST
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
