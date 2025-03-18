@@ -1,0 +1,104 @@
+{
+    "method": "POST",
+    "post": {
+        "article_id": "1",
+        "category_id": "1",
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella",
+        "price": "5.94"
+    },
+    "files": [],
+    "time": "2025-03-18 03:22:15"
+}
+
+{
+    "method": "POST",
+    "post": {
+        "article_id": "1",
+        "category_id": "1",
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella",
+        "price": "5.94"
+    },
+    "files": [],
+    "time": "2025-03-18 03:23:43"
+}
+
+{
+    "method": "POST",
+    "post": {
+        "article_id": "1",
+        "category_id": "1",
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella hghgh",
+        "price": "5.94"
+    },
+    "files": [],
+    "time": "2025-03-18 03:25:34"
+}
+
+{
+    "method": "POST",
+    "post": {
+        "article_id": "2",
+        "category_id": "2",
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00"
+    },
+    "files": [],
+    "time": "2025-03-18 03:27:17"
+}
+
+{
+    "method": "POST",
+    "post": {
+        "article_id": "1",
+        "category_id": "3",
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella",
+        "price": "5.94"
+    },
+    "files": [],
+    "time": "2025-03-18 03:29:33"
+}
+
+{
+    "method": "POST",
+    "post": {
+        "article_id": "1",
+        "category_id": "1",
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella, basilico",
+        "price": "6.5"
+    },
+    "files": [],
+    "time": "2025-03-18 03:33:31"
+}
+
+{
+    "method": "POST",
+    "post": {
+        "article_id": "1",
+        "category_id": "1",
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella, basilico",
+        "price": "6.50"
+    },
+    "files": [],
+    "time": "2025-03-18 13:02:54"
+}
+
+{
+    "method": "POST",
+    "post": {
+        "article_id": "1",
+        "category_id": "1",
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella, basilico",
+        "price": "6.50"
+    },
+    "files": [],
+    "time": "2025-03-18 13:14:45"
+}
+

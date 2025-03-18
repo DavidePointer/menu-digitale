@@ -2,56 +2,56 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+require_once 'config.php';
+
+echo "<h1>Configurazione Database MySQL</h1>";
+
 try {
-    // Connessione al server SQL Server
-    $dsn = "sqlsrv:Server=MSI-POINTER\\SQLEXPRESS";
-    $pdo = new PDO($dsn, "", "");
+    // Connessione al server MySQL senza specificare il database
+    $pdo = new PDO("mysql:host=" . DB_SERVER . ";charset=utf8mb4", DB_USER, DB_PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    // Crea il database se non esiste
-    $pdo->exec("IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'menu_db')
-                BEGIN
-                    CREATE DATABASE menu_db
-                END");
-    echo "Database menu_db creato o già esistente<br>";
+    // Verifica se il database esiste, altrimenti lo crea
+    $stmt = $pdo->query("SHOW DATABASES LIKE '" . DB_NAME . "'");
+    if ($stmt->rowCount() == 0) {
+        echo "Creazione database " . DB_NAME . "...<br>";
+        $pdo->exec("CREATE DATABASE `" . DB_NAME . "` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
+        echo "Database creato con successo!<br>";
+    } else {
+        echo "Il database " . DB_NAME . " esiste già.<br>";
+    }
     
-    // Riconnettiti al database specifico
-    $pdo = new PDO("sqlsrv:Server=MSI-POINTER\\SQLEXPRESS;Database=menu_db", "", "");
+    // Connessione al database specifico
+    $pdo = new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USER, DB_PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    // Crea la tabella categories se non esiste
-    $sql = "IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='categories' and xtype='U')
-            BEGIN
-                CREATE TABLE categories (
-                    category_id INT IDENTITY(1,1) PRIMARY KEY,
-                    name NVARCHAR(100) NOT NULL,
-                    image_url NVARCHAR(255) NOT NULL
-                )
-            END";
+    // Creazione tabelle
+    echo "Creazione delle tabelle...<br>";
     
-    $pdo->exec($sql);
-    echo "Tabella categories creata o già esistente<br>";
+    // Tabella categorie
+    $pdo->exec("CREATE TABLE IF NOT EXISTS categories (
+        category_id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(100) NOT NULL,
+        image_url VARCHAR(255) NOT NULL
+    )");
+    echo "Tabella 'categories' creata.<br>";
     
-    // Crea la tabella articles se non esiste
-    $sql = "IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='articles' and xtype='U')
-            BEGIN
-                CREATE TABLE articles (
-                    article_id INT IDENTITY(1,1) PRIMARY KEY,
-                    category_id INT NOT NULL,
-                    name NVARCHAR(100) NOT NULL,
-                    description NTEXT,
-                    price DECIMAL(10,2) NOT NULL,
-                    image_url NVARCHAR(255) NOT NULL,
-                    CONSTRAINT FK_Articles_Categories FOREIGN KEY (category_id) 
-                    REFERENCES categories(category_id)
-                )
-            END";
+    // Tabella articoli
+    $pdo->exec("CREATE TABLE IF NOT EXISTS articles (
+        article_id INT AUTO_INCREMENT PRIMARY KEY,
+        category_id INT NOT NULL,
+        name VARCHAR(100) NOT NULL,
+        description TEXT,
+        price DECIMAL(10,2) NOT NULL,
+        image_url VARCHAR(255) NOT NULL,
+        FOREIGN KEY (category_id) REFERENCES categories(category_id)
+    )");
+    echo "Tabella 'articles' creata.<br>";
     
-    $pdo->exec($sql);
-    echo "Tabella articles creata o già esistente<br>";
-    
-    echo "<br>Setup completato con successo!";
+    echo "<h2>Configurazione del database completata con successo!</h2>";
     
 } catch (PDOException $e) {
-    die("Errore: " . $e->getMessage());
-} 
+    echo "<h2>Errore durante la configurazione del database:</h2>";
+    echo $e->getMessage();
+}
+?> 

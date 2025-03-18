@@ -1,139 +1,94 @@
 <?php
-// Carica la configurazione e le utilities
+// api/delete_category.php - Elimina una categoria
+
+// Includi i file necessari
 require_once '../config.php';
-require_once 'auth_check.php';
+require_once 'auth.php';
 
-// Configura CORS
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST, OPTIONS");
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+// Headers per CORS e JSON
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
-// Configura il logging
-$logFile = '../logs/admin_actions.log';
-if (!file_exists('../logs/')) {
-    mkdir('../logs/', 0777, true);
+// Gestisci le richieste OPTIONS per il preflight CORS
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    exit(0);
 }
 
-function logAction($message) {
-    global $logFile;
-    $timestamp = date('Y-m-d H:i:s');
-    $logMessage = "[$timestamp] " . $message . PHP_EOL;
-    file_put_contents($logFile, $logMessage, FILE_APPEND);
-}
-
-// Per le richieste OPTIONS, termina qui
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-    http_response_code(200);
-    exit;
-}
-
-// Verifica l'autenticazione (funzione importata da auth_check.php)
+// Verifica autenticazione
 if (!isAuthenticated()) {
-    http_response_code(401);
-    echo json_encode(['success' => false, 'message' => 'Non autorizzato']);
-    exit;
+    logAuthMessage("Tentativo di eliminare una categoria senza autenticazione");
+    jsonResponse(false, 'Utente non autenticato');
 }
 
-// Verifica che sia una richiesta POST
-if ($_SERVER['REQUEST_METHOD'] != 'POST') {
-    http_response_code(405); // Method Not Allowed
-    echo json_encode(['success' => false, 'message' => 'Metodo non consentito']);
-    exit;
+// Verifica che il metodo sia POST
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    logAuthMessage("Metodo non consentito per eliminazione categoria: " . $_SERVER['REQUEST_METHOD']);
+    jsonResponse(false, 'Metodo non consentito');
 }
 
-// Ottieni i dati JSON dalla richiesta
-$data = json_decode(file_get_contents("php://input"), true);
-
-// Verifica che l'ID categoria sia stato fornito
-if (!isset($data['category_id']) || empty($data['category_id'])) {
-    http_response_code(400); // Bad Request
-    echo json_encode(['success' => false, 'message' => 'ID categoria richiesto']);
-    exit;
-}
-
-$categoryId = $data['category_id'];
-
-// Connessione al database
 try {
-    $db = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Recupera i dati della richiesta
+    $input = json_decode(file_get_contents('php://input'), true);
     
-    // Inizia una transazione per garantire l'integrità dei dati
-    $db->beginTransaction();
+    // Verifica che l'ID categoria sia stato fornito
+    if (!isset($input['category_id']) || empty($input['category_id'])) {
+        logAuthMessage("ID categoria mancante per eliminazione");
+        jsonResponse(false, 'ID categoria richiesto');
+    }
     
-    // Ottieni le informazioni sulla categoria e sugli articoli associati prima dell'eliminazione
-    $stmt = $db->prepare("SELECT * FROM categories WHERE category_id = :category_id");
-    $stmt->bindParam(':category_id', $categoryId, PDO::PARAM_INT);
-    $stmt->execute();
+    $categoryId = (int)$input['category_id'];
+    
+    // Connessione al database
+    $pdo = getDBConnection();
+    
+    // Inizia la transazione
+    $pdo->beginTransaction();
+    
+    // Prima ottieni i dettagli della categoria per poter eliminare l'immagine
+    $stmt = $pdo->prepare("SELECT image_url FROM categories WHERE category_id = ?");
+    $stmt->execute([$categoryId]);
     $category = $stmt->fetch(PDO::FETCH_ASSOC);
     
     if (!$category) {
-        $db->rollBack();
-        http_response_code(404);
-        echo json_encode(['success' => false, 'message' => 'Categoria non trovata']);
-        exit;
+        logAuthMessage("Tentativo di eliminare una categoria inesistente: " . $categoryId);
+        jsonResponse(false, 'Categoria non trovata');
     }
-    
-    $categoryName = $category['name'];
-    $categoryImage = $category['image'];
-    
-    // Ottieni gli articoli associati alla categoria
-    $stmt = $db->prepare("SELECT * FROM articles WHERE category_id = :category_id");
-    $stmt->bindParam(':category_id', $categoryId, PDO::PARAM_INT);
-    $stmt->execute();
-    $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     // Elimina gli articoli associati alla categoria
-    $stmt = $db->prepare("DELETE FROM articles WHERE category_id = :category_id");
-    $stmt->bindParam(':category_id', $categoryId, PDO::PARAM_INT);
-    $stmt->execute();
+    $stmt = $pdo->prepare("DELETE FROM articles WHERE category_id = ?");
+    $stmt->execute([$categoryId]);
+    $articlesDeleted = $stmt->rowCount();
     
     // Elimina la categoria
-    $stmt = $db->prepare("DELETE FROM categories WHERE category_id = :category_id");
-    $stmt->bindParam(':category_id', $categoryId, PDO::PARAM_INT);
-    $stmt->execute();
+    $stmt = $pdo->prepare("DELETE FROM categories WHERE category_id = ?");
+    $stmt->execute([$categoryId]);
+    $categoryDeleted = $stmt->rowCount();
+    
+    if ($categoryDeleted === 0) {
+        $pdo->rollBack();
+        logAuthMessage("Errore nell'eliminazione della categoria: " . $categoryId);
+        jsonResponse(false, 'Impossibile eliminare la categoria');
+    }
     
     // Commit della transazione
-    $db->commit();
+    $pdo->commit();
     
-    // Elimina le immagini degli articoli associati
-    $articlesDir = '../images/articles/';
-    foreach ($articles as $article) {
-        if (isset($article['image']) && file_exists($articlesDir . $article['image'])) {
-            unlink($articlesDir . $article['image']);
-        }
+    // Rimuovi il file dell'immagine se esiste
+    if ($category['image_url'] && file_exists($_SERVER['DOCUMENT_ROOT'] . '/menu_digitale/' . $category['image_url'])) {
+        unlink($_SERVER['DOCUMENT_ROOT'] . '/menu_digitale/' . $category['image_url']);
     }
     
-    // Elimina l'immagine della categoria
-    $categoriesDir = '../images/categories/';
-    if (isset($categoryImage) && file_exists($categoriesDir . $categoryImage)) {
-        unlink($categoriesDir . $categoryImage);
+    logAuthMessage("Categoria eliminata con successo: " . $categoryId . ", articoli eliminati: " . $articlesDeleted);
+    jsonResponse(true, 'Categoria eliminata con successo');
+    
+} catch (Exception $e) {
+    // In caso di errore, rollback della transazione
+    if (isset($pdo) && $pdo->inTransaction()) {
+        $pdo->rollBack();
     }
     
-    // Log dell'azione
-    $articlesCount = count($articles);
-    $username = $_SESSION['user']['username'] ?? 'unknown';
-    logAction("Utente $username ha eliminato la categoria '$categoryName' (ID: $categoryId) con $articlesCount articoli associati");
-    
-    // Restituisci la risposta
-    echo json_encode([
-        'success' => true, 
-        'message' => 'Categoria eliminata con successo',
-        'deleted_items' => [
-            'category' => $categoryName,
-            'articles_count' => $articlesCount
-        ]
-    ]);
-    
-} catch(PDOException $e) {
-    // Errore di database, rollback della transazione
-    if ($db->inTransaction()) {
-        $db->rollBack();
-    }
-    
-    error_log("Database error: " . $e->getMessage());
-    http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Errore del server']);
+    logAuthMessage("Errore nell'eliminazione della categoria: " . $e->getMessage());
+    jsonResponse(false, 'Errore del server: ' . $e->getMessage());
 } 

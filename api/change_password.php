@@ -1,30 +1,29 @@
 <?php
-// Richiedi autenticazione
-require_once 'auth_check.php';
+// Richiedi file di autenticazione
+require_once 'auth.php';
 
 // Headers CORS
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type');
-
-// Configurazione dei log
-ini_set('log_errors', 1);
-ini_set('error_log', __DIR__ . '/../logs/auth.log');
-error_log("=== Richiesta cambio password === " . date('Y-m-d H:i:s') . " - Utente: " . $_SESSION['username']);
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
 // Se è una richiesta OPTIONS, termina qui
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    error_log("Richiesta OPTIONS ricevuta, invio headers CORS");
+    logAuthMessage("Richiesta OPTIONS ricevuta, invio headers CORS");
     exit(0);
+}
+
+// Verifica autenticazione utente
+if (!isAuthenticated()) {
+    logAuthMessage("Tentativo di cambio password senza autenticazione");
+    jsonResponse(false, 'Utente non autenticato');
 }
 
 // Verifica che il metodo sia POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    error_log("Metodo non consentito: " . $_SERVER['REQUEST_METHOD']);
-    http_response_code(405);
-    echo json_encode(['success' => false, 'message' => 'Metodo non consentito']);
-    exit;
+    logAuthMessage("Metodo non consentito: " . $_SERVER['REQUEST_METHOD']);
+    jsonResponse(false, 'Metodo non consentito');
 }
 
 try {
@@ -34,26 +33,20 @@ try {
     
     // Verifica che il JSON sia valido
     if ($data === null) {
-        error_log("JSON non valido ricevuto");
-        http_response_code(400);
-        echo json_encode(['success' => false, 'message' => 'Dati di richiesta non validi']);
-        exit;
+        logAuthMessage("JSON non valido ricevuto");
+        jsonResponse(false, 'Dati di richiesta non validi');
     }
     
     // Verifica che le password siano presenti
     if (empty($data['currentPassword']) || empty($data['newPassword'])) {
-        error_log("Password mancanti");
-        http_response_code(400);
-        echo json_encode(['success' => false, 'message' => 'Password attuale e nuova sono obbligatorie']);
-        exit;
+        logAuthMessage("Password mancanti");
+        jsonResponse(false, 'Password attuale e nuova sono obbligatorie');
     }
     
     // Verifica che la nuova password sia abbastanza forte
     if (strlen($data['newPassword']) < 8) {
-        error_log("Password troppo corta");
-        http_response_code(400);
-        echo json_encode(['success' => false, 'message' => 'La nuova password deve essere di almeno 8 caratteri']);
-        exit;
+        logAuthMessage("Password troppo corta");
+        jsonResponse(false, 'La nuova password deve essere di almeno 8 caratteri');
     }
     
     // Carica il file di configurazione
@@ -69,18 +62,14 @@ try {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         
         if (!$user) {
-            error_log("Utente non trovato: " . $_SESSION['user_id']);
-            http_response_code(500);
-            echo json_encode(['success' => false, 'message' => 'Errore interno del server']);
-            exit;
+            logAuthMessage("Utente non trovato: " . $_SESSION['user_id']);
+            jsonResponse(false, 'Errore interno del server');
         }
         
         // Verifica la password attuale
         if (!password_verify($data['currentPassword'], $user['password_hash'])) {
-            error_log("Password attuale non valida per l'utente: " . $user['username']);
-            http_response_code(401);
-            echo json_encode(['success' => false, 'message' => 'Password attuale non valida']);
-            exit;
+            logAuthMessage("Password attuale non valida per l'utente: " . $user['username']);
+            jsonResponse(false, 'Password attuale non valida');
         }
         
         // Genera hash della nuova password
@@ -91,22 +80,19 @@ try {
         $result = $stmt->execute([$newPasswordHash, $_SESSION['user_id']]);
         
         if ($result) {
-            error_log("Password aggiornata con successo per l'utente: " . $user['username']);
-            echo json_encode(['success' => true, 'message' => 'Password aggiornata con successo']);
+            logAuthMessage("Password aggiornata con successo per l'utente: " . $user['username']);
+            jsonResponse(true, 'Password aggiornata con successo');
         } else {
-            error_log("Errore nell'aggiornamento della password per l'utente: " . $user['username']);
-            http_response_code(500);
-            echo json_encode(['success' => false, 'message' => 'Errore nell\'aggiornamento della password']);
+            logAuthMessage("Errore nell'aggiornamento della password per l'utente: " . $user['username']);
+            jsonResponse(false, 'Errore nell\'aggiornamento della password');
         }
         
     } catch (PDOException $e) {
-        error_log("Errore database: " . $e->getMessage());
-        http_response_code(500);
-        echo json_encode(['success' => false, 'message' => 'Errore interno del server']);
+        logAuthMessage("Errore database: " . $e->getMessage());
+        jsonResponse(false, 'Errore interno del server');
     }
     
 } catch (Exception $e) {
-    error_log("Errore generale: " . $e->getMessage());
-    http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Errore interno del server']);
+    logAuthMessage("Errore generale: " . $e->getMessage());
+    jsonResponse(false, 'Errore interno del server');
 } 

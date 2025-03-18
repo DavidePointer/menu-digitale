@@ -25,3 +25,4081 @@
 [17-Mar-2025 22:58:22 Europe/Berlin] File caricato con successo in: C:\xampp\htdocs\menu_digitale\api/../images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
 [17-Mar-2025 22:58:22 Europe/Berlin] Categoria inserita con successo nel database
 [17-Mar-2025 22:58:22 Europe/Berlin] === Fine elaborazione add_category.php ===
+[18-Mar-2025 00:35:21 Europe/Berlin] === Inizio elaborazione add_category.php ===
+[18-Mar-2025 00:35:21 Europe/Berlin] Directory corrente: C:\xampp\htdocs\menu_digitale\api
+[18-Mar-2025 00:35:21 Europe/Berlin] Document root: C:/xampp/htdocs
+[18-Mar-2025 00:35:21 Europe/Berlin] POST data: Array
+(
+    [name] => PRIMI
+)
+
+[18-Mar-2025 00:35:21 Europe/Berlin] FILES data: Array
+(
+    [image] => Array
+        (
+            [name] => Pici all'aglione_orizz.jpg
+            [full_path] => Pici all'aglione_orizz.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpCC88.tmp
+            [error] => 0
+            [size] => 315088
+        )
+
+)
+
+[18-Mar-2025 00:35:21 Europe/Berlin] Directory upload: C:\xampp\htdocs\menu_digitale\api/../images/categories/
+[18-Mar-2025 00:35:21 Europe/Berlin] Tentativo di upload del file in: C:\xampp\htdocs\menu_digitale\api/../images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+[18-Mar-2025 00:35:21 Europe/Berlin] File caricato con successo in: C:\xampp\htdocs\menu_digitale\api/../images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+[18-Mar-2025 00:35:21 Europe/Berlin] Categoria inserita con successo nel database
+[18-Mar-2025 00:35:21 Europe/Berlin] === Fine elaborazione add_category.php ===
+[18-Mar-2025 00:43:58 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 00:43:58
+[18-Mar-2025 00:43:58 Europe/Berlin] Metodo: GET
+[18-Mar-2025 00:43:58 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 00:43:58 Europe/Berlin] Query string: 
+[18-Mar-2025 00:43:58 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 00:43:58 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 00:43:58 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 00:43:58 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 00:43:58 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 00:43:58 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 00:43:58 Europe/Berlin] Trovate 2 categorie
+[18-Mar-2025 00:43:58 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 00:43:58 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 00:43:58 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 00:43:58 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    }
+]
+[18-Mar-2025 00:43:58 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 00:43:58
+[18-Mar-2025 00:46:40 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 00:46:40
+[18-Mar-2025 00:46:40 Europe/Berlin] Metodo: GET
+[18-Mar-2025 00:46:40 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 00:46:40 Europe/Berlin] Query string: 
+[18-Mar-2025 00:46:40 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 00:46:40 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 00:46:40 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 00:46:40 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 00:46:40 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 00:46:40 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 00:46:40 Europe/Berlin] Trovate 2 categorie
+[18-Mar-2025 00:46:40 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 00:46:40 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 00:46:40 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 00:46:40 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    }
+]
+[18-Mar-2025 00:46:40 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 00:46:40
+[18-Mar-2025 00:46:40 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 00:46:40
+[18-Mar-2025 00:46:40 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 00:46:40
+[18-Mar-2025 00:46:40 Europe/Berlin] Metodo: GET
+[18-Mar-2025 00:46:40 Europe/Berlin] Metodo: GET
+[18-Mar-2025 00:46:40 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 00:46:40 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 00:46:40 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 00:46:40 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 00:46:40 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 00:46:40 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 00:46:40 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 00:46:40 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 00:46:40 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 00:46:40 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 00:46:40 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 00:46:40 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 00:46:40 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 00:46:40 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 00:46:40 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella
+            [price] => 5.94
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 00:46:40 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 00:46:40 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 00:46:40 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella",
+        "price": "5.94",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 00:46:40 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 00:46:40
+[18-Mar-2025 00:46:40 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 00:46:40 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 00:46:40 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 00:46:40 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 00:46:40 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 00:46:40 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 00:46:40 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 00:46:40 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 00:46:40 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 00:46:40 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 00:46:40 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 00:46:40
+[18-Mar-2025 00:47:39 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 00:47:39
+[18-Mar-2025 00:47:39 Europe/Berlin] Metodo: GET
+[18-Mar-2025 00:47:39 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 00:47:39 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 00:47:39 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 00:47:39 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 00:47:39 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 00:47:39 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 00:47:39 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 00:47:39 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 00:47:39 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 00:47:39 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 00:47:39 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella
+            [price] => 5.94
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 00:47:39 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 00:47:39 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 00:47:39 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella",
+        "price": "5.94",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 00:47:39 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 00:47:39
+[18-Mar-2025 00:52:29 Europe/Berlin] Richiesta add_article.php ricevuta
+[18-Mar-2025 00:52:29 Europe/Berlin] POST data: Array
+(
+    [category_id] => 2
+    [name] => Spaghettoni
+    [description] => spaghetti simili ai pici
+    [price] => 13
+)
+
+[18-Mar-2025 00:52:29 Europe/Berlin] FILES data: Array
+(
+    [image] => Array
+        (
+            [name] => PIZZA-MARGHERITA.jpg
+            [full_path] => PIZZA-MARGHERITA.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php7E4E.tmp
+            [error] => 0
+            [size] => 230628
+        )
+
+)
+
+[18-Mar-2025 00:52:29 Europe/Berlin] Directory upload: C:\xampp\htdocs\menu_digitale\api/../images/articles/
+[18-Mar-2025 00:52:29 Europe/Berlin] Tentativo di upload del file in: C:\xampp\htdocs\menu_digitale\api/../images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+[18-Mar-2025 00:52:29 Europe/Berlin] File caricato con successo in: C:\xampp\htdocs\menu_digitale\api/../images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+[18-Mar-2025 00:52:29 Europe/Berlin] Inserimento nel database: categoria=2, nome=Spaghettoni, immagine=images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+[18-Mar-2025 00:52:29 Europe/Berlin] Articolo inserito con successo nel database
+[18-Mar-2025 00:52:35 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 00:52:35
+[18-Mar-2025 00:52:35 Europe/Berlin] Metodo: GET
+[18-Mar-2025 00:52:35 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 00:52:35 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 00:52:35 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 00:52:35 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 00:52:35 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 00:52:35 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 00:52:35 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 00:52:35 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 00:52:35 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 00:52:35 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 00:52:35 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 00:52:35 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 00:52:35 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 00:52:35 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 00:52:35 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 00:52:35
+[18-Mar-2025 00:52:38 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 00:52:38
+[18-Mar-2025 00:52:38 Europe/Berlin] Metodo: GET
+[18-Mar-2025 00:52:38 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 00:52:38 Europe/Berlin] Query string: 
+[18-Mar-2025 00:52:38 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 00:52:38 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 00:52:38 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 00:52:38 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 00:52:38 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 00:52:38 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 00:52:38 Europe/Berlin] Trovate 2 categorie
+[18-Mar-2025 00:52:38 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 00:52:38 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 00:52:38 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 00:52:38 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    }
+]
+[18-Mar-2025 00:52:38 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 00:52:38
+[18-Mar-2025 00:52:38 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 00:52:38
+[18-Mar-2025 00:52:38 Europe/Berlin] Metodo: GET
+[18-Mar-2025 00:52:38 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 00:52:38 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 00:52:38 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 00:52:38 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 00:52:38 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 00:52:38 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 00:52:38 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 00:52:38 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 00:52:38 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 00:52:38 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 00:52:38 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella
+            [price] => 5.94
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 00:52:38 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 00:52:38 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 00:52:38 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella",
+        "price": "5.94",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 00:52:38 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 00:52:38
+[18-Mar-2025 00:54:48 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 00:54:48
+[18-Mar-2025 00:54:48 Europe/Berlin] Metodo: GET
+[18-Mar-2025 00:54:48 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 00:54:48 Europe/Berlin] Query string: 
+[18-Mar-2025 00:54:48 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 00:54:48 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 00:54:48 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 00:54:48 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 00:54:48 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 00:54:48 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 00:54:48 Europe/Berlin] Trovate 2 categorie
+[18-Mar-2025 00:54:48 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 00:54:48 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 00:54:48 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 00:54:48 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    }
+]
+[18-Mar-2025 00:54:48 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 00:54:48
+[18-Mar-2025 00:54:49 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 00:54:49
+[18-Mar-2025 00:54:49 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 00:54:49
+[18-Mar-2025 00:54:49 Europe/Berlin] Metodo: GET
+[18-Mar-2025 00:54:49 Europe/Berlin] Metodo: GET
+[18-Mar-2025 00:54:49 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 00:54:49 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 00:54:49 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 00:54:49 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 00:54:49 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 00:54:49 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 00:54:49 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 00:54:49 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 00:54:49 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 00:54:49 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 00:54:49 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 00:54:49 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 00:54:49 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 00:54:49 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 00:54:49 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 00:54:49 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 00:54:49 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 00:54:49 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 00:54:49 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 00:54:49 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 00:54:49 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 00:54:49 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella
+            [price] => 5.94
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 00:54:49 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 00:54:49 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 00:54:49 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 00:54:49 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 00:54:49 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 00:54:49 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 00:54:49
+[18-Mar-2025 00:54:49 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella",
+        "price": "5.94",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 00:54:49 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 00:54:49
+[18-Mar-2025 00:58:14 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 00:58:14
+[18-Mar-2025 00:58:14 Europe/Berlin] Metodo: GET
+[18-Mar-2025 00:58:14 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 00:58:14 Europe/Berlin] Query string: 
+[18-Mar-2025 00:58:14 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 00:58:14 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 00:58:14 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 00:58:14 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 00:58:14 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 00:58:14 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 00:58:14 Europe/Berlin] Trovate 2 categorie
+[18-Mar-2025 00:58:14 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 00:58:14 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 00:58:14 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 00:58:14 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    }
+]
+[18-Mar-2025 00:58:14 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 00:58:14
+[18-Mar-2025 00:58:14 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 00:58:14
+[18-Mar-2025 00:58:14 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 00:58:14
+[18-Mar-2025 00:58:14 Europe/Berlin] Metodo: GET
+[18-Mar-2025 00:58:14 Europe/Berlin] Metodo: GET
+[18-Mar-2025 00:58:14 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 00:58:14 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 00:58:14 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 00:58:14 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 00:58:14 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 00:58:14 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 00:58:14 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 00:58:14 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 00:58:14 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 00:58:14 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 00:58:14 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 00:58:14 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 00:58:14 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 00:58:14 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 00:58:14 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 00:58:14 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 00:58:14 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 00:58:14 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 00:58:14 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 00:58:14 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 00:58:14 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella
+            [price] => 5.94
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 00:58:14 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 00:58:14 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 00:58:14 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 00:58:14 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 00:58:14 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella",
+        "price": "5.94",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 00:58:14 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 00:58:14 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 00:58:14
+[18-Mar-2025 00:58:14 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 00:58:14 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 00:58:14
+[18-Mar-2025 01:44:33 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 01:44:33
+[18-Mar-2025 01:44:33 Europe/Berlin] Metodo: GET
+[18-Mar-2025 01:44:33 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 01:44:33 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 01:44:33 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 01:44:33 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 01:44:33 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 01:44:33 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 01:44:33 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 01:44:33 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 01:44:33 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 01:44:33 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 01:44:33 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 01:44:33 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 01:44:33 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 01:44:33 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 01:44:33 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 01:44:33
+[18-Mar-2025 01:48:46 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 01:48:46
+[18-Mar-2025 01:48:46 Europe/Berlin] Metodo: GET
+[18-Mar-2025 01:48:46 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 01:48:46 Europe/Berlin] Query string: 
+[18-Mar-2025 01:48:46 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 01:48:46 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 01:48:46 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 01:48:46 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 01:48:46 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 01:48:46 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 01:48:46 Europe/Berlin] Trovate 2 categorie
+[18-Mar-2025 01:48:46 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 01:48:46 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 01:48:46 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 01:48:46 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    }
+]
+[18-Mar-2025 01:48:46 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 01:48:46
+[18-Mar-2025 01:48:46 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 01:48:46
+[18-Mar-2025 01:48:46 Europe/Berlin] Metodo: GET
+[18-Mar-2025 01:48:46 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 01:48:46 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 01:48:46 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 01:48:46 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 01:48:46 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 01:48:46 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 01:48:46 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 01:48:46 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 01:48:46 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 01:48:46 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 01:48:46 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella
+            [price] => 5.94
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 01:48:46 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 01:48:46 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 01:48:46 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella",
+        "price": "5.94",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 01:48:46 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 01:48:46
+[18-Mar-2025 01:50:59 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 01:50:59
+[18-Mar-2025 01:50:59 Europe/Berlin] Metodo: GET
+[18-Mar-2025 01:50:59 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 01:50:59 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 01:50:59 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 01:50:59 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 01:50:59 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 01:50:59 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 01:50:59 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 01:50:59 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 01:50:59 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 01:50:59 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 01:50:59 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 01:50:59 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 01:50:59 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 01:50:59 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 01:50:59 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 01:50:59
+[18-Mar-2025 01:53:51 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 01:53:51
+[18-Mar-2025 01:53:51 Europe/Berlin] Metodo: GET
+[18-Mar-2025 01:53:51 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 01:53:51 Europe/Berlin] Query string: 
+[18-Mar-2025 01:53:51 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 01:53:51 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 01:53:51 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 01:53:51 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 01:53:51 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 01:53:51 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 01:53:51 Europe/Berlin] Trovate 2 categorie
+[18-Mar-2025 01:53:51 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 01:53:51 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 01:53:51 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 01:53:51 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    }
+]
+[18-Mar-2025 01:53:51 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 01:53:51
+[18-Mar-2025 01:53:51 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 01:53:51
+[18-Mar-2025 01:53:51 Europe/Berlin] Metodo: GET
+[18-Mar-2025 01:53:51 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 01:53:51 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 01:53:51 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 01:53:51 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 01:53:51 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 01:53:51 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 01:53:51 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 01:53:51 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 01:53:51 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 01:53:51 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 01:53:51 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella
+            [price] => 5.94
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 01:53:51 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 01:53:51 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 01:53:51 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella",
+        "price": "5.94",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 01:53:51 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 01:53:51
+[18-Mar-2025 02:06:43 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 02:06:43
+[18-Mar-2025 02:06:43 Europe/Berlin] Metodo: GET
+[18-Mar-2025 02:06:43 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 02:06:43 Europe/Berlin] Query string: 
+[18-Mar-2025 02:06:43 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 02:06:43 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 02:06:43 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 02:06:43 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 02:06:43 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 02:06:43 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 02:06:43 Europe/Berlin] Trovate 2 categorie
+[18-Mar-2025 02:06:43 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 02:06:43 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 02:06:43 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 02:06:43 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    }
+]
+[18-Mar-2025 02:06:43 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 02:06:43
+[18-Mar-2025 02:06:43 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 02:06:43
+[18-Mar-2025 02:06:43 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 02:06:43
+[18-Mar-2025 02:06:43 Europe/Berlin] Metodo: GET
+[18-Mar-2025 02:06:43 Europe/Berlin] Metodo: GET
+[18-Mar-2025 02:06:43 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 02:06:43 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 02:06:43 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 02:06:43 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 02:06:43 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 02:06:43 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 02:06:43 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 02:06:43 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 02:06:43 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 02:06:43 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 02:06:43 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 02:06:43 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 02:06:43 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 02:06:43 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 02:06:43 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella
+            [price] => 5.94
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 02:06:43 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 02:06:43 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 02:06:43 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella",
+        "price": "5.94",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 02:06:43 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 02:06:43
+[18-Mar-2025 02:06:43 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 02:06:43 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 02:06:43 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 02:06:43 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 02:06:43 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 02:06:43 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 02:06:43 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 02:06:43 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 02:06:43 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 02:06:43 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 02:06:43 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 02:06:43
+[18-Mar-2025 02:30:18 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 02:30:18
+[18-Mar-2025 02:30:18 Europe/Berlin] Metodo: GET
+[18-Mar-2025 02:30:18 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 02:30:18 Europe/Berlin] Query string: 
+[18-Mar-2025 02:30:18 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 02:30:18 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 02:30:18 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 02:30:18 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 02:30:18 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 02:30:18 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 02:30:18 Europe/Berlin] Trovate 2 categorie
+[18-Mar-2025 02:30:18 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 02:30:18 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 02:30:18 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 02:30:18 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    }
+]
+[18-Mar-2025 02:30:18 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 02:30:18
+[18-Mar-2025 02:30:18 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 02:30:18
+[18-Mar-2025 02:30:18 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 02:30:18
+[18-Mar-2025 02:30:18 Europe/Berlin] Metodo: GET
+[18-Mar-2025 02:30:18 Europe/Berlin] Metodo: GET
+[18-Mar-2025 02:30:18 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 02:30:18 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 02:30:18 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 02:30:18 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 02:30:18 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 02:30:18 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 02:30:18 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 02:30:18 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 02:30:18 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 02:30:18 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 02:30:18 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 02:30:18 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 02:30:18 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 02:30:18 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 02:30:18 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 02:30:18 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 02:30:18 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 02:30:18 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 02:30:18 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 02:30:18
+[18-Mar-2025 02:30:18 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 02:30:18 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 02:30:18 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 02:30:18 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 02:30:18 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 02:30:18 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 02:30:18 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella
+            [price] => 5.94
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 02:30:18 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 02:30:18 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 02:30:18 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella",
+        "price": "5.94",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 02:30:18 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 02:30:18
+[18-Mar-2025 02:34:08 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 02:34:08
+[18-Mar-2025 02:34:08 Europe/Berlin] Metodo: GET
+[18-Mar-2025 02:34:08 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 02:34:08 Europe/Berlin] Query string: 
+[18-Mar-2025 02:34:08 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 02:34:08 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 02:34:08 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 02:34:08 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 02:34:08 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 02:34:08 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 02:34:08 Europe/Berlin] Trovate 2 categorie
+[18-Mar-2025 02:34:08 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 02:34:08 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 02:34:08 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 02:34:08 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    }
+]
+[18-Mar-2025 02:34:08 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 02:34:08
+[18-Mar-2025 02:34:08 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 02:34:08
+[18-Mar-2025 02:34:08 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 02:34:08
+[18-Mar-2025 02:34:08 Europe/Berlin] Metodo: GET
+[18-Mar-2025 02:34:08 Europe/Berlin] Metodo: GET
+[18-Mar-2025 02:34:08 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 02:34:08 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 02:34:08 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 02:34:08 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 02:34:08 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 02:34:08 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 02:34:08 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 02:34:08 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 02:34:08 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 02:34:08 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 02:34:08 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 02:34:08 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 02:34:08 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 02:34:08 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 02:34:08 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 02:34:08 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 02:34:08 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 02:34:08 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 02:34:08 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 02:34:08
+[18-Mar-2025 02:34:08 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 02:34:08 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 02:34:08 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 02:34:08 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 02:34:08 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 02:34:08 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 02:34:08 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella
+            [price] => 5.94
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 02:34:08 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 02:34:08 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 02:34:08 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella",
+        "price": "5.94",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 02:34:08 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 02:34:08
+[18-Mar-2025 02:46:10 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 02:46:10
+[18-Mar-2025 02:46:10 Europe/Berlin] Metodo: GET
+[18-Mar-2025 02:46:10 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 02:46:10 Europe/Berlin] Query string: 
+[18-Mar-2025 02:46:10 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 02:46:10 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 02:46:10 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 02:46:10 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 02:46:10 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 02:46:10 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 02:46:10 Europe/Berlin] Trovate 2 categorie
+[18-Mar-2025 02:46:10 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 02:46:10 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 02:46:10 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 02:46:10 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    }
+]
+[18-Mar-2025 02:46:10 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 02:46:10
+[18-Mar-2025 02:46:10 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 02:46:10
+[18-Mar-2025 02:46:10 Europe/Berlin] Metodo: GET
+[18-Mar-2025 02:46:10 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 02:46:10 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 02:46:10 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 02:46:10 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 02:46:10
+[18-Mar-2025 02:46:10 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 02:46:10 Europe/Berlin] Metodo: GET
+[18-Mar-2025 02:46:10 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 02:46:10 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 02:46:10 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 02:46:10 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 02:46:10 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 02:46:10 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 02:46:10 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 02:46:10 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 02:46:10 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 02:46:10 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 02:46:10 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 02:46:10 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 02:46:10 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 02:46:10 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 02:46:10 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 02:46:10
+[18-Mar-2025 02:46:10 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 02:46:10 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 02:46:10 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 02:46:10 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 02:46:10 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 02:46:10 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 02:46:10 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella
+            [price] => 5.94
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 02:46:10 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 02:46:10 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 02:46:10 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella",
+        "price": "5.94",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 02:46:10 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 02:46:10
+[18-Mar-2025 02:53:24 Europe/Berlin] === Inizio elaborazione add_category.php ===
+[18-Mar-2025 02:53:24 Europe/Berlin] Directory corrente: C:\xampp\htdocs\menu_digitale\api
+[18-Mar-2025 02:53:24 Europe/Berlin] Document root: C:/xampp/htdocs
+[18-Mar-2025 02:53:24 Europe/Berlin] POST data: Array
+(
+    [name] => TEST
+)
+
+[18-Mar-2025 02:53:24 Europe/Berlin] FILES data: Array
+(
+    [image] => Array
+        (
+            [name] => 2024_Nitro_Default_3840x2400.jpg
+            [full_path] => 2024_Nitro_Default_3840x2400.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php3236.tmp
+            [error] => 0
+            [size] => 845696
+        )
+
+)
+
+[18-Mar-2025 02:53:24 Europe/Berlin] Directory upload: C:\xampp\htdocs\menu_digitale\api/../images/categories/
+[18-Mar-2025 02:53:24 Europe/Berlin] Tentativo di upload del file in: C:\xampp\htdocs\menu_digitale\api/../images/categories/67d8d214c7028_2024_Nitro_Default_3840x2400.jpg
+[18-Mar-2025 02:53:24 Europe/Berlin] File caricato con successo in: C:\xampp\htdocs\menu_digitale\api/../images/categories/67d8d214c7028_2024_Nitro_Default_3840x2400.jpg
+[18-Mar-2025 02:53:24 Europe/Berlin] Categoria inserita con successo nel database
+[18-Mar-2025 02:53:24 Europe/Berlin] === Fine elaborazione add_category.php ===
+[18-Mar-2025 02:59:27 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 02:59:27
+[18-Mar-2025 02:59:27 Europe/Berlin] Metodo: GET
+[18-Mar-2025 02:59:27 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 02:59:27 Europe/Berlin] Query string: 
+[18-Mar-2025 02:59:27 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 02:59:27 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 02:59:27 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 02:59:27 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 02:59:27 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 02:59:27 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 02:59:27 Europe/Berlin] Trovate 3 categorie
+[18-Mar-2025 02:59:27 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+    [2] => Array
+        (
+            [name] => TEST
+            [category_id] => 3
+            [image_url] => images/categories/67d8d214c7028_2024_Nitro_Default_3840x2400.jpg
+            [url_name] => test
+        )
+
+)
+
+[18-Mar-2025 02:59:27 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 02:59:27 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 02:59:27 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    },
+    {
+        "name": "TEST",
+        "category_id": 3,
+        "image_url": "images\/categories\/67d8d214c7028_2024_Nitro_Default_3840x2400.jpg",
+        "url_name": "test"
+    }
+]
+[18-Mar-2025 02:59:27 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 02:59:27
+[18-Mar-2025 02:59:28 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 02:59:28
+[18-Mar-2025 02:59:28 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 02:59:28
+[18-Mar-2025 02:59:28 Europe/Berlin] Metodo: GET
+[18-Mar-2025 02:59:28 Europe/Berlin] Metodo: GET
+[18-Mar-2025 02:59:28 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 02:59:28 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 02:59:28 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 02:59:28 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 02:59:28
+[18-Mar-2025 02:59:28 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 02:59:28 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 02:59:28 Europe/Berlin] Metodo: GET
+[18-Mar-2025 02:59:28 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 02:59:28 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=test
+[18-Mar-2025 02:59:28 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 02:59:28 Europe/Berlin] Query string: category=test
+[18-Mar-2025 02:59:28 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 02:59:28 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 02:59:28 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 02:59:28 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 02:59:28 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 02:59:28 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 02:59:28 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 02:59:28 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 02:59:28 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 02:59:28 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 02:59:28 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 02:59:28 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 02:59:28 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 02:59:28 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 02:59:28
+[18-Mar-2025 02:59:28 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 02:59:28 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 02:59:28 Europe/Berlin] Categoria richiesta: test
+[18-Mar-2025 02:59:28 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 02:59:28 Europe/Berlin] Esecuzione query articoli per categoria: test
+[18-Mar-2025 02:59:28 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 02:59:28 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 02:59:28 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 02:59:28 Europe/Berlin] Parametro categoria: test
+[18-Mar-2025 02:59:28 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 02:59:28 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 02:59:28 Europe/Berlin] Trovati 0 articoli
+[18-Mar-2025 02:59:28 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella
+            [price] => 5.94
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 02:59:28 Europe/Berlin] Risultati query: Array
+(
+)
+
+[18-Mar-2025 02:59:28 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 02:59:28 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 02:59:28 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 02:59:28 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 02:59:28 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella",
+        "price": "5.94",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 02:59:28 Europe/Berlin] JSON: []
+[18-Mar-2025 02:59:28 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 02:59:28
+[18-Mar-2025 02:59:28 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 02:59:28
+[18-Mar-2025 03:03:48 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 03:03:48
+[18-Mar-2025 03:03:48 Europe/Berlin] Metodo: GET
+[18-Mar-2025 03:03:48 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 03:03:48 Europe/Berlin] Query string: 
+[18-Mar-2025 03:03:48 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 03:03:48 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 03:03:48 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 03:03:48 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 03:03:48 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 03:03:48 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 03:03:48 Europe/Berlin] Trovate 3 categorie
+[18-Mar-2025 03:03:48 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+    [2] => Array
+        (
+            [name] => TEST
+            [category_id] => 3
+            [image_url] => images/categories/67d8d214c7028_2024_Nitro_Default_3840x2400.jpg
+            [url_name] => test
+        )
+
+)
+
+[18-Mar-2025 03:03:48 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 03:03:48 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 03:03:48 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    },
+    {
+        "name": "TEST",
+        "category_id": 3,
+        "image_url": "images\/categories\/67d8d214c7028_2024_Nitro_Default_3840x2400.jpg",
+        "url_name": "test"
+    }
+]
+[18-Mar-2025 03:03:48 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 03:03:48
+[18-Mar-2025 03:03:48 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 03:03:48
+[18-Mar-2025 03:03:48 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 03:03:48
+[18-Mar-2025 03:03:48 Europe/Berlin] Metodo: GET
+[18-Mar-2025 03:03:48 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 03:03:48
+[18-Mar-2025 03:03:48 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=test
+[18-Mar-2025 03:03:48 Europe/Berlin] Metodo: GET
+[18-Mar-2025 03:03:48 Europe/Berlin] Metodo: GET
+[18-Mar-2025 03:03:48 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 03:03:48 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 03:03:48 Europe/Berlin] Query string: category=test
+[18-Mar-2025 03:03:48 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 03:03:48 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 03:03:48 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 03:03:48 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 03:03:48 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 03:03:48 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 03:03:48 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 03:03:48 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 03:03:48 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 03:03:48 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 03:03:48 Europe/Berlin] Categoria richiesta: test
+[18-Mar-2025 03:03:48 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 03:03:48 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 03:03:48 Europe/Berlin] Esecuzione query articoli per categoria: test
+[18-Mar-2025 03:03:48 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 03:03:48 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 03:03:48 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 03:03:48 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 03:03:48 Europe/Berlin] Parametro categoria: test
+[18-Mar-2025 03:03:48 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 03:03:48 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 03:03:48 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 03:03:48 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 03:03:48 Europe/Berlin] Trovati 0 articoli
+[18-Mar-2025 03:03:48 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 03:03:48 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 03:03:48 Europe/Berlin] Risultati query: Array
+(
+)
+
+[18-Mar-2025 03:03:48 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella
+            [price] => 5.94
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 03:03:48 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 03:03:48 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 03:03:48 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 03:03:48 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 03:03:48 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 03:03:48 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 03:03:48 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella",
+        "price": "5.94",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 03:03:48 Europe/Berlin] JSON: []
+[18-Mar-2025 03:03:48 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 03:03:48 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 03:03:48
+[18-Mar-2025 03:03:48 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 03:03:48
+[18-Mar-2025 03:03:48 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 03:03:48 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 03:03:48
+[18-Mar-2025 12:58:58 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 12:58:58
+[18-Mar-2025 12:58:58 Europe/Berlin] Metodo: GET
+[18-Mar-2025 12:58:58 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 12:58:58 Europe/Berlin] Query string: 
+[18-Mar-2025 12:58:58 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 12:58:58 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 12:58:58 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 12:58:58 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 12:58:58 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 12:58:58 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 12:58:58 Europe/Berlin] Trovate 3 categorie
+[18-Mar-2025 12:58:58 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+    [2] => Array
+        (
+            [name] => TEST
+            [category_id] => 3
+            [image_url] => images/categories/67d8d214c7028_2024_Nitro_Default_3840x2400.jpg
+            [url_name] => test
+        )
+
+)
+
+[18-Mar-2025 12:58:58 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 12:58:58 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 12:58:58 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    },
+    {
+        "name": "TEST",
+        "category_id": 3,
+        "image_url": "images\/categories\/67d8d214c7028_2024_Nitro_Default_3840x2400.jpg",
+        "url_name": "test"
+    }
+]
+[18-Mar-2025 12:58:58 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 12:58:58
+[18-Mar-2025 12:58:59 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 12:58:59
+[18-Mar-2025 12:58:59 Europe/Berlin] Metodo: GET
+[18-Mar-2025 12:58:59 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 12:58:59 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 12:58:59 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 12:58:59 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 12:58:59 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 12:58:59
+[18-Mar-2025 12:58:59 Europe/Berlin] Metodo: GET
+[18-Mar-2025 12:58:59 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 12:58:59 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 12:58:59 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 12:58:59 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 12:58:59 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 12:58:59
+[18-Mar-2025 12:58:59 Europe/Berlin] Metodo: GET
+[18-Mar-2025 12:58:59 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=test
+[18-Mar-2025 12:58:59 Europe/Berlin] Query string: category=test
+[18-Mar-2025 12:58:59 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 12:58:59 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 12:58:59 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 12:58:59 Europe/Berlin] Categoria richiesta: test
+[18-Mar-2025 12:58:59 Europe/Berlin] Esecuzione query articoli per categoria: test
+[18-Mar-2025 12:58:59 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 12:58:59 Europe/Berlin] Parametro categoria: test
+[18-Mar-2025 12:58:59 Europe/Berlin] Trovati 0 articoli
+[18-Mar-2025 12:58:59 Europe/Berlin] Risultati query: Array
+(
+)
+
+[18-Mar-2025 12:58:59 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 12:58:59 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 12:58:59 Europe/Berlin] JSON: []
+[18-Mar-2025 12:58:59 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 12:58:59
+[18-Mar-2025 12:58:59 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 12:58:59 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 12:58:59 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 12:58:59 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 12:58:59 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 12:58:59 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 12:58:59 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 12:58:59 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 12:58:59 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 12:58:59 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 12:58:59 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 12:58:59 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 12:58:59 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella, basilico
+            [price] => 6.50
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 12:58:59 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 12:58:59 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 12:58:59 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 12:58:59 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 12:58:59 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 12:58:59 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella, basilico",
+        "price": "6.50",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 12:58:59 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 12:58:59 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 12:58:59
+[18-Mar-2025 12:58:59 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 12:58:59
+[18-Mar-2025 13:18:12 Europe/Berlin] === Inizio elaborazione add_category.php ===
+[18-Mar-2025 13:18:12 Europe/Berlin] Directory corrente: C:\xampp\htdocs\menu_digitale\api
+[18-Mar-2025 13:18:12 Europe/Berlin] Document root: C:/xampp/htdocs
+[18-Mar-2025 13:18:12 Europe/Berlin] POST data: Array
+(
+    [name] => SECONDI
+)
+
+[18-Mar-2025 13:18:12 Europe/Berlin] FILES data: Array
+(
+    [image] => Array
+        (
+            [name] => download.jpg
+            [full_path] => download.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php374A.tmp
+            [error] => 0
+            [size] => 13028
+        )
+
+)
+
+[18-Mar-2025 13:18:12 Europe/Berlin] Directory upload: C:\xampp\htdocs\menu_digitale\api/../images/categories/
+[18-Mar-2025 13:18:12 Europe/Berlin] Tentativo di upload del file in: C:\xampp\htdocs\menu_digitale\api/../images/categories/67d96484a5b04_download.jpg
+[18-Mar-2025 13:18:12 Europe/Berlin] File caricato con successo in: C:\xampp\htdocs\menu_digitale\api/../images/categories/67d96484a5b04_download.jpg
+[18-Mar-2025 13:18:12 Europe/Berlin] Categoria inserita con successo nel database
+[18-Mar-2025 13:18:12 Europe/Berlin] === Fine elaborazione add_category.php ===
+[18-Mar-2025 13:19:33 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:19:33
+[18-Mar-2025 13:19:33 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:19:33 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 13:19:33 Europe/Berlin] Query string: 
+[18-Mar-2025 13:19:33 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:19:33 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:19:33 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:19:33 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 13:19:33 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 13:19:33 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 13:19:33 Europe/Berlin] Trovate 4 categorie
+[18-Mar-2025 13:19:33 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+    [2] => Array
+        (
+            [name] => SECONDI
+            [category_id] => 4
+            [image_url] => images/categories/67d96484a5b04_download.jpg
+            [url_name] => secondi
+        )
+
+    [3] => Array
+        (
+            [name] => TEST
+            [category_id] => 3
+            [image_url] => images/categories/67d8d214c7028_2024_Nitro_Default_3840x2400.jpg
+            [url_name] => test
+        )
+
+)
+
+[18-Mar-2025 13:19:33 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:19:33 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:19:33 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    },
+    {
+        "name": "SECONDI",
+        "category_id": 4,
+        "image_url": "images\/categories\/67d96484a5b04_download.jpg",
+        "url_name": "secondi"
+    },
+    {
+        "name": "TEST",
+        "category_id": 3,
+        "image_url": "images\/categories\/67d8d214c7028_2024_Nitro_Default_3840x2400.jpg",
+        "url_name": "test"
+    }
+]
+[18-Mar-2025 13:19:33 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:19:33
+[18-Mar-2025 13:19:33 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:19:33
+[18-Mar-2025 13:19:33 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:19:33 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=secondi
+[18-Mar-2025 13:19:33 Europe/Berlin] Query string: category=secondi
+[18-Mar-2025 13:19:33 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:19:33 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:19:33 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:19:33
+[18-Mar-2025 13:19:33 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:19:33 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:19:33
+[18-Mar-2025 13:19:33 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 13:19:33 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:19:33
+[18-Mar-2025 13:19:33 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:19:33 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:19:33 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 13:19:33 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 13:19:33 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=test
+[18-Mar-2025 13:19:33 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:19:33 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 13:19:33 Europe/Berlin] Query string: category=test
+[18-Mar-2025 13:19:33 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:19:33 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:19:33 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:19:33 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:19:33 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:19:33 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:19:33 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:19:33 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:19:33 Europe/Berlin] Categoria richiesta: secondi
+[18-Mar-2025 13:19:33 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 13:19:33 Europe/Berlin] Categoria richiesta: test
+[18-Mar-2025 13:19:33 Europe/Berlin] Esecuzione query articoli per categoria: secondi
+[18-Mar-2025 13:19:33 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 13:19:33 Europe/Berlin] Esecuzione query articoli per categoria: test
+[18-Mar-2025 13:19:33 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 13:19:33 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 13:19:33 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 13:19:33 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 13:19:33 Europe/Berlin] Parametro categoria: secondi
+[18-Mar-2025 13:19:33 Europe/Berlin] Parametro categoria: test
+[18-Mar-2025 13:19:33 Europe/Berlin] Trovati 0 articoli
+[18-Mar-2025 13:19:33 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 13:19:33 Europe/Berlin] Trovati 0 articoli
+[18-Mar-2025 13:19:33 Europe/Berlin] Risultati query: Array
+(
+)
+
+[18-Mar-2025 13:19:33 Europe/Berlin] Risultati query: Array
+(
+)
+
+[18-Mar-2025 13:19:33 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:19:33 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella, basilico
+            [price] => 6.50
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 13:19:33 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:19:33 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:19:33 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:19:33 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:19:33 Europe/Berlin] JSON: []
+[18-Mar-2025 13:19:33 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:19:33 Europe/Berlin] JSON: []
+[18-Mar-2025 13:19:33 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:19:33
+[18-Mar-2025 13:19:33 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella, basilico",
+        "price": "6.50",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 13:19:33 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:19:33
+[18-Mar-2025 13:19:33 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:19:33
+[18-Mar-2025 13:19:33 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:19:33 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 13:19:33 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 13:19:33 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 13:19:33 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 13:19:33 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 13:19:33 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 13:19:33 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:19:33 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:19:33 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 13:19:33 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:19:33
+[18-Mar-2025 13:25:19 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:25:19
+[18-Mar-2025 13:25:19 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:25:19 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 13:25:19 Europe/Berlin] Query string: 
+[18-Mar-2025 13:25:19 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:25:19 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:25:19 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:25:19 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 13:25:19 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 13:25:19 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 13:25:19 Europe/Berlin] Trovate 3 categorie
+[18-Mar-2025 13:25:19 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+    [2] => Array
+        (
+            [name] => SECONDI
+            [category_id] => 4
+            [image_url] => images/categories/67d96484a5b04_download.jpg
+            [url_name] => secondi
+        )
+
+)
+
+[18-Mar-2025 13:25:19 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:25:19 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:25:19 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    },
+    {
+        "name": "SECONDI",
+        "category_id": 4,
+        "image_url": "images\/categories\/67d96484a5b04_download.jpg",
+        "url_name": "secondi"
+    }
+]
+[18-Mar-2025 13:25:19 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:25:19
+[18-Mar-2025 13:25:19 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:25:19
+[18-Mar-2025 13:25:19 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:25:19
+[18-Mar-2025 13:25:19 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:25:19 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:25:19 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 13:25:19 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 13:25:19 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 13:25:19 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 13:25:19 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:25:19
+[18-Mar-2025 13:25:19 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:25:19 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:25:19 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:25:19 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=secondi
+[18-Mar-2025 13:25:19 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:25:19 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:25:19 Europe/Berlin] Query string: category=secondi
+[18-Mar-2025 13:25:19 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:25:19 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:25:19 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:25:19 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 13:25:19 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:25:19 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:25:19 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 13:25:19 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 13:25:19 Europe/Berlin] Categoria richiesta: secondi
+[18-Mar-2025 13:25:19 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 13:25:19 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 13:25:19 Europe/Berlin] Esecuzione query articoli per categoria: secondi
+[18-Mar-2025 13:25:19 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 13:25:19 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 13:25:19 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 13:25:19 Europe/Berlin] Parametro categoria: secondi
+[18-Mar-2025 13:25:19 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 13:25:19 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 13:25:19 Europe/Berlin] Trovati 0 articoli
+[18-Mar-2025 13:25:19 Europe/Berlin] Risultati query: Array
+(
+)
+
+[18-Mar-2025 13:25:19 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 13:25:19 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:25:19 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:25:19 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 13:25:19 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:25:19 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:25:19 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:25:19
+[18-Mar-2025 13:25:19 Europe/Berlin] JSON: []
+[18-Mar-2025 13:25:19 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:25:19
+[18-Mar-2025 13:25:19 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 13:25:19 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella, basilico
+            [price] => 6.50
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 13:25:19 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:25:19 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:25:19 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella, basilico",
+        "price": "6.50",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 13:25:19 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:25:19
+[18-Mar-2025 13:30:27 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:30:27
+[18-Mar-2025 13:30:27 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:30:27 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 13:30:27 Europe/Berlin] Query string: 
+[18-Mar-2025 13:30:27 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:30:27 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:30:27 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:30:27 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 13:30:27 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 13:30:27 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 13:30:27 Europe/Berlin] Trovate 3 categorie
+[18-Mar-2025 13:30:27 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+    [2] => Array
+        (
+            [name] => SECONDI
+            [category_id] => 4
+            [image_url] => images/categories/67d96484a5b04_download.jpg
+            [url_name] => secondi
+        )
+
+)
+
+[18-Mar-2025 13:30:27 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:30:27 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:30:27 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    },
+    {
+        "name": "SECONDI",
+        "category_id": 4,
+        "image_url": "images\/categories\/67d96484a5b04_download.jpg",
+        "url_name": "secondi"
+    }
+]
+[18-Mar-2025 13:30:27 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:30:27
+[18-Mar-2025 13:30:27 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:30:27
+[18-Mar-2025 13:30:27 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:30:27 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 13:30:27 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:30:27
+[18-Mar-2025 13:30:27 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 13:30:27 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:30:27
+[18-Mar-2025 13:30:27 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:30:27 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:30:27 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:30:27 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 13:30:27 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=secondi
+[18-Mar-2025 13:30:27 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 13:30:27 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:30:27 Europe/Berlin] Query string: category=secondi
+[18-Mar-2025 13:30:27 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:30:27 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:30:27 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:30:27 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:30:27 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:30:27 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:30:27 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 13:30:27 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 13:30:27 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 13:30:27 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 13:30:27 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 13:30:27 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 13:30:27 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 13:30:27 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 13:30:27 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 13:30:27 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 13:30:27 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 13:30:27 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:30:27 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella, basilico
+            [price] => 6.50
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 13:30:27 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:30:27 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:30:27 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 13:30:27 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:30:27 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella, basilico",
+        "price": "6.50",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 13:30:27 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:30:27
+[18-Mar-2025 13:30:27 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:30:27
+[18-Mar-2025 13:30:27 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:30:27 Europe/Berlin] Categoria richiesta: secondi
+[18-Mar-2025 13:30:27 Europe/Berlin] Esecuzione query articoli per categoria: secondi
+[18-Mar-2025 13:30:27 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 13:30:27 Europe/Berlin] Parametro categoria: secondi
+[18-Mar-2025 13:30:27 Europe/Berlin] Trovati 0 articoli
+[18-Mar-2025 13:30:27 Europe/Berlin] Risultati query: Array
+(
+)
+
+[18-Mar-2025 13:30:27 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:30:27 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:30:27 Europe/Berlin] JSON: []
+[18-Mar-2025 13:30:27 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:30:27
+[18-Mar-2025 13:38:48 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:38:48
+[18-Mar-2025 13:38:48 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:38:48 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 13:38:48 Europe/Berlin] Query string: 
+[18-Mar-2025 13:38:48 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:38:48 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:38:48 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:38:48 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 13:38:48 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 13:38:48 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 13:38:48 Europe/Berlin] Trovate 3 categorie
+[18-Mar-2025 13:38:48 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+    [2] => Array
+        (
+            [name] => SECONDI
+            [category_id] => 4
+            [image_url] => images/categories/67d96484a5b04_download.jpg
+            [url_name] => secondi
+        )
+
+)
+
+[18-Mar-2025 13:38:48 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:38:48 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:38:48 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    },
+    {
+        "name": "SECONDI",
+        "category_id": 4,
+        "image_url": "images\/categories\/67d96484a5b04_download.jpg",
+        "url_name": "secondi"
+    }
+]
+[18-Mar-2025 13:38:48 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:38:48
+[18-Mar-2025 13:38:48 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:38:48
+[18-Mar-2025 13:38:48 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:38:48 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 13:38:48 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:38:48
+[18-Mar-2025 13:38:48 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 13:38:48 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:38:48 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:38:48 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=secondi
+[18-Mar-2025 13:38:48 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 13:38:48
+[18-Mar-2025 13:38:48 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:38:48 Europe/Berlin] Query string: category=secondi
+[18-Mar-2025 13:38:48 Europe/Berlin] Metodo: GET
+[18-Mar-2025 13:38:48 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:38:48 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 13:38:48 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:38:48 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 13:38:48 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 13:38:48 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:38:48 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 13:38:48 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 13:38:48 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 13:38:48 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:38:48 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 13:38:48 Europe/Berlin] Categoria richiesta: secondi
+[18-Mar-2025 13:38:48 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 13:38:48 Europe/Berlin] Esecuzione query articoli per categoria: secondi
+[18-Mar-2025 13:38:48 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 13:38:48 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 13:38:48 Europe/Berlin] Parametro categoria: secondi
+[18-Mar-2025 13:38:48 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 13:38:48 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 13:38:48 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 13:38:48 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 13:38:48 Europe/Berlin] Trovati 0 articoli
+[18-Mar-2025 13:38:48 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 13:38:48 Europe/Berlin] Risultati query: Array
+(
+)
+
+[18-Mar-2025 13:38:48 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:38:48 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 13:38:48 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:38:48 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:38:48 Europe/Berlin] JSON: []
+[18-Mar-2025 13:38:48 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:38:48 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:38:48
+[18-Mar-2025 13:38:48 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 13:38:48 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 13:38:48 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:38:48
+[18-Mar-2025 13:38:48 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella, basilico
+            [price] => 6.50
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 13:38:48 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 13:38:48 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 13:38:48 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella, basilico",
+        "price": "6.50",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 13:38:48 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 13:38:48
+[18-Mar-2025 14:13:06 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 14:13:06
+[18-Mar-2025 14:13:06 Europe/Berlin] Metodo: GET
+[18-Mar-2025 14:13:06 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 14:13:06 Europe/Berlin] Query string: 
+[18-Mar-2025 14:13:06 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 14:13:06 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 14:13:06 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 14:13:06 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 14:13:06 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 14:13:06 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 14:13:06 Europe/Berlin] Trovate 3 categorie
+[18-Mar-2025 14:13:06 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+    [2] => Array
+        (
+            [name] => SECONDI
+            [category_id] => 4
+            [image_url] => images/categories/67d96484a5b04_download.jpg
+            [url_name] => secondi
+        )
+
+)
+
+[18-Mar-2025 14:13:06 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 14:13:06 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 14:13:06 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    },
+    {
+        "name": "SECONDI",
+        "category_id": 4,
+        "image_url": "images\/categories\/67d96484a5b04_download.jpg",
+        "url_name": "secondi"
+    }
+]
+[18-Mar-2025 14:13:06 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 14:13:06
+[18-Mar-2025 14:13:06 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 14:13:06
+[18-Mar-2025 14:13:06 Europe/Berlin] Metodo: GET
+[18-Mar-2025 14:13:06 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 14:13:06 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 14:13:06
+[18-Mar-2025 14:13:06 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 14:13:06 Europe/Berlin] Metodo: GET
+[18-Mar-2025 14:13:06 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 14:13:06 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 14:13:06 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 14:13:06 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 14:13:06
+[18-Mar-2025 14:13:06 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 14:13:06 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 14:13:06 Europe/Berlin] Metodo: GET
+[18-Mar-2025 14:13:06 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=secondi
+[18-Mar-2025 14:13:06 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 14:13:06 Europe/Berlin] Query string: category=secondi
+[18-Mar-2025 14:13:06 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 14:13:06 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 14:13:06 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 14:13:06 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 14:13:06 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 14:13:06 Europe/Berlin] Categoria richiesta: secondi
+[18-Mar-2025 14:13:06 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 14:13:06 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 14:13:06 Europe/Berlin] Esecuzione query articoli per categoria: secondi
+[18-Mar-2025 14:13:06 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 14:13:06 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 14:13:06 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 14:13:06 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 14:13:06 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 14:13:06 Europe/Berlin] Parametro categoria: secondi
+[18-Mar-2025 14:13:06 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 14:13:06 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 14:13:06 Europe/Berlin] Trovati 0 articoli
+[18-Mar-2025 14:13:06 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 14:13:06 Europe/Berlin] Risultati query: Array
+(
+)
+
+[18-Mar-2025 14:13:06 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 14:13:06 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 14:13:06 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 14:13:06 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 14:13:06 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella, basilico
+            [price] => 6.50
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 14:13:06 Europe/Berlin] JSON: []
+[18-Mar-2025 14:13:06 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 14:13:06 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 14:13:06 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 14:13:06
+[18-Mar-2025 14:13:06 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 14:13:06 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 14:13:06 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 14:13:06 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella, basilico",
+        "price": "6.50",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 14:13:06 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 14:13:06
+[18-Mar-2025 14:13:06 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 14:13:06
+[18-Mar-2025 14:22:43 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 14:22:43
+[18-Mar-2025 14:22:43 Europe/Berlin] Metodo: GET
+[18-Mar-2025 14:22:43 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 14:22:43 Europe/Berlin] Query string: 
+[18-Mar-2025 14:22:43 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 14:22:43 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 14:22:43 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 14:22:43 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 14:22:43 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 14:22:43 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 14:22:43 Europe/Berlin] Trovate 3 categorie
+[18-Mar-2025 14:22:43 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+    [2] => Array
+        (
+            [name] => SECONDI
+            [category_id] => 4
+            [image_url] => images/categories/67d96484a5b04_download.jpg
+            [url_name] => secondi
+        )
+
+)
+
+[18-Mar-2025 14:22:43 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 14:22:43 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 14:22:43 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    },
+    {
+        "name": "SECONDI",
+        "category_id": 4,
+        "image_url": "images\/categories\/67d96484a5b04_download.jpg",
+        "url_name": "secondi"
+    }
+]
+[18-Mar-2025 14:22:43 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 14:22:43
+[18-Mar-2025 14:22:43 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 14:22:43
+[18-Mar-2025 14:22:43 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 14:22:43
+[18-Mar-2025 14:22:43 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 14:22:43
+[18-Mar-2025 14:22:43 Europe/Berlin] Metodo: GET
+[18-Mar-2025 14:22:43 Europe/Berlin] Metodo: GET
+[18-Mar-2025 14:22:43 Europe/Berlin] Metodo: GET
+[18-Mar-2025 14:22:43 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=secondi
+[18-Mar-2025 14:22:43 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 14:22:43 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 14:22:43 Europe/Berlin] Query string: category=secondi
+[18-Mar-2025 14:22:43 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 14:22:43 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 14:22:43 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 14:22:43 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 14:22:43 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 14:22:43 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 14:22:43 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 14:22:43 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 14:22:43 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 14:22:43 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 14:22:43 Europe/Berlin] Categoria richiesta: secondi
+[18-Mar-2025 14:22:43 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 14:22:43 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 14:22:43 Europe/Berlin] Esecuzione query articoli per categoria: secondi
+[18-Mar-2025 14:22:43 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 14:22:43 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 14:22:43 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 14:22:43 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 14:22:43 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 14:22:43 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 14:22:43 Europe/Berlin] Parametro categoria: secondi
+[18-Mar-2025 14:22:43 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 14:22:43 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 14:22:43 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 14:22:43 Europe/Berlin] Trovati 0 articoli
+[18-Mar-2025 14:22:43 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella, basilico
+            [price] => 6.50
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 14:22:43 Europe/Berlin] Risultati query: Array
+(
+)
+
+[18-Mar-2025 14:22:43 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 14:22:43 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 14:22:43 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 14:22:43 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 14:22:43 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 14:22:43 Europe/Berlin] JSON: []
+[18-Mar-2025 14:22:43 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella, basilico",
+        "price": "6.50",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 14:22:43 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 14:22:43
+[18-Mar-2025 14:22:43 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 14:22:43
+[18-Mar-2025 14:22:43 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 14:22:43 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 14:22:43 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 14:22:43 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 14:22:43 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 14:22:43
+[18-Mar-2025 14:47:31 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 14:47:31
+[18-Mar-2025 14:47:31 Europe/Berlin] Metodo: GET
+[18-Mar-2025 14:47:31 Europe/Berlin] URL: /menu_digitale/api/menu.php
+[18-Mar-2025 14:47:31 Europe/Berlin] Query string: 
+[18-Mar-2025 14:47:31 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 14:47:31 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 14:47:31 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 14:47:31 Europe/Berlin] Categoria richiesta: nessuna
+[18-Mar-2025 14:47:31 Europe/Berlin] Esecuzione query tutte le categorie
+[18-Mar-2025 14:47:31 Europe/Berlin] Query SQL: SELECT 
+                c.name,
+                c.category_id,
+                c.image_url,
+                LOWER(REPLACE(c.name, ' ', '_')) as url_name
+                FROM categories c 
+                ORDER BY c.name
+[18-Mar-2025 14:47:31 Europe/Berlin] Trovate 3 categorie
+[18-Mar-2025 14:47:31 Europe/Berlin] Categorie: Array
+(
+    [0] => Array
+        (
+            [name] => PIZZE
+            [category_id] => 1
+            [image_url] => images/categories/67d89afe34046_PIZZA-MARGHERITA.jpg
+            [url_name] => pizze
+        )
+
+    [1] => Array
+        (
+            [name] => PRIMI
+            [category_id] => 2
+            [image_url] => images/categories/67d8b1b9389b4_Pici all'aglione_orizz.jpg
+            [url_name] => primi
+        )
+
+    [2] => Array
+        (
+            [name] => SECONDI
+            [category_id] => 4
+            [image_url] => images/categories/67d96484a5b04_download.jpg
+            [url_name] => secondi
+        )
+
+)
+
+[18-Mar-2025 14:47:31 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 14:47:31 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 14:47:31 Europe/Berlin] JSON: [
+    {
+        "name": "PIZZE",
+        "category_id": 1,
+        "image_url": "images\/categories\/67d89afe34046_PIZZA-MARGHERITA.jpg",
+        "url_name": "pizze"
+    },
+    {
+        "name": "PRIMI",
+        "category_id": 2,
+        "image_url": "images\/categories\/67d8b1b9389b4_Pici all'aglione_orizz.jpg",
+        "url_name": "primi"
+    },
+    {
+        "name": "SECONDI",
+        "category_id": 4,
+        "image_url": "images\/categories\/67d96484a5b04_download.jpg",
+        "url_name": "secondi"
+    }
+]
+[18-Mar-2025 14:47:31 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 14:47:31
+[18-Mar-2025 14:47:31 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 14:47:31
+[18-Mar-2025 14:47:31 Europe/Berlin] Metodo: GET
+[18-Mar-2025 14:47:31 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=pizze
+[18-Mar-2025 14:47:31 Europe/Berlin] Query string: category=pizze
+[18-Mar-2025 14:47:31 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 14:47:31
+[18-Mar-2025 14:47:31 Europe/Berlin] === Inizio richiesta API menu.php === 2025-03-18 14:47:31
+[18-Mar-2025 14:47:31 Europe/Berlin] Metodo: GET
+[18-Mar-2025 14:47:31 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 14:47:31 Europe/Berlin] Metodo: GET
+[18-Mar-2025 14:47:31 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=secondi
+[18-Mar-2025 14:47:31 Europe/Berlin] URL: /menu_digitale/api/menu.php?category=primi
+[18-Mar-2025 14:47:31 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 14:47:31 Europe/Berlin] Query string: category=secondi
+[18-Mar-2025 14:47:31 Europe/Berlin] Query string: category=primi
+[18-Mar-2025 14:47:31 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 14:47:31 Europe/Berlin] Caricamento config.php
+[18-Mar-2025 14:47:31 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 14:47:31 Europe/Berlin] Tentativo connessione al database
+[18-Mar-2025 14:47:31 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 14:47:31 Europe/Berlin] Categoria richiesta: primi
+[18-Mar-2025 14:47:31 Europe/Berlin] Esecuzione query articoli per categoria: primi
+[18-Mar-2025 14:47:31 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 14:47:31 Europe/Berlin] Parametro categoria: primi
+[18-Mar-2025 14:47:31 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 14:47:31 Europe/Berlin] Categoria richiesta: secondi
+[18-Mar-2025 14:47:31 Europe/Berlin] Esecuzione query articoli per categoria: secondi
+[18-Mar-2025 14:47:31 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 14:47:31 Europe/Berlin] Parametro categoria: secondi
+[18-Mar-2025 14:47:31 Europe/Berlin] ✅ Connessione DB stabilita
+[18-Mar-2025 14:47:31 Europe/Berlin] Categoria richiesta: pizze
+[18-Mar-2025 14:47:32 Europe/Berlin] Esecuzione query articoli per categoria: pizze
+[18-Mar-2025 14:47:32 Europe/Berlin] Query SQL: SELECT 
+                a.name,
+                a.description, 
+                a.price,
+                a.image_url,
+                c.name as category_name,
+                LOWER(REPLACE(c.name, ' ', '_')) as category_url_name
+                FROM articles a 
+                JOIN categories c ON a.category_id = c.category_id 
+                WHERE LOWER(REPLACE(c.name, ' ', '_')) = ?
+                ORDER BY a.name
+[18-Mar-2025 14:47:32 Europe/Berlin] Parametro categoria: pizze
+[18-Mar-2025 14:47:32 Europe/Berlin] Trovati 0 articoli
+[18-Mar-2025 14:47:32 Europe/Berlin] Risultati query: Array
+(
+)
+
+[18-Mar-2025 14:47:32 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 14:47:32 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 14:47:32 Europe/Berlin] JSON: []
+[18-Mar-2025 14:47:32 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 14:47:32
+[18-Mar-2025 14:47:32 Europe/Berlin] Trovati 2 articoli
+[18-Mar-2025 14:47:32 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Pici
+            [description] => pasta lunga tipica toscana
+            [price] => 11.00
+            [image_url] => images/articles/67d8b1f0c78bb_Pici all'aglione_orizz.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+    [1] => Array
+        (
+            [name] => Spaghettoni
+            [description] => spaghetti simili ai pici
+            [price] => 13.00
+            [image_url] => images/articles/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg
+            [category_name] => PRIMI
+            [category_url_name] => primi
+        )
+
+)
+
+[18-Mar-2025 14:47:32 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 14:47:32 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 14:47:32 Europe/Berlin] JSON: [
+    {
+        "name": "Pici",
+        "description": "pasta lunga tipica toscana",
+        "price": "11.00",
+        "image_url": "images\/articles\/67d8b1f0c78bb_Pici all'aglione_orizz.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    },
+    {
+        "name": "Spaghettoni",
+        "description": "spaghetti simili ai pici",
+        "price": "13.00",
+        "image_url": "images\/articles\/67d8b5bdbbe0e_PIZZA-MARGHERITA.jpg",
+        "category_name": "PRIMI",
+        "category_url_name": "primi"
+    }
+]
+[18-Mar-2025 14:47:32 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 14:47:32
+[18-Mar-2025 14:47:32 Europe/Berlin] Trovati 1 articoli
+[18-Mar-2025 14:47:32 Europe/Berlin] Risultati query: Array
+(
+    [0] => Array
+        (
+            [name] => Margherita
+            [description] => pomodoro, mozzarella, basilico
+            [price] => 6.50
+            [image_url] => images/articles/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg
+            [category_name] => PIZZE
+            [category_url_name] => pizze
+        )
+
+)
+
+[18-Mar-2025 14:47:32 Europe/Berlin] Dati recuperati dal database
+[18-Mar-2025 14:47:32 Europe/Berlin] ✅ JSON generato con successo
+[18-Mar-2025 14:47:32 Europe/Berlin] JSON: [
+    {
+        "name": "Margherita",
+        "description": "pomodoro, mozzarella, basilico",
+        "price": "6.50",
+        "image_url": "images\/articles\/67d8b1d5b8f73_PIZZA-MARGHERITA.jpg",
+        "category_name": "PIZZE",
+        "category_url_name": "pizze"
+    }
+]
+[18-Mar-2025 14:47:32 Europe/Berlin] === Fine richiesta API menu.php === 2025-03-18 14:47:32

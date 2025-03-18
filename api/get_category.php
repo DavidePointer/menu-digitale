@@ -1,65 +1,72 @@
 <?php
-// Carica la configurazione e le utilities
+// api/get_category.php - Ottiene una singola categoria dal database
+
 require_once '../config.php';
-// Rimuovo il controllo dell'autenticazione perché anche la pagina principale deve accedere alle categorie
-// require_once 'auth_check.php';
+require_once 'auth.php';
 
-// Configura CORS
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: GET, OPTIONS");
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+// Imposta gli header CORS e JSON
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
+header('Content-Type: application/json');
 
-// Per le richieste OPTIONS, termina qui
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+// Gestisci il preflight CORS
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit;
 }
 
-// Verifica che sia una richiesta GET
-if ($_SERVER['REQUEST_METHOD'] != 'GET') {
-    http_response_code(405); // Method Not Allowed
-    echo json_encode(['success' => false, 'message' => 'Metodo non consentito']);
+// Verifica l'autenticazione
+if (!isAuthenticated()) {
+    http_response_code(401);
+    echo json_encode(['success' => false, 'message' => 'Non autorizzato']);
     exit;
 }
 
+// Ottieni l'ID della categoria dalla richiesta
+$categoryId = isset($_GET['category_id']) ? intval($_GET['category_id']) : 0;
+
 // Verifica che l'ID categoria sia stato fornito
-if (!isset($_GET['id']) || empty($_GET['id'])) {
-    http_response_code(400); // Bad Request
+if (!$categoryId) {
+    http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'ID categoria richiesto']);
     exit;
 }
 
-$categoryId = $_GET['id'];
-
-// Connessione al database
 try {
-    // Utilizza la funzione dal config.php invece di creare una nuova connessione
+    // Connessione al database
     $db = getDBConnection();
     
-    // Prepara e esegui la query
-    $stmt = $db->prepare("SELECT * FROM categories WHERE category_id = :category_id");
-    $stmt->bindParam(':category_id', $categoryId, PDO::PARAM_INT);
-    $stmt->execute();
-    
+    // Ottieni i dettagli della categoria
+    $stmt = $db->prepare('SELECT * FROM categories WHERE category_id = ?');
+    $stmt->execute([$categoryId]);
     $category = $stmt->fetch(PDO::FETCH_ASSOC);
     
-    if ($category) {
-        // Categoria trovata, restituisci i dati
-        echo json_encode(['success' => true, 'data' => $category]);
-    } else {
-        // Categoria non trovata
-        http_response_code(404); // Not Found
+    if (!$category) {
+        http_response_code(404);
         echo json_encode(['success' => false, 'message' => 'Categoria non trovata']);
+        exit;
     }
-} catch(PDOException $e) {
-    // Errore di database
-    error_log("Database error: " . $e->getMessage());
-    http_response_code(500); // Internal Server Error
-    echo json_encode([
-        'success' => false, 
-        'message' => 'Errore del server', 
-        'debug' => $e->getMessage()
-    ]);
+    
+    // Conta quanti articoli sono associati a questa categoria
+    $stmt = $db->prepare('SELECT COUNT(*) FROM articles WHERE category_id = ?');
+    $stmt->execute([$categoryId]);
+    $articleCount = $stmt->fetchColumn();
+    
+    // Aggiungi il numero di articoli al risultato
+    $category['article_count'] = $articleCount;
+    
+    // Assicurati che image_url abbia il path completo
+    if (!empty($category['image_url']) && strpos($category['image_url'], 'http') !== 0) {
+        // Se il percorso è relativo, aggiungi il path base
+        $category['image_url'] = "/menu_digitale/" . ltrim($category['image_url'], '/');
+    }
+    
+    // Restituisci i dati della categoria
+    echo json_encode($category);
+    
+} catch (Exception $e) {
+    error_log('Errore get_category.php: ' . $e->getMessage());
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Errore del server: ' . $e->getMessage()]);
 } 

@@ -6,67 +6,51 @@
  * require_once 'auth_check.php';
  */
 
-// Avvia la sessione se non è già attiva
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+// Includi il file di autenticazione
+require_once 'auth.php';
 
-// Configura il log degli errori
-ini_set('log_errors', 1);
-ini_set('error_log', __DIR__ . '/../logs/auth.log');
-
-/**
- * Verifica se l'utente è autenticato
- * @return bool True se l'utente è autenticato, False altrimenti
- */
-function isAuthenticated() {
-    // Verifica se l'utente è autenticato
-    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-        error_log("Tentativo di accesso API protetta senza autenticazione. URL: " . $_SERVER['REQUEST_URI']);
-        return false;
-    }
-
-    // Verifica se la sessione è scaduta (dopo 2 ore di inattività)
-    $sessionTimeout = 7200; // 2 ore in secondi
-    if (time() - $_SESSION['login_time'] > $sessionTimeout) {
-        error_log("Sessione scaduta per utente: " . ($_SESSION['username'] ?? 'unknown'));
-        session_unset();
-        session_destroy();
-        return false;
-    }
-
-    // Aggiorna il timestamp della sessione
-    $_SESSION['login_time'] = time();
-
-    // Registra l'accesso all'API
-    error_log("Accesso API autenticato: " . $_SESSION['username'] . ", URL: " . $_SERVER['REQUEST_URI']);
-    
-    return true;
-}
+// File di log
+$logFile = __DIR__ . '/../logs/auth.log';
 
 // Verifica se l'utente è autenticato
-if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-    error_log("Tentativo di accesso API protetta senza autenticazione. URL: " . $_SERVER['REQUEST_URI']);
+if (!isAuthenticated()) {
+    $logMessage = date('Y-m-d H:i:s') . " - Tentativo di accesso API protetta senza autenticazione. URL: " . $_SERVER['REQUEST_URI'] . "\n";
+    file_put_contents($logFile, $logMessage, FILE_APPEND);
+    
     header('Content-Type: application/json');
     http_response_code(401);
-    echo json_encode(['success' => false, 'message' => 'Autenticazione richiesta']);
-    exit;
+    jsonResponse(false, 'Autenticazione richiesta');
+}
+
+// Verifica del token
+$token = getTokenFromRequest();
+if (!$token || !verifyToken($token)) {
+    $logMessage = date('Y-m-d H:i:s') . " - Token non valido o mancante. URL: " . $_SERVER['REQUEST_URI'] . "\n";
+    file_put_contents($logFile, $logMessage, FILE_APPEND);
+    
+    header('Content-Type: application/json');
+    http_response_code(401);
+    jsonResponse(false, 'Token non valido o mancante');
 }
 
 // Verifica se la sessione è scaduta (dopo 2 ore di inattività)
 $sessionTimeout = 7200; // 2 ore in secondi
 if (time() - $_SESSION['login_time'] > $sessionTimeout) {
-    error_log("Sessione scaduta per utente: " . ($_SESSION['username'] ?? 'unknown'));
+    $logMessage = date('Y-m-d H:i:s') . " - Sessione scaduta per utente: " . ($_SESSION['username'] ?? 'unknown') . "\n";
+    file_put_contents($logFile, $logMessage, FILE_APPEND);
+    
+    // Rimuovi la sessione
     session_unset();
     session_destroy();
+    
     header('Content-Type: application/json');
     http_response_code(401);
-    echo json_encode(['success' => false, 'message' => 'Sessione scaduta, effettua di nuovo il login']);
-    exit;
+    jsonResponse(false, 'Sessione scaduta, effettua di nuovo il login');
 }
 
 // Aggiorna il timestamp della sessione
 $_SESSION['login_time'] = time();
 
 // Registra l'accesso all'API
-error_log("Accesso API autenticato: " . $_SESSION['username'] . ", URL: " . $_SERVER['REQUEST_URI']); 
+$logMessage = date('Y-m-d H:i:s') . " - Accesso API autenticato: " . $_SESSION['username'] . ", URL: " . $_SERVER['REQUEST_URI'] . "\n";
+file_put_contents($logFile, $logMessage, FILE_APPEND); 

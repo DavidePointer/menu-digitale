@@ -1,0 +1,59 @@
+{
+    "method": "POST",
+    "post": {
+        "category_id": "1",
+        "name": "PIZZE"
+    },
+    "files": [],
+    "time": "2025-03-18 03:25:18"
+}
+
+{
+    "method": "POST",
+    "post": {
+        "category_id": "2",
+        "name": "PRIMI"
+    },
+    "files": [],
+    "time": "2025-03-18 03:33:08"
+}
+
+{
+    "method": "POST",
+    "post": {
+        "category_id": "1",
+        "name": "PIZZE"
+    },
+    "files": [],
+    "time": "2025-03-18 13:00:02"
+}
+
+{
+    "method": "POST",
+    "post": {
+        "category_id": "1",
+        "name": "PIZZE"
+    },
+    "files": [],
+    "time": "2025-03-18 13:02:41"
+}
+
+{
+    "method": "POST",
+    "post": {
+        "category_id": "1",
+        "name": "PIZZAA"
+    },
+    "files": {
+        "image": {
+            "name": "",
+            "full_path": "",
+            "type": "",
+            "tmp_name": "",
+            "error": 4,
+            "size": 0
+        }
+    },
+    "time": "2025-03-18 15:27:10"
+}
+

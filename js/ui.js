@@ -4,6 +4,8 @@ class MenuUI {
         this.categories = [];
         this.allMenuItems = [];
         this.utils = MenuUtils;
+        this.currentCategory = '';
+        this.currentCategoryName = '';
         this.initializeEventListeners();
     }
 
@@ -54,10 +56,14 @@ class MenuUI {
         `;
     }
 
-    async showCategory(urlName, categoryName) {
+    async showCategory(urlName, categoryName, isFromSearch = false) {
         const categoriesView = this.utils.getElement('#categoriesView');
         const menuView = this.utils.getElement('#menuView');
         const categoryTitle = this.utils.getElement('#categoryTitle');
+
+        // Salva la categoria corrente
+        this.currentCategory = urlName;
+        this.currentCategoryName = categoryName;
 
         // Aggiungi la navigazione rapida se non esiste
         if (!document.querySelector('.quick-categories')) {
@@ -105,7 +111,7 @@ class MenuUI {
         menuView.style.display = 'block';
         categoryTitle.textContent = categoryName;
 
-        await this.loadMenuItems(urlName);
+        await this.loadMenuItems(urlName, isFromSearch);
     }
 
     showCategories() {
@@ -121,25 +127,64 @@ class MenuUI {
         menuView.style.display = 'none';
     }
 
-    async loadMenuItems(category) {
+    async loadMenuItems(category, isFromSearch = false) {
         const menuItems = this.utils.getElement('#menuItems');
         menuItems.innerHTML = '<div class="loading">Caricamento menu...</div>';
 
         try {
             const items = await this.api.fetchMenuItems(category);
             
-            menuItems.innerHTML = items
-                .map((item, index) => `
-                    <div class="menu-item" style="--item-index: ${index}">
-                        <div>
+            // Assicurati che ci sia sempre un'immagine per ogni articolo
+            const processedItems = items.map(item => {
+                // Se l'URL dell'immagine è vuoto o undefined, usa un placeholder
+                if (!item.image_url) {
+                    item.image_url = '/menu_digitale/images/placeholder.jpg';
+                    console.log('Immagine mancante per:', item.name);
+                } else {
+                    // In caso di errore nell'immagine, verrà gestito dall'attributo onerror nell'HTML
+                    console.log('Immagine per:', item.name, '=', item.image_url);
+                }
+                return item;
+            });
+            
+            // Verifica che la funzione encodeForHTML esista
+            const encodeForHTML = typeof this.utils.encodeForHTML === 'function' 
+                ? this.utils.encodeForHTML 
+                : (str => str ? String(str) : '');
+            
+            menuItems.innerHTML = processedItems
+                .map((item, index) => {
+                    // Converti caratteri problematici in una forma sicura per gli attributi HTML
+                    const safeItemName = encodeForHTML(item.name);
+                    const safeItemDesc = item.description ? encodeForHTML(item.description) : '';
+                    const safeItemImageUrl = encodeForHTML(item.image_url);
+                    
+                    // Aggiunta classe animation solo se non stiamo caricando da una ricerca
+                    const animationClass = isFromSearch ? '' : 'with-animation';
+                    
+                    return `
+                    <div class="menu-item ${animationClass}" style="--item-index: ${index}" 
+                         data-name="${safeItemName}" 
+                         data-description="${safeItemDesc}" 
+                         data-price="${item.price}" 
+                         data-image="${safeItemImageUrl}"
+                         onclick="ui.showItemDetailFromAttributes(this)">
+                        <div class="item-content">
                             <div class="item-name">${item.name}</div>
                             ${item.description ? 
                                 `<div class="item-description">${item.description}</div>` : 
                                 ''}
+                            <div class="item-price">${this.utils.formatPrice(item.price)}</div>
                         </div>
-                        <div class="item-price">${this.utils.formatPrice(item.price)}</div>
+                        <div class="item-image-container">
+                            <img src="${item.image_url}" 
+                                 alt="${safeItemName}" 
+                                 class="item-image" 
+                                 onerror="this.onerror=null; this.src='/menu_digitale/images/placeholder.jpg'; console.error('Errore caricamento immagine:', this.src);">
+                        </div>
                     </div>
-                `).join('');
+                    `;
+                }).join('');
         } catch (error) {
             menuItems.innerHTML = this.utils.showError(error.message);
         }
@@ -236,28 +281,55 @@ class MenuUI {
     }
 
     async showCategoryAndScrollToItem(categoryUrl, categoryName, itemName) {
-        // Prima mostra la categoria
-        await this.showCategory(categoryUrl, categoryName);
+        // Prima mostra la categoria, indicando che viene dalla ricerca
+        await this.showCategory(categoryUrl, categoryName, true);
         
-        // Poi trova e scrolla all'articolo
-        setTimeout(() => {
-            const menuItems = document.querySelectorAll('.menu-item');
-            for (let item of menuItems) {
-                const itemNameElement = item.querySelector('.item-name');
-                if (itemNameElement && itemNameElement.textContent === itemName) {
-                    // Aggiunge la classe per l'evidenziazione
-                    item.classList.add('highlighted-item');
-                    item.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
-                    // Rimuove la classe dopo 2 secondi
-                    setTimeout(() => {
-                        item.classList.remove('highlighted-item');
-                    }, 2000);
-                    
-                    break;
+        // Nessun ritardo per la ricerca, cerca subito l'elemento
+        const menuItems = document.querySelectorAll('.menu-item');
+        let found = false;
+        
+        for (let item of menuItems) {
+            const itemNameElement = item.querySelector('.item-name');
+            if (itemNameElement && itemNameElement.textContent === itemName) {
+                // Aggiunge la classe per l'evidenziazione
+                item.classList.add('highlighted-item');
+                
+                // Scroll all'elemento immediatamente
+                item.scrollIntoView({ behavior: 'auto', block: 'center' });
+                
+                // Rimuove la classe dopo 2 secondi
+                setTimeout(() => {
+                    item.classList.remove('highlighted-item');
+                }, 2000);
+                
+                // Apri direttamente la visualizzazione dettagliata
+                if (item.getAttribute('data-name')) {
+                    this.showItemDetailFromAttributes(item);
                 }
+                
+                found = true;
+                break;
             }
-        }, 100);
+        }
+        
+        // Se l'articolo non è stato trovato subito, riprova dopo un breve ritardo
+        if (!found) {
+            setTimeout(() => {
+                const menuItems = document.querySelectorAll('.menu-item');
+                for (let item of menuItems) {
+                    const itemNameElement = item.querySelector('.item-name');
+                    if (itemNameElement && itemNameElement.textContent === itemName) {
+                        item.classList.add('highlighted-item');
+                        item.scrollIntoView({ behavior: 'auto', block: 'center' });
+                        
+                        setTimeout(() => {
+                            item.classList.remove('highlighted-item');
+                        }, 2000);
+                        break;
+                    }
+                }
+            }, 50); // Ridotto ulteriormente a 50ms
+        }
     }
 
     // Nuovo metodo per gestire sia la pulizia che la navigazione
@@ -277,6 +349,49 @@ class MenuUI {
         
         // Procedi con la navigazione
         await this.showCategoryAndScrollToItem(categoryUrl, categoryName, itemName);
+    }
+
+    showItemDetailFromAttributes(element) {
+        const name = element.getAttribute('data-name');
+        const description = element.getAttribute('data-description');
+        const price = parseFloat(element.getAttribute('data-price'));
+        const imageUrl = element.getAttribute('data-image');
+        
+        this.showItemDetail(name, description, price, imageUrl);
+    }
+
+    showItemDetail(name, description, price, imageUrl) {
+        // Crea un overlay modale
+        const modal = document.createElement('div');
+        modal.className = 'item-detail-modal';
+        
+        // Crea contenuto modale
+        modal.innerHTML = `
+            <div class="item-detail-content">
+                <button class="close-modal" onclick="this.parentNode.parentNode.remove()">&times;</button>
+                <div class="item-detail-image-container">
+                    <img src="${imageUrl}" 
+                         alt="${name}" 
+                         class="item-detail-image" 
+                         onerror="this.onerror=null; this.src='/menu_digitale/images/placeholder.jpg'; console.error('Errore caricamento immagine:', this.src);">
+                </div>
+                <div class="item-detail-info">
+                    <h2>${name}</h2>
+                    ${description ? `<p class="item-detail-description">${description}</p>` : ''}
+                    <p class="item-detail-price">${this.utils.formatPrice(price)}</p>
+                </div>
+            </div>
+        `;
+        
+        // Aggiungi al DOM
+        document.body.appendChild(modal);
+        
+        // Aggiungi event listener per chiudere il modale quando si clicca fuori
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.remove();
+            }
+        });
     }
 }
 

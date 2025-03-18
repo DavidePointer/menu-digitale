@@ -9,28 +9,37 @@ http://{server}/menu_digitale/api/
 ```
 
 ## Autenticazione
-Attualmente le API sono pubbliche per le operazioni di lettura. Le operazioni di scrittura/modifica saranno protette in futuro con autenticazione.
+Le API di lettura sono pubbliche mentre le operazioni di scrittura/modifica/cancellazione sono protette con autenticazione. Per utilizzare le API protette, è necessario:
+
+1. Effettuare l'accesso tramite il pannello di amministrazione
+2. Ottenere un token di sessione valido
+3. Includere il token nelle richieste HTTP attraverso i cookie (gestito automaticamente dal browser)
 
 ## Formati di Risposta
 Tutte le risposte sono in formato JSON.
 
 ### Formato Successo
 ```json
-[
-  {
-    "property1": "value1",
-    "property2": "value2",
+{
+  "success": true,
+  "message": "Operazione completata con successo",
+  "data": [
+    {
+      "property1": "value1",
+      "property2": "value2",
+      ...
+    },
     ...
-  },
-  ...
-]
+  ]
+}
 ```
 
 ### Formato Errore
 ```json
 {
-  "error": "Tipo errore",
+  "success": false,
   "message": "Messaggio dettagliato sull'errore",
+  "error": "Tipo errore",
   "trace": "Stack trace dell'errore (solo in ambiente di sviluppo)"
 }
 ```
@@ -101,6 +110,34 @@ Nessuno
 ]
 ```
 
+#### GET /get_category.php
+Ottiene i dettagli di una categoria specifica.
+
+**Parametri**
+- `category_id` (integer, obbligatorio): ID della categoria
+
+**Risposta Successo**
+```json
+{
+  "success": true,
+  "data": {
+    "category_id": 1,
+    "name": "Nome Categoria",
+    "image_url": "percorso/immagine.jpg",
+    "article_count": 5
+  }
+}
+```
+
+**Risposta Errore**
+```json
+{
+  "success": false,
+  "message": "Categoria non trovata",
+  "error": "Categoria con ID 1 non trovata"
+}
+```
+
 #### POST /add_category.php
 Aggiunge una nuova categoria.
 
@@ -123,6 +160,55 @@ Aggiunge una nuova categoria.
   "success": false,
   "message": "Errore durante l'aggiunta della categoria",
   "error": "Dettaglio errore"
+}
+```
+
+#### POST /update_category.php
+Aggiorna una categoria esistente.
+
+**Parametri**
+- `category_id` (integer, obbligatorio): ID della categoria da aggiornare
+- `name` (string, obbligatorio): nuovo nome della categoria
+- `image` (file, opzionale): nuova immagine della categoria
+
+**Risposta Successo**
+```json
+{
+  "success": true,
+  "message": "Categoria aggiornata con successo",
+  "category_id": 1
+}
+```
+
+**Risposta Errore**
+```json
+{
+  "success": false,
+  "message": "Errore durante l'aggiornamento della categoria",
+  "error": "Dettaglio errore"
+}
+```
+
+#### POST /delete_category.php
+Elimina una categoria esistente.
+
+**Parametri**
+- `category_id` (integer, obbligatorio): ID della categoria da eliminare
+
+**Risposta Successo**
+```json
+{
+  "success": true,
+  "message": "Categoria eliminata con successo"
+}
+```
+
+**Risposta Errore**
+```json
+{
+  "success": false,
+  "message": "Impossibile eliminare la categoria",
+  "error": "La categoria contiene articoli"
 }
 ```
 
@@ -149,6 +235,37 @@ Ottiene l'elenco di tutti gli articoli disponibili.
   },
   ...
 ]
+```
+
+#### GET /get_article.php
+Ottiene i dettagli di un articolo specifico.
+
+**Parametri**
+- `article_id` (integer, obbligatorio): ID dell'articolo
+
+**Risposta Successo**
+```json
+{
+  "success": true,
+  "data": {
+    "article_id": 1,
+    "name": "Nome Articolo",
+    "description": "Descrizione dell'articolo",
+    "price": "10.50",
+    "image_url": "percorso/immagine.jpg",
+    "category_id": 1,
+    "category_name": "Nome Categoria"
+  }
+}
+```
+
+**Risposta Errore**
+```json
+{
+  "success": false,
+  "message": "Articolo non trovato",
+  "error": "Articolo con ID 1 non trovato"
+}
 ```
 
 #### POST /add_article.php
@@ -179,10 +296,64 @@ Aggiunge un nuovo articolo.
 }
 ```
 
+#### POST /update_article.php
+Aggiorna un articolo esistente.
+
+**Parametri**
+- `article_id` (integer, obbligatorio): ID dell'articolo da aggiornare
+- `name` (string, obbligatorio): nuovo nome dell'articolo
+- `description` (string, opzionale): nuova descrizione dell'articolo
+- `price` (decimal, obbligatorio): nuovo prezzo dell'articolo
+- `category_id` (integer, obbligatorio): ID della categoria 
+- `image` (file, opzionale): nuova immagine dell'articolo
+
+**Risposta Successo**
+```json
+{
+  "success": true,
+  "message": "Articolo aggiornato con successo",
+  "article_id": 1
+}
+```
+
+**Risposta Errore**
+```json
+{
+  "success": false,
+  "message": "Errore durante l'aggiornamento dell'articolo",
+  "error": "Dettaglio errore"
+}
+```
+
+#### POST /delete_article.php
+Elimina un articolo esistente.
+
+**Parametri**
+- `article_id` (integer, obbligatorio): ID dell'articolo da eliminare
+
+**Risposta Successo**
+```json
+{
+  "success": true,
+  "message": "Articolo eliminato con successo"
+}
+```
+
+**Risposta Errore**
+```json
+{
+  "success": false,
+  "message": "Impossibile eliminare l'articolo",
+  "error": "Dettaglio errore"
+}
+```
+
 ## Codici di Stato HTTP
 
 - `200 OK`: Richiesta completata con successo
 - `400 Bad Request`: Richiesta malformata o parametri mancanti
+- `401 Unauthorized`: Autenticazione richiesta
+- `403 Forbidden`: Autenticazione insufficiente per accedere alla risorsa
 - `404 Not Found`: Risorsa non trovata
 - `500 Internal Server Error`: Errore interno del server
 
@@ -207,6 +378,23 @@ fetch('/menu_digitale/api/menu.php?category=nome_categoria')
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error('Error:', error));
+
+// Aggiornare un articolo (richiede autenticazione)
+const formData = new FormData();
+formData.append('article_id', '1');
+formData.append('name', 'Nuovo nome');
+formData.append('price', '12.50');
+formData.append('category_id', '1');
+formData.append('description', 'Nuova descrizione');
+
+fetch('/menu_digitale/api/update_article.php', {
+  method: 'POST',
+  body: formData,
+  credentials: 'include' // Importante per inviare i cookie di autenticazione
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
 ```
 
 ### PHP cURL
@@ -223,7 +411,6 @@ print_r($data);
 ## Roadmap API Future
 
 - Implementazione autenticazione JWT
-- Endpoint per modifica e cancellazione di articoli e categorie
 - Versioning delle API (v1, v2, ecc.)
 - API per gestione varianti articoli
 - Rate limiting per prevenire abusi

@@ -30,5 +30,15 @@ const MenuUtils = {
         const div = document.createElement('div');
         div.textContent = str;
         return div.innerHTML;
+    },
+    
+    encodeForHTML(str) {
+        if (!str) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
     }
 }; 

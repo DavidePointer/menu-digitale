@@ -1,109 +1,77 @@
 <?php
-// Carica la configurazione e le utilities
+// api/delete_article.php - Elimina un articolo
+
+// Includi i file necessari
 require_once '../config.php';
-require_once 'auth_check.php';
+require_once 'auth.php';
 
-// Configura CORS
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST, OPTIONS");
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+// Headers per CORS e JSON
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
-// Configura il logging
-$logFile = '../logs/admin_actions.log';
-if (!file_exists('../logs/')) {
-    mkdir('../logs/', 0777, true);
+// Gestisci le richieste OPTIONS per il preflight CORS
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    exit(0);
 }
 
-function logAction($message) {
-    global $logFile;
-    $timestamp = date('Y-m-d H:i:s');
-    $logMessage = "[$timestamp] " . $message . PHP_EOL;
-    file_put_contents($logFile, $logMessage, FILE_APPEND);
-}
-
-// Per le richieste OPTIONS, termina qui
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-    http_response_code(200);
-    exit;
-}
-
-// Verifica l'autenticazione (funzione importata da auth_check.php)
+// Verifica autenticazione
 if (!isAuthenticated()) {
-    http_response_code(401);
-    echo json_encode(['success' => false, 'message' => 'Non autorizzato']);
-    exit;
+    logAuthMessage("Tentativo di eliminare un articolo senza autenticazione");
+    jsonResponse(false, 'Utente non autenticato');
 }
 
-// Verifica che sia una richiesta POST
-if ($_SERVER['REQUEST_METHOD'] != 'POST') {
-    http_response_code(405); // Method Not Allowed
-    echo json_encode(['success' => false, 'message' => 'Metodo non consentito']);
-    exit;
+// Verifica che il metodo sia POST
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    logAuthMessage("Metodo non consentito per eliminazione articolo: " . $_SERVER['REQUEST_METHOD']);
+    jsonResponse(false, 'Metodo non consentito');
 }
 
-// Ottieni i dati JSON dalla richiesta
-$data = json_decode(file_get_contents("php://input"), true);
-
-// Verifica che l'ID articolo sia stato fornito
-if (!isset($data['article_id']) || empty($data['article_id'])) {
-    http_response_code(400); // Bad Request
-    echo json_encode(['success' => false, 'message' => 'ID articolo richiesto']);
-    exit;
-}
-
-$articleId = $data['article_id'];
-
-// Connessione al database
 try {
-    $db = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Recupera i dati della richiesta
+    $input = json_decode(file_get_contents('php://input'), true);
     
-    // Ottieni le informazioni sull'articolo prima dell'eliminazione
-    $stmt = $db->prepare("SELECT a.*, c.name AS category_name FROM articles a JOIN categories c ON a.category_id = c.category_id WHERE a.article_id = :article_id");
-    $stmt->bindParam(':article_id', $articleId, PDO::PARAM_INT);
-    $stmt->execute();
+    // Verifica che l'ID articolo sia stato fornito
+    if (!isset($input['article_id']) || empty($input['article_id'])) {
+        logAuthMessage("ID articolo mancante per eliminazione");
+        jsonResponse(false, 'ID articolo richiesto');
+    }
+    
+    $articleId = (int)$input['article_id'];
+    
+    // Connessione al database
+    $pdo = getDBConnection();
+    
+    // Prima ottieni i dettagli dell'articolo per poter eliminare l'immagine
+    $stmt = $pdo->prepare("SELECT image_url FROM articles WHERE article_id = ?");
+    $stmt->execute([$articleId]);
     $article = $stmt->fetch(PDO::FETCH_ASSOC);
     
     if (!$article) {
-        http_response_code(404);
-        echo json_encode(['success' => false, 'message' => 'Articolo non trovato']);
-        exit;
+        logAuthMessage("Tentativo di eliminare un articolo inesistente: " . $articleId);
+        jsonResponse(false, 'Articolo non trovato');
     }
-    
-    $articleName = $article['name'];
-    $articleImage = $article['image'];
-    $categoryName = $article['category_name'];
     
     // Elimina l'articolo
-    $stmt = $db->prepare("DELETE FROM articles WHERE article_id = :article_id");
-    $stmt->bindParam(':article_id', $articleId, PDO::PARAM_INT);
-    $stmt->execute();
+    $stmt = $pdo->prepare("DELETE FROM articles WHERE article_id = ?");
+    $stmt->execute([$articleId]);
+    $deleted = $stmt->rowCount();
     
-    // Elimina l'immagine dell'articolo
-    $articlesDir = '../images/articles/';
-    if (isset($articleImage) && file_exists($articlesDir . $articleImage)) {
-        unlink($articlesDir . $articleImage);
+    if ($deleted === 0) {
+        logAuthMessage("Errore nell'eliminazione dell'articolo: " . $articleId);
+        jsonResponse(false, 'Impossibile eliminare l\'articolo');
     }
     
-    // Log dell'azione
-    $username = $_SESSION['user']['username'] ?? 'unknown';
-    logAction("Utente $username ha eliminato l'articolo '$articleName' (ID: $articleId) dalla categoria '$categoryName'");
+    // Rimuovi il file dell'immagine se esiste
+    if ($article['image_url'] && file_exists($_SERVER['DOCUMENT_ROOT'] . '/menu_digitale/' . $article['image_url'])) {
+        unlink($_SERVER['DOCUMENT_ROOT'] . '/menu_digitale/' . $article['image_url']);
+    }
     
-    // Restituisci la risposta
-    echo json_encode([
-        'success' => true, 
-        'message' => 'Articolo eliminato con successo',
-        'deleted_item' => [
-            'article' => $articleName,
-            'category' => $categoryName
-        ]
-    ]);
+    logAuthMessage("Articolo eliminato con successo: " . $articleId);
+    jsonResponse(true, 'Articolo eliminato con successo');
     
-} catch(PDOException $e) {
-    // Errore di database
-    error_log("Database error: " . $e->getMessage());
-    http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Errore del server']);
+} catch (Exception $e) {
+    logAuthMessage("Errore nell'eliminazione dell'articolo: " . $e->getMessage());
+    jsonResponse(false, 'Errore del server: ' . $e->getMessage());
 } 

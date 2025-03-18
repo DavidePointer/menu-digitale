@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Genera Placeholder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            display: block;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 15px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crea Immagine Placeholder</h1>
+    <p>Questa pagina genera un'immagine placeholder per gli articoli del menu</p>
+    
+    <div>
+        <canvas id="canvas" width="300" height="200"></canvas>
+        <div>
+            <button id="downloadButton">Scarica Immagine</button>
+            <button id="copyButton">Copia Base64</button>
+        </div>
+        <p id="status"></p>
+    </div>
+    <img id="preview">
+    
+    <script>
+        // Funzione per disegnare un placeholder sul canvas
+        function drawPlaceholder() {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Sfondo
+            ctx.fillStyle = '#E9ECEF';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Bordo
+            ctx.strokeStyle = '#CED4DA';
+            ctx.lineWidth = 4;
+            ctx.strokeRect(2, 2, canvas.width-4, canvas.height-4);
+            
+            // Testo
+            ctx.fillStyle = '#343A40';
+            ctx.font = 'bold 30px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('Immagine', canvas.width/2, canvas.height/2 - 20);
+            ctx.fillText('Placeholder', canvas.width/2, canvas.height/2 + 20);
+            
+            // Aggiorna l'anteprima
+            updatePreview();
+        }
+        
+        // Aggiorna l'immagine di anteprima
+        function updatePreview() {
+            const canvas = document.getElementById('canvas');
+            const preview = document.getElementById('preview');
+            preview.src = canvas.toDataURL('image/jpeg');
+        }
+        
+        // Scarica l'immagine
+        document.getElementById('downloadButton').addEventListener('click', function() {
+            const canvas = document.getElementById('canvas');
+            const dataURL = canvas.toDataURL('image/jpeg');
+            
+            const a = document.createElement('a');
+            a.href = dataURL;
+            a.download = 'placeholder.jpg';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            
+            document.getElementById('status').textContent = 'Immagine scaricata!';
+        });
+        
+        // Copia il base64
+        document.getElementById('copyButton').addEventListener('click', function() {
+            const canvas = document.getElementById('canvas');
+            const dataURL = canvas.toDataURL('image/jpeg');
+            
+            navigator.clipboard.writeText(dataURL)
+                .then(() => {
+                    document.getElementById('status').textContent = 'Base64 copiato negli appunti!';
+                })
+                .catch(err => {
+                    document.getElementById('status').textContent = 'Errore: ' + err;
+                });
+        });
+        
+        // Disegna il placeholder all'avvio
+        window.onload = drawPlaceholder;
+    </script>
+</body>
+</html> 

@@ -172,6 +172,11 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
+                        // Salva il token di autenticazione
+                        if (data.auth_token) {
+                            localStorage.setItem('auth_token', data.auth_token);
+                        }
+                        
                         // Login riuscito, reindirizza alla pagina admin
                         window.location.href = '/menu_digitale/admin.html';
                     } else {

@@ -11,12 +11,13 @@ Questo documento delinea il piano di sviluppo per il progetto Menu Digitale, org
 - ✅ CRUD completo per articoli con gestione immagini
 - ✅ Sistema auto-riparazione struttura database
 - ✅ Gestione password amministratore
+- ✅ Correzione bug di visualizzazione dati nei form di modifica
 - Dashboard per visualizzazione rapida stato menu
 
 ### 2. Miglioramento UX/UI Menu Utente
 - ✅ Link discreto all'area amministrativa
+- ✅ Ottimizzazione layout responsive per tutti i dispositivi
 - Ottimizzazione animazioni e transizioni
-- Miglioramento layout responsive per tutti i dispositivi
 - Aggiunta filtri avanzati per il menu (prezzo, allergenici, etc.)
 
 ### 3. Infrastruttura Cloud
@@ -37,6 +38,7 @@ Questo documento delinea il piano di sviluppo per il progetto Menu Digitale, org
 - Configurazione individuale per ogni cliente
 
 ### 3. API Avanzate
+- ✅ API per gestione CRUD completa di categorie e articoli
 - Versioning delle API (v1, v2, etc.)
 - Implementazione autenticazione JWT per API
 - Documentazione Swagger/OpenAPI completa
@@ -106,6 +108,7 @@ Questo documento delinea il piano di sviluppo per il progetto Menu Digitale, org
 - ✅ Completare form di gestione categorie
 - ✅ Implementare form gestione articoli con upload immagini
 - ✅ Sistema di gestione password amministratore
+- ✅ Correggere problemi di visualizzazione dati nei form
 
 ### 2. Preparare per Multi-Tenant
 - Ristrutturare database per supporto multi-tenant
@@ -126,11 +129,14 @@ Questo documento delinea il piano di sviluppo per il progetto Menu Digitale, org
 - ✅ Sistema auto-riparazione struttura database
 - ✅ Caricamento immagini per categorie e articoli
 - ✅ Documentazione completa per installazione e manutenzione
+- ✅ Correzione bug di precaricamento dati nei form di modifica
+- ✅ Miglioramento della UI amministrativa con CSS dedicato
 
 ### In Corso
 - Ottimizzazione UI/UX
 - Miglioramento sicurezza e performance
 - Test su dispositivi multipli
+- Preparazione per architettura multi-tenant
 
 ## Metriche di Successo
 
@@ -144,4 +150,4 @@ Questo documento delinea il piano di sviluppo per il progetto Menu Digitale, org
 
 Questa roadmap verrà rivista e aggiornata ogni 3 mesi per riflettere i progressi, le priorità e le nuove opportunità.
 
-Ultimo aggiornamento: Marzo 2024 
+Ultimo aggiornamento: Aprile 2024 
