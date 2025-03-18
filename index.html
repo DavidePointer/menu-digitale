@@ -1,21 +1,41 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ristorante Da Mario - Menu</title>
+    <title>Pointer - Menu</title>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/menu_digitale/css/style.css">
     <link rel="icon" type="image/x-icon" href="/menu_digitale/images/favicon.ico">
+    <style>
+        /* ... existing styles ... */
+        .footer-admin-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.8rem;
+        }
+        
+        .admin-link {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .admin-link:hover {
+            color: #666;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo-container">
-                <img src="/menu_digitale/images/logo.png" alt="Logo Ristorante" class="logo">
+                <img src="/menu_digitale/images/Logo-Pointer.jpg" alt="Logo Pointer" class="logo">
             </div>
             <div class="header-content">
-                <h1>Ristorante Da Mario</h1>
+                <h1>Pointer</h1>
+                <div class="header-tagline">Soluzioni evolute per il punto cassa</div>
             </div>
         </div>
     </header>
@@ -34,7 +54,7 @@
 
     <div class="menu-list" id="menuView" style="display: none;">
         <a href="#" class="back-button" onclick="ui.showCategories()">
-            ←
+            â†
             <span>Torna al menu</span>
         </a>
         <h2 id="categoryTitle"></h2>
@@ -46,18 +66,21 @@
             <div class="footer-info">
                 <div class="footer-section">
                     <h3>Dove Siamo</h3>
-                    <p>📍 Via Roma 123, Milano</p>
+                    <p>📍 Via Trieste 42, Udine</p>
                 </div>
                 <div class="footer-section">
                     <h3>Contatti</h3>
-                    <p>📞 02 1234567</p>
-                    <p>✉️ info@ristorantemario.it</p>
+                    <p>📞 0432 111111</p>
+                    <p>✉️ info@pointer.it</p>
                 </div>
                 <div class="footer-section">
                     <h3>Orari</h3>
-                    <p>Lun-Ven: 12:00-15:00, 19:00-23:00</p>
-                    <p>Sab-Dom: 12:00-23:00</p>
+                    <p>Lun-Ven: 8:30-12:30, 14:30-18:30</p>
+                    <p>Sab-Dom: Chiuso</p>
                 </div>
+            </div>
+            <div class="footer-admin-link">
+                <a href="/menu_digitale/login.html" class="admin-link">Area Admin</a>
             </div>
         </div>
     </footer>
