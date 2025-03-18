@@ -218,6 +218,25 @@
 
         <div class="admin-container">
             <div class="admin-card">
+                <h2>Gestione Account</h2>
+                <form id="passwordForm">
+                    <div class="form-group">
+                        <label for="currentPassword">Password attuale:</label>
+                        <input type="password" id="currentPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">Nuova password:</label>
+                        <input type="password" id="newPassword" required minlength="8">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Conferma password:</label>
+                        <input type="password" id="confirmPassword" required minlength="8">
+                    </div>
+                    <button type="submit">Aggiorna Password</button>
+                </form>
+            </div>
+
+            <div class="admin-card">
                 <h2>Gestione Categorie</h2>
                 <form id="categoryForm">
                     <div class="form-group">
@@ -270,6 +289,46 @@
             
             // Setup logout
             document.getElementById('logoutBtn').addEventListener('click', logout);
+            
+            // Aggiungi gestore per form password
+            document.getElementById('passwordForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const currentPassword = document.getElementById('currentPassword').value;
+                const newPassword = document.getElementById('newPassword').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                // Verifica che le due password corrispondano
+                if (newPassword !== confirmPassword) {
+                    alert('Le nuove password non corrispondono');
+                    return;
+                }
+                
+                // Invia richiesta per cambio password
+                fetch('/menu_digitale/api/change_password.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        currentPassword: currentPassword,
+                        newPassword: newPassword
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Password aggiornata con successo');
+                        this.reset();
+                    } else {
+                        alert('Errore: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Errore:', error);
+                    alert('Errore nella comunicazione con il server');
+                });
+            });
         });
         
         function checkAuthentication() {
