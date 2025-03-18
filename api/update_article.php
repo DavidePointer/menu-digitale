@@ -109,18 +109,38 @@ try {
     
     // Aggiorna i dati dell'articolo nel database
     if ($imageUpdated) {
-        $stmt = $db->prepare("
-            UPDATE articles 
-            SET category_id = :category_id, name = :name, description = :description, 
-                price = :price, image = :image 
-            WHERE article_id = :article_id
-        ");
-        $stmt->bindParam(':category_id', $categoryId, PDO::PARAM_INT);
-        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
-        $stmt->bindParam(':description', $description, PDO::PARAM_STR);
-        $stmt->bindParam(':price', $price, PDO::PARAM_STR);
-        $stmt->bindParam(':image', $newImageName, PDO::PARAM_STR);
-        $stmt->bindParam(':article_id', $articleId, PDO::PARAM_INT);
+        // Verifica prima se la colonna image esiste nella tabella
+        $checkColumn = $db->prepare("SHOW COLUMNS FROM articles LIKE 'image'");
+        $checkColumn->execute();
+        $columnExists = $checkColumn->rowCount() > 0;
+        
+        if ($columnExists) {
+            $stmt = $db->prepare("
+                UPDATE articles 
+                SET category_id = :category_id, name = :name, description = :description, 
+                    price = :price, image = :image 
+                WHERE article_id = :article_id
+            ");
+            $stmt->bindParam(':category_id', $categoryId, PDO::PARAM_INT);
+            $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+            $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+            $stmt->bindParam(':price', $price, PDO::PARAM_STR);
+            $stmt->bindParam(':image', $newImageName, PDO::PARAM_STR);
+            $stmt->bindParam(':article_id', $articleId, PDO::PARAM_INT);
+        } else {
+            // Se la colonna image non esiste, aggiorna solo gli altri campi
+            $stmt = $db->prepare("
+                UPDATE articles 
+                SET category_id = :category_id, name = :name, description = :description, 
+                    price = :price
+                WHERE article_id = :article_id
+            ");
+            $stmt->bindParam(':category_id', $categoryId, PDO::PARAM_INT);
+            $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+            $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+            $stmt->bindParam(':price', $price, PDO::PARAM_STR);
+            $stmt->bindParam(':article_id', $articleId, PDO::PARAM_INT);
+        }
     } else {
         $stmt = $db->prepare("
             UPDATE articles 

@@ -101,10 +101,22 @@ try {
     
     // Aggiorna i dati della categoria nel database
     if ($imageUpdated) {
-        $stmt = $db->prepare("UPDATE categories SET name = :name, image = :image WHERE category_id = :category_id");
-        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
-        $stmt->bindParam(':image', $newImageName, PDO::PARAM_STR);
-        $stmt->bindParam(':category_id', $categoryId, PDO::PARAM_INT);
+        // Verifica prima se la colonna image esiste nella tabella
+        $checkColumn = $db->prepare("SHOW COLUMNS FROM categories LIKE 'image'");
+        $checkColumn->execute();
+        $columnExists = $checkColumn->rowCount() > 0;
+        
+        if ($columnExists) {
+            $stmt = $db->prepare("UPDATE categories SET name = :name, image = :image WHERE category_id = :category_id");
+            $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+            $stmt->bindParam(':image', $newImageName, PDO::PARAM_STR);
+            $stmt->bindParam(':category_id', $categoryId, PDO::PARAM_INT);
+        } else {
+            // Se la colonna image non esiste, aggiorna solo il nome
+            $stmt = $db->prepare("UPDATE categories SET name = :name WHERE category_id = :category_id");
+            $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+            $stmt->bindParam(':category_id', $categoryId, PDO::PARAM_INT);
+        }
     } else {
         $stmt = $db->prepare("UPDATE categories SET name = :name WHERE category_id = :category_id");
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
