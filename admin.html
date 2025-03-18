@@ -663,7 +663,12 @@
         
         function loadCategories() {
             fetch('/menu_digitale/api/get_categories.php')
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
                 .then(categories => {
                     // Popola il select per l'aggiunta di articoli
                     const select = document.getElementById('articleCategory');
@@ -690,13 +695,17 @@
                     // Visualizza le categorie nella lista
                     displayCategories(categories);
                 })
-                .catch(error => console.error('Errore nel caricamento delle categorie:', error));
+                .catch(error => {
+                    console.error('Errore nel caricamento delle categorie:', error);
+                    const categoriesList = document.getElementById('categoriesList');
+                    categoriesList.innerHTML = `<div class="no-items">Errore nel caricamento delle categorie: ${error.message}</div>`;
+                });
         }
         
         function displayCategories(categories) {
             const categoriesList = document.getElementById('categoriesList');
             
-            if (categories.length === 0) {
+            if (!categories || categories.length === 0) {
                 categoriesList.innerHTML = '<div class="no-items">Nessuna categoria presente</div>';
                 return;
             }
@@ -704,11 +713,17 @@
             let html = '';
             categories.forEach(category => {
                 // Usiamo .replace per evitare problemi con caratteri speciali
-                const categoryName = category.name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                const categoryName = category.name ? category.name.replace(/</g, "&lt;").replace(/>/g, "&gt;") : 'Senza nome';
+                
+                // Gestiamo il caso di immagine mancante
+                const imagePath = category.image && category.image !== '' ? 
+                    `/menu_digitale/images/categories/${category.image}` : 
+                    '/menu_digitale/images/placeholder.jpg';
+                
                 html += `
                 <div class="item-card" data-id="${category.category_id}">
                     <div class="item-info">
-                        <img src="/menu_digitale/images/categories/${category.image}" alt="${categoryName}" class="item-image">
+                        <img src="${imagePath}" alt="${categoryName}" class="item-image" onerror="this.src='/menu_digitale/images/placeholder.jpg'">
                         <div class="item-details">
                             <div class="item-name">${categoryName}</div>
                         </div>
@@ -725,7 +740,12 @@
         
         function loadArticles() {
             fetch('/menu_digitale/api/get_articles.php')
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
                 .then(articles => {
                     displayArticles(articles);
                     
@@ -741,13 +761,17 @@
                         }
                     });
                 })
-                .catch(error => console.error('Errore nel caricamento degli articoli:', error));
+                .catch(error => {
+                    console.error('Errore nel caricamento degli articoli:', error);
+                    const articlesList = document.getElementById('articlesList');
+                    articlesList.innerHTML = `<div class="no-items">Errore nel caricamento degli articoli: ${error.message}</div>`;
+                });
         }
         
         function displayArticles(articles) {
             const articlesList = document.getElementById('articlesList');
             
-            if (articles.length === 0) {
+            if (!articles || articles.length === 0) {
                 articlesList.innerHTML = '<div class="no-items">Nessun articolo presente</div>';
                 return;
             }
@@ -755,18 +779,25 @@
             let html = '';
             articles.forEach(article => {
                 // Sanifichiamo tutti i testi per evitare problemi di parsing
-                const articleName = article.name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-                const articleDescription = article.description.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-                const categoryName = article.category_name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                // E ci assicuriamo che i campi esistano prima di usarli
+                const articleName = article.name ? article.name.replace(/</g, "&lt;").replace(/>/g, "&gt;") : 'Senza nome';
+                const articleDescription = article.description ? article.description.replace(/</g, "&lt;").replace(/>/g, "&gt;") : '';
+                const categoryName = article.category_name ? article.category_name.replace(/</g, "&lt;").replace(/>/g, "&gt;") : 'Senza categoria';
+                const articlePrice = article.price ? parseFloat(article.price).toFixed(2) : '0.00';
+                
+                // Gestiamo il caso di immagine mancante
+                const imagePath = article.image && article.image !== '' ? 
+                    `/menu_digitale/images/articles/${article.image}` : 
+                    '/menu_digitale/images/placeholder.jpg';
                 
                 html += `
                 <div class="item-card" data-id="${article.article_id}">
                     <div class="item-info">
-                        <img src="/menu_digitale/images/articles/${article.image}" alt="${articleName}" class="item-image">
+                        <img src="${imagePath}" alt="${articleName}" class="item-image" onerror="this.src='/menu_digitale/images/placeholder.jpg'">
                         <div class="item-details">
                             <div class="item-name">${articleName}</div>
                             <div class="item-description">${articleDescription}</div>
-                            <div class="item-price">${parseFloat(article.price).toFixed(2)} €</div>
+                            <div class="item-price">${articlePrice} €</div>
                             <div class="item-category">${categoryName}</div>
                         </div>
                     </div>

@@ -26,11 +26,36 @@ if (isset($_GET['category_id']) && !empty($_GET['category_id'])) {
 
 // Connessione al database
 try {
+    // Configurazione per vedere tutti gli errori
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    
     $db = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
+    // Verifica se le tabelle esistono prima di eseguire la query
+    $checkTableQuery = "SHOW TABLES LIKE 'articles'";
+    $stmt = $db->prepare($checkTableQuery);
+    $stmt->execute();
+    $articlesTableExists = $stmt->rowCount() > 0;
+    
+    $checkTableQuery = "SHOW TABLES LIKE 'categories'";
+    $stmt = $db->prepare($checkTableQuery);
+    $stmt->execute();
+    $categoriesTableExists = $stmt->rowCount() > 0;
+    
+    if (!$articlesTableExists || !$categoriesTableExists) {
+        throw new Exception('Le tabelle necessarie non esistono nel database.');
+    }
+    
     // Prepara e esegui la query con join alla tabella categorie per ottenere il nome della categoria
-    $query = "SELECT a.*, c.name as category_name FROM articles a JOIN categories c ON a.category_id = c.category_id $categoryFilter ORDER BY a.category_id, a.name";
+    // Gestione più robusta con LEFT JOIN per evitare errori se una categoria è stata eliminata
+    $query = "SELECT a.*, c.name as category_name 
+              FROM articles a 
+              LEFT JOIN categories c ON a.category_id = c.category_id 
+              " . ($categoryFilter ? $categoryFilter : "") . " 
+              ORDER BY a.category_id, a.name";
+    
     $stmt = $db->prepare($query);
     
     // Bind dei parametri se necessario
@@ -44,11 +69,20 @@ try {
     $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     // Restituisci gli articoli come JSON
-    echo json_encode($articles);
+    echo json_encode($articles, JSON_NUMERIC_CHECK);
     
 } catch(PDOException $e) {
     // Errore di database
-    error_log("Database error: " . $e->getMessage());
+    error_log("Database error in get_articles.php: " . $e->getMessage());
     http_response_code(500); // Internal Server Error
-    echo json_encode(['error' => 'Database error', 'message' => $e->getMessage()]);
+    echo json_encode([
+        'error' => 'Database error', 
+        'message' => $e->getMessage(),
+        'query' => isset($query) ? $query : 'No query created yet'
+    ]);
+} catch(Exception $e) {
+    // Altri errori
+    error_log("Error in get_articles.php: " . $e->getMessage());
+    http_response_code(500); // Internal Server Error
+    echo json_encode(['error' => 'Error', 'message' => $e->getMessage()]);
 } 
