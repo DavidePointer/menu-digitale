@@ -2,6 +2,9 @@
 // index.php - Visualizza il menu con le impostazioni personalizzate
 require_once 'config.php';
 
+// Inizializza la connessione al database
+$conn = getDBConnection();
+
 // Funzione per ottenere le impostazioni dal database
 function getSettings() {
     global $conn;
