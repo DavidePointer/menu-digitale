@@ -51,6 +51,23 @@ $newImageName = '';
 try {
     $db = getDBConnection();
     
+    // Prima di tutto, verifichiamo se la colonna 'image' esiste e se non esiste la aggiungiamo
+    $checkColumn = $db->prepare("SHOW COLUMNS FROM categories LIKE 'image'");
+    $checkColumn->execute();
+    if ($checkColumn->rowCount() == 0) {
+        // La colonna non esiste, quindi la aggiungiamo
+        $addColumn = $db->prepare("ALTER TABLE categories ADD COLUMN image VARCHAR(255)");
+        $addColumn->execute();
+    }
+    
+    // Verifichiamo se la colonna name esiste e la aggiungiamo se necessario
+    $checkNameColumn = $db->prepare("SHOW COLUMNS FROM categories LIKE 'name'");
+    $checkNameColumn->execute();
+    if ($checkNameColumn->rowCount() == 0) {
+        $addNameColumn = $db->prepare("ALTER TABLE categories ADD COLUMN name VARCHAR(255) NOT NULL");
+        $addNameColumn->execute();
+    }
+    
     // Ottieni l'immagine attuale
     $stmt = $db->prepare("SELECT image FROM categories WHERE category_id = :category_id");
     $stmt->bindParam(':category_id', $categoryId, PDO::PARAM_INT);

@@ -59,6 +59,37 @@ $newImageName = '';
 try {
     $db = getDBConnection();
     
+    // Prima di tutto, verifichiamo se la colonna 'image' esiste e se non esiste la aggiungiamo
+    $checkColumn = $db->prepare("SHOW COLUMNS FROM articles LIKE 'image'");
+    $checkColumn->execute();
+    if ($checkColumn->rowCount() == 0) {
+        // La colonna non esiste, quindi la aggiungiamo
+        $addColumn = $db->prepare("ALTER TABLE articles ADD COLUMN image VARCHAR(255)");
+        $addColumn->execute();
+    }
+    
+    // Verifichiamo se le colonne name, description e price esistono e le aggiungiamo se necessario
+    $checkNameColumn = $db->prepare("SHOW COLUMNS FROM articles LIKE 'name'");
+    $checkNameColumn->execute();
+    if ($checkNameColumn->rowCount() == 0) {
+        $addNameColumn = $db->prepare("ALTER TABLE articles ADD COLUMN name VARCHAR(255) NOT NULL");
+        $addNameColumn->execute();
+    }
+    
+    $checkDescColumn = $db->prepare("SHOW COLUMNS FROM articles LIKE 'description'");
+    $checkDescColumn->execute();
+    if ($checkDescColumn->rowCount() == 0) {
+        $addDescColumn = $db->prepare("ALTER TABLE articles ADD COLUMN description TEXT");
+        $addDescColumn->execute();
+    }
+    
+    $checkPriceColumn = $db->prepare("SHOW COLUMNS FROM articles LIKE 'price'");
+    $checkPriceColumn->execute();
+    if ($checkPriceColumn->rowCount() == 0) {
+        $addPriceColumn = $db->prepare("ALTER TABLE articles ADD COLUMN price DECIMAL(10,2) NOT NULL");
+        $addPriceColumn->execute();
+    }
+    
     // Ottieni l'immagine attuale
     $stmt = $db->prepare("SELECT image FROM articles WHERE article_id = :article_id");
     $stmt->bindParam(':article_id', $articleId, PDO::PARAM_INT);
