@@ -368,7 +368,6 @@ function editArticle(articleId) {
  * Elimina un articolo
  */
 function deleteArticle(articleId) {
-    console.log("Eliminazione articolo ID:", articleId);
     const token = localStorage.getItem('auth_token');
     
     fetch('/menu_digitale/api/delete_article.php', {
@@ -379,28 +378,30 @@ function deleteArticle(articleId) {
         },
         body: JSON.stringify({ article_id: articleId })
     })
-    .then(response => response.text())
-    .then(text => {
-        console.log("Risposta eliminazione articolo:", text);
-        try {
-            const data = JSON.parse(text);
-            if (data.success) {
-                showNotification('Articolo eliminato con successo', 'success');
-                // Ricarica l'elenco articoli
-                const filterCategory = document.getElementById('categoryFilter');
-                const categoryValue = filterCategory ? filterCategory.value : 'all';
-                loadExistingArticles(categoryValue);
-            } else {
-                showNotification('Errore: ' + data.message, 'error');
+    .then(response => {
+        return response.json().then(data => {
+            if (!response.ok) {
+                throw new Error(data.message || 'Errore durante l\'eliminazione dell\'articolo');
             }
-        } catch (e) {
-            console.error("Errore parsing JSON:", e);
-            showNotification('Errore nel formato della risposta dal server', 'error');
-        }
+            return data;
+        });
+    })
+    .then(data => {
+        showNotification('Articolo eliminato con successo!', 'success');
+        
+        // Ricarica sia gli articoli che le categorie per aggiornare il conteggio
+        setTimeout(() => {
+            loadExistingArticles();
+            
+            // Aggiorna anche il conteggio nelle categorie
+            if (typeof loadExistingCategories === 'function') {
+                loadExistingCategories();
+            }
+        }, 500);
     })
     .catch(error => {
-        console.error("Errore eliminazione articolo:", error);
-        showNotification('Errore nella comunicazione con il server', 'error');
+        console.error('Error:', error);
+        showNotification(error.message || 'Errore durante l\'eliminazione dell\'articolo', 'error');
     });
 }
 

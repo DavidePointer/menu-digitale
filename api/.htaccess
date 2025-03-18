@@ -1,0 +1,18 @@
+# Assicurati che php gestisca tutte le richieste API
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
+
+# Abilita CORS
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
+</IfModule>
+
+# Impostazioni PHP
+php_flag display_errors off
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+php_flag display_startup_errors off 

@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Verifica autenticazione
-    if (!isAuthenticated()) {
-        window.location.href = 'login.html';
-        return;
-    }
+    checkAuth();
 
     // Setup tab navigation
     setupTabs();
@@ -99,41 +96,64 @@ function setupCategoryForm() {
         submitBtn.innerHTML = '<div class="spinner" style="width:20px;height:20px;margin:0 auto;"></div>';
         submitBtn.disabled = true;
         
-        fetch('/menu_digitale/api/add_category.php', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Authorization': 'Bearer ' + token
-            }
-        })
-        .then(response => {
-            return response.json().then(data => {
-                if (!response.ok) {
-                    throw new Error(data.message || 'Errore durante l\'aggiunta della categoria');
+        // Usa XMLHttpRequest per maggiore controllo sulla richiesta
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '/menu_digitale/api/add_category_simple.php');
+        xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+        
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                // Ripristina il testo del pulsante
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                
+                if (xhr.status === 200) {
+                    try {
+                        const response = JSON.parse(xhr.responseText);
+                        if (response.success) {
+                            showNotification('Categoria aggiunta con successo!', 'success');
+                            form.reset();
+                            document.getElementById('categoryImagePreview').style.display = 'none';
+                            
+                            // Ricarica le categorie esistenti con ritardo
+                            setTimeout(() => {
+                                if (typeof loadExistingCategories === 'function') {
+                                    loadExistingCategories();
+                                }
+                                
+                                // Ricarica le categorie per il select degli articoli
+                                loadCategoriesForSelect(response.category_id);
+                                
+                                // Cambia tab agli articoli per maggiore comodità
+                                if (response.category_id) {
+                                    // Trova il pulsante della tab articoli e simuliamo un click
+                                    const articlesTabBtn = document.querySelector('.tab-button[data-tab="articles"]');
+                                    if (articlesTabBtn) {
+                                        articlesTabBtn.click();
+                                    }
+                                }
+                            }, 500);
+                        } else {
+                            showNotification(response.message || 'Errore durante l\'aggiunta della categoria', 'error');
+                        }
+                    } catch (e) {
+                        console.error('Errore nel parsing JSON:', e);
+                        console.error('Risposta ricevuta:', xhr.responseText);
+                        showNotification('Errore nel parsing della risposta dal server', 'error');
+                    }
+                } else {
+                    showNotification('Errore del server: ' + xhr.status, 'error');
                 }
-                return data;
-            });
-        })
-        .then(data => {
-            showNotification('Categoria aggiunta con successo!', 'success');
-            form.reset();
-            document.getElementById('categoryImagePreview').style.display = 'none';
-            // Ricarica le categorie esistenti
-            if (typeof loadExistingCategories === 'function') {
-                loadExistingCategories();
             }
-            // Ricarica le categorie per il select degli articoli
-            loadCategoriesForSelect();
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            showNotification(error.message || 'Errore durante l\'aggiunta della categoria', 'error');
-        })
-        .finally(() => {
-            // Ripristina il testo del pulsante
+        };
+        
+        xhr.onerror = function() {
             submitBtn.innerHTML = originalBtnText;
             submitBtn.disabled = false;
-        });
+            showNotification('Errore di rete durante l\'aggiunta della categoria', 'error');
+        };
+        
+        xhr.send(formData);
     });
 }
 
@@ -180,43 +200,61 @@ function setupArticleForm() {
         submitBtn.innerHTML = '<div class="spinner" style="width:20px;height:20px;margin:0 auto;"></div>';
         submitBtn.disabled = true;
         
-        fetch('/menu_digitale/api/add_article.php', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Authorization': 'Bearer ' + token
-            }
-        })
-        .then(response => {
-            return response.json().then(data => {
-                if (!response.ok) {
-                    throw new Error(data.message || 'Errore durante l\'aggiunta dell\'articolo');
+        // Usa XMLHttpRequest invece di fetch
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '/menu_digitale/api/add_article.php');
+        xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+        
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                // Ripristina il testo del pulsante
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                
+                if (xhr.status === 200) {
+                    try {
+                        const response = JSON.parse(xhr.responseText);
+                        if (response.success) {
+                            showNotification('Articolo aggiunto con successo!', 'success');
+                            form.reset();
+                            document.getElementById('articleImagePreview').style.display = 'none';
+                            
+                            // Ricarica gli articoli esistenti con un breve ritardo
+                            setTimeout(() => {
+                                if (typeof loadExistingArticles === 'function') {
+                                    loadExistingArticles();
+                                }
+                                
+                                // Ricarica anche le categorie per aggiornare il conteggio degli articoli
+                                if (typeof loadExistingCategories === 'function') {
+                                    loadExistingCategories();
+                                }
+                            }, 500);
+                        } else {
+                            showNotification(response.message || 'Errore durante l\'aggiunta dell\'articolo', 'error');
+                        }
+                    } catch (e) {
+                        console.error('Errore nel parsing JSON:', e);
+                        console.error('Risposta ricevuta:', xhr.responseText);
+                        showNotification('Errore nel parsing della risposta dal server', 'error');
+                    }
+                } else {
+                    showNotification('Errore del server: ' + xhr.status, 'error');
                 }
-                return data;
-            });
-        })
-        .then(data => {
-            showNotification('Articolo aggiunto con successo!', 'success');
-            form.reset();
-            document.getElementById('articleImagePreview').style.display = 'none';
-            // Ricarica gli articoli esistenti
-            if (typeof loadExistingArticles === 'function') {
-                loadExistingArticles();
             }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            showNotification(error.message || 'Errore durante l\'aggiunta dell\'articolo', 'error');
-        })
-        .finally(() => {
-            // Ripristina il testo del pulsante
+        };
+        
+        xhr.onerror = function() {
             submitBtn.innerHTML = originalBtnText;
             submitBtn.disabled = false;
-        });
+            showNotification('Errore di rete durante l\'aggiunta dell\'articolo', 'error');
+        };
+        
+        xhr.send(formData);
     });
 }
 
-function loadCategoriesForSelect() {
+function loadCategoriesForSelect(preSelectCategoryId = null) {
     const categorySelect = document.getElementById('articleCategory');
     const categoryFilter = document.getElementById('categoryFilter');
     
@@ -264,6 +302,11 @@ function loadCategoriesForSelect() {
                 categoryFilter.appendChild(filterOption);
             }
         });
+        
+        // Preseleziona la categoria se specificata
+        if (preSelectCategoryId && categorySelect) {
+            categorySelect.value = preSelectCategoryId;
+        }
     })
     .catch(error => {
         console.error('Error:', error);
