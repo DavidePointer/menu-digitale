@@ -3,6 +3,15 @@
 require_once '../config.php';
 require_once 'auth_check.php';
 
+// Debug: salva i dati ricevuti in un file di log
+$debugData = [
+    'method' => $_SERVER['REQUEST_METHOD'],
+    'post' => $_POST,
+    'files' => isset($_FILES) ? $_FILES : [],
+    'time' => date('Y-m-d H:i:s')
+];
+file_put_contents('../debug_update_article.log', json_encode($debugData, JSON_PRETTY_PRINT) . "\n\n", FILE_APPEND);
+
 // Configura CORS
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");

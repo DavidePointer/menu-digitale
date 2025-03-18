@@ -923,23 +923,41 @@
                 formData.append('image', imageInput.files[0]);
             }
             
+            console.log('Invio dati categoria:', {
+                category_id: categoryId,
+                name: document.getElementById('editCategoryName').value,
+                hasImage: imageInput.files.length > 0
+            });
+            
             fetch('/menu_digitale/api/update_category.php', {
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.json())
+            .then(response => {
+                console.log('Status:', response.status);
+                return response.text().then(text => {
+                    try {
+                        return JSON.parse(text);
+                    } catch (e) {
+                        console.error('Errore nel parsing JSON:', e);
+                        console.log('Risposta text:', text);
+                        throw new Error('Risposta non valida dal server: ' + text);
+                    }
+                });
+            })
             .then(data => {
+                console.log('Risposta update categoria:', data);
                 if (data.success) {
                     alert('Categoria aggiornata con successo!');
                     document.getElementById('editCategoryModal').style.display = 'none';
                     loadCategories(); // Ricarica le categorie
                 } else {
-                    alert('Errore: ' + data.message);
+                    alert('Errore: ' + (data.message || 'Errore sconosciuto'));
                 }
             })
             .catch(error => {
                 console.error('Errore:', error);
-                alert('Errore nella comunicazione con il server');
+                alert('Errore nella comunicazione con il server: ' + error.message);
             });
         }
         
@@ -1099,23 +1117,44 @@
                 formData.append('image', imageInput.files[0]);
             }
             
+            console.log('Invio dati articolo:', {
+                article_id: articleId,
+                category_id: document.getElementById('editArticleCategory').value,
+                name: document.getElementById('editArticleName').value,
+                description: document.getElementById('editArticleDescription').value.substr(0, 30) + '...',
+                price: document.getElementById('editArticlePrice').value,
+                hasImage: imageInput.files.length > 0
+            });
+            
             fetch('/menu_digitale/api/update_article.php', {
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.json())
+            .then(response => {
+                console.log('Status:', response.status);
+                return response.text().then(text => {
+                    try {
+                        return JSON.parse(text);
+                    } catch (e) {
+                        console.error('Errore nel parsing JSON:', e);
+                        console.log('Risposta text:', text);
+                        throw new Error('Risposta non valida dal server: ' + text);
+                    }
+                });
+            })
             .then(data => {
+                console.log('Risposta update articolo:', data);
                 if (data.success) {
                     alert('Articolo aggiornato con successo!');
                     document.getElementById('editArticleModal').style.display = 'none';
                     loadArticles(); // Ricarica gli articoli
                 } else {
-                    alert('Errore: ' + data.message);
+                    alert('Errore: ' + (data.message || 'Errore sconosciuto'));
                 }
             })
             .catch(error => {
                 console.error('Errore:', error);
-                alert('Errore nella comunicazione con il server');
+                alert('Errore nella comunicazione con il server: ' + error.message);
             });
         }
         
