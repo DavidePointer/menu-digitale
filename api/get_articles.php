@@ -9,6 +9,10 @@ header("Access-Control-Allow-Methods: GET, OPTIONS");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
+// Abilita la visualizzazione di errori per il debug
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // Per le richieste OPTIONS, termina qui
 if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     http_response_code(200);
@@ -24,37 +28,75 @@ if (isset($_GET['category_id']) && !empty($_GET['category_id'])) {
     $params[':category_id'] = $_GET['category_id'];
 }
 
+// Struttura di risposta
+$response = [
+    'success' => false,
+    'message' => '',
+    'data' => null,
+    'debug' => [
+        'dbHost' => $dbHost,
+        'dbName' => $dbName,
+        'dbUser' => $dbUser,
+        'dbPass' => '******', // nascosto per sicurezza
+        'php_version' => PHP_VERSION,
+        'tables_check' => []
+    ]
+];
+
 // Connessione al database
 try {
-    // Configurazione per vedere tutti gli errori
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-    
-    $db = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-    // Verifica se le tabelle esistono prima di eseguire la query
-    $checkTableQuery = "SHOW TABLES LIKE 'articles'";
-    $stmt = $db->prepare($checkTableQuery);
-    $stmt->execute();
-    $articlesTableExists = $stmt->rowCount() > 0;
-    
-    $checkTableQuery = "SHOW TABLES LIKE 'categories'";
-    $stmt = $db->prepare($checkTableQuery);
-    $stmt->execute();
-    $categoriesTableExists = $stmt->rowCount() > 0;
-    
-    if (!$articlesTableExists || !$categoriesTableExists) {
-        throw new Exception('Le tabelle necessarie non esistono nel database.');
+    // Test connessione database
+    try {
+        $db = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $response['debug']['connection'] = 'success';
+    } catch (PDOException $e) {
+        $response['debug']['connection'] = 'failed';
+        $response['debug']['connection_error'] = $e->getMessage();
+        throw new Exception('Connessione al database fallita: ' . $e->getMessage());
     }
     
-    // Prepara e esegui la query con join alla tabella categorie per ottenere il nome della categoria
-    // Gestione più robusta con LEFT JOIN per evitare errori se una categoria è stata eliminata
-    $query = "SELECT a.*, c.name as category_name 
-              FROM articles a 
-              LEFT JOIN categories c ON a.category_id = c.category_id 
-              " . ($categoryFilter ? $categoryFilter : "") . " 
-              ORDER BY a.category_id, a.name";
+    // Verifica se le tabelle esistono
+    $tables = ['users', 'categories', 'articles'];
+    $allTablesExist = true;
+    
+    foreach ($tables as $table) {
+        $checkTableQuery = "SHOW TABLES LIKE '$table'";
+        $stmt = $db->prepare($checkTableQuery);
+        $stmt->execute();
+        $tableExists = $stmt->rowCount() > 0;
+        $response['debug']['tables_check'][$table] = $tableExists ? 'exists' : 'missing';
+        
+        if (!$tableExists) {
+            $allTablesExist = false;
+        }
+    }
+    
+    if (!$allTablesExist) {
+        $response['message'] = 'Alcune tabelle necessarie non esistono nel database.';
+        http_response_code(500);
+        echo json_encode($response);
+        exit;
+    }
+    
+    // Conta gli articoli per il debug
+    $stmt = $db->prepare("SELECT COUNT(*) FROM articles");
+    $stmt->execute();
+    $articlesCount = $stmt->fetchColumn();
+    $response['debug']['articles_count'] = $articlesCount;
+    
+    // Conta le categorie per il debug
+    $stmt = $db->prepare("SELECT COUNT(*) FROM categories");
+    $stmt->execute();
+    $categoriesCount = $stmt->fetchColumn();
+    $response['debug']['categories_count'] = $categoriesCount;
+    
+    // Query semplificata per evitare problemi di JOIN
+    $query = "SELECT a.* FROM articles a";
+    if ($categoryFilter) {
+        $query .= " $categoryFilter";
+    }
+    $query .= " ORDER BY a.category_id, a.name";
     
     $stmt = $db->prepare($query);
     
@@ -64,25 +106,34 @@ try {
     }
     
     $stmt->execute();
-    
-    // Ottieni tutti gli articoli
     $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
-    // Restituisci gli articoli come JSON
-    echo json_encode($articles, JSON_NUMERIC_CHECK);
+    // Ottieni le informazioni delle categorie
+    $categoryInfo = [];
+    $stmt = $db->prepare("SELECT category_id, name FROM categories");
+    $stmt->execute();
+    $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
-} catch(PDOException $e) {
-    // Errore di database
-    error_log("Database error in get_articles.php: " . $e->getMessage());
-    http_response_code(500); // Internal Server Error
-    echo json_encode([
-        'error' => 'Database error', 
-        'message' => $e->getMessage(),
-        'query' => isset($query) ? $query : 'No query created yet'
-    ]);
+    foreach ($categories as $category) {
+        $categoryInfo[$category['category_id']] = $category['name'];
+    }
+    
+    // Aggiungi il nome della categoria a ciascun articolo
+    foreach ($articles as &$article) {
+        $categoryId = $article['category_id'];
+        $article['category_name'] = isset($categoryInfo[$categoryId]) ? $categoryInfo[$categoryId] : 'Categoria Sconosciuta';
+    }
+    
+    // Successo - restituisci gli articoli
+    $response['success'] = true;
+    $response['message'] = 'Articoli caricati con successo';
+    $response['data'] = $articles;
+    
+    echo json_encode($response, JSON_NUMERIC_CHECK);
+    
 } catch(Exception $e) {
-    // Altri errori
+    $response['message'] = 'Errore: ' . $e->getMessage();
     error_log("Error in get_articles.php: " . $e->getMessage());
-    http_response_code(500); // Internal Server Error
-    echo json_encode(['error' => 'Error', 'message' => $e->getMessage()]);
+    http_response_code(500);
+    echo json_encode($response);
 } 

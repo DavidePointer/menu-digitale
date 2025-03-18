@@ -746,20 +746,36 @@
                     }
                     return response.json();
                 })
-                .then(articles => {
-                    displayArticles(articles);
+                .then(response => {
+                    // Gestire la nuova struttura della risposta
+                    console.log('Risposta API:', response); // Debug info
                     
-                    // Aggiungi event listener per il filtro
-                    document.getElementById('filterCategory').addEventListener('change', function() {
-                        const categoryId = this.value;
-                        if (categoryId === 'all') {
-                            displayArticles(articles);
-                        } else {
-                            const filteredArticles = articles.filter(article => 
-                                article.category_id == categoryId);
-                            displayArticles(filteredArticles);
+                    if (response.success) {
+                        const articles = response.data || [];
+                        displayArticles(articles);
+                        
+                        // Aggiungi event listener per il filtro
+                        document.getElementById('filterCategory').addEventListener('change', function() {
+                            const categoryId = this.value;
+                            if (categoryId === 'all') {
+                                displayArticles(articles);
+                            } else {
+                                const filteredArticles = articles.filter(article => 
+                                    article.category_id == categoryId);
+                                displayArticles(filteredArticles);
+                            }
+                        });
+                    } else {
+                        // Gestisci l'errore
+                        console.error('Errore API:', response.message);
+                        const articlesList = document.getElementById('articlesList');
+                        articlesList.innerHTML = `<div class="no-items">Errore nel caricamento degli articoli: ${response.message}</div>`;
+                        
+                        // Debug info
+                        if (response.debug) {
+                            console.log('Debug info:', response.debug);
                         }
-                    });
+                    }
                 })
                 .catch(error => {
                     console.error('Errore nel caricamento degli articoli:', error);
