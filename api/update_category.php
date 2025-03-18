@@ -44,8 +44,7 @@ $newImageName = '';
 
 // Connessione al database
 try {
-    $db = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db = getDBConnection();
     
     // Ottieni l'immagine attuale
     $stmt = $db->prepare("SELECT image FROM categories WHERE category_id = :category_id");
@@ -112,5 +111,5 @@ try {
     // Errore di database
     error_log("Database error: " . $e->getMessage());
     http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Errore del server']);
+    echo json_encode(['success' => false, 'message' => 'Errore del server', 'debug' => $e->getMessage()]);
 } 

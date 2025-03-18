@@ -52,8 +52,7 @@ $newImageName = '';
 
 // Connessione al database
 try {
-    $db = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db = getDBConnection();
     
     // Ottieni l'immagine attuale
     $stmt = $db->prepare("SELECT image FROM articles WHERE article_id = :article_id");

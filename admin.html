@@ -831,9 +831,15 @@
             // Carica i dati della categoria
             fetch(`/menu_digitale/api/get_category.php?id=${categoryId}`)
                 .then(response => response.json())
-                .then(category => {
-                    // Crea e mostra il modal di modifica
-                    showEditCategoryModal(category);
+                .then(response => {
+                    console.log('Risposta API categoria:', response); // Debug
+                    // Verifica che la risposta contenga i dati corretti
+                    if (response.success && response.data) {
+                        // Crea e mostra il modal di modifica
+                        showEditCategoryModal(response.data);
+                    } else {
+                        throw new Error(response.message || 'Errore nel caricamento dei dati');
+                    }
                 })
                 .catch(error => {
                     console.error('Errore nel caricamento della categoria:', error);
@@ -967,9 +973,15 @@
             // Carica i dati dell'articolo
             fetch(`/menu_digitale/api/get_article.php?id=${articleId}`)
                 .then(response => response.json())
-                .then(article => {
-                    // Crea e mostra il modal di modifica
-                    showEditArticleModal(article);
+                .then(response => {
+                    console.log('Risposta API articolo:', response); // Debug
+                    // Verifica che la risposta contenga i dati corretti
+                    if (response.success && response.data) {
+                        // Crea e mostra il modal di modifica
+                        showEditArticleModal(response.data);
+                    } else {
+                        throw new Error(response.message || 'Errore nel caricamento dei dati');
+                    }
                 })
                 .catch(error => {
                     console.error('Errore nel caricamento dell\'articolo:', error);
