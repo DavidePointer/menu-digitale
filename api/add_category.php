@@ -1,4 +1,18 @@
 <?php
+// Richiedi autenticazione
+require_once 'auth_check.php';
+
+// Headers CORS
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type');
+
+// Se è una richiesta OPTIONS, termina qui
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    exit(0);
+}
+
 // Configurazione dei log
 ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/../logs/debug.log');
@@ -9,8 +23,6 @@ if (!file_exists(__DIR__ . '/../logs')) {
 error_log("=== Inizio elaborazione add_category.php ===");
 
 require_once '../config.php';
-
-header('Content-Type: application/json');
 
 // Abilita la visualizzazione degli errori
 ini_set('display_errors', 1);
