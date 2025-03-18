@@ -22,8 +22,7 @@ ini_set('display_errors', 1);
 // Connessione al database
 try {
     // Connessione al database
-    $db = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db = getDBConnection();
     
     // Tabelle create
     $tablesCreated = [];
@@ -111,7 +110,12 @@ try {
     echo json_encode([
         'success' => true, 
         'message' => 'Tabelle create con successo', 
-        'tables_created' => $tablesCreated
+        'tables_created' => $tablesCreated,
+        'database_info' => [
+            'server' => DB_SERVER,
+            'name' => DB_NAME,
+            'user' => DB_USER
+        ]
     ]);
     
 } catch(PDOException $e) {
@@ -123,6 +127,11 @@ try {
     echo json_encode([
         'success' => false, 
         'message' => 'Errore nella creazione delle tabelle',
-        'error' => $e->getMessage()
+        'error' => $e->getMessage(),
+        'database_info' => [
+            'server' => DB_SERVER,
+            'name' => DB_NAME,
+            'user' => DB_USER
+        ]
     ]);
 } 
