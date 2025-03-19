@@ -10,6 +10,7 @@ Sistema di visualizzazione menu digitale per ristoranti/locali, personalizzato p
 - **Design moderno**: Animazioni CSS e interfaccia intuitiva
 - **Ricerca in tempo reale**: Funzionalità di ricerca istantanea per gli articoli
 - **Pannello Admin**: Interfaccia sicura per la gestione dei contenuti
+- **Gestione immagini flessibile**: Supporto per immagini opzionali in categorie e articoli
 
 ### Backend
 - **PHP**: API RESTful per la gestione dei dati
@@ -53,8 +54,8 @@ menu_digitale/
 ## Funzionalità Principali
 
 ### Menu Digitale (Pubblico)
-- Visualizzazione categorie con immagini
-- Elenco articoli per categoria
+- Visualizzazione categorie con immagini opzionali
+- Elenco articoli per categoria con immagini opzionali
 - Ricerca articoli in tempo reale
 - Layout responsivo per tutti i dispositivi
 - Ottimizzazione performance (animazioni ottimizzate)
@@ -63,7 +64,7 @@ menu_digitale/
 ### Pannello Amministrativo
 - Autenticazione sicura con username e password
 - Gestione completa categorie e articoli (CRUD)
-- Caricamento immagini per categorie e articoli
+- Caricamento immagini opzionale per categorie e articoli
 - Modifica prezzi e descrizioni
 - Cambio password dell'amministratore
 - Sistema auto-resiliente con auto-riparazione della struttura del database
@@ -111,6 +112,8 @@ Il sistema è progettato per essere auto-resiliente:
 - Sistema di autenticazione
 - CRUD completo per categorie e articoli
 - Auto-riparazione struttura database
+- Gestione immagini opzionale per categorie e articoli
+- Miglioramento della resilienza del sistema
 
 ### Futuro
 - Sistema multi-tenant per più clienti

@@ -65,6 +65,8 @@ function displayImagePreview(input, previewElement) {
         };
         
         reader.readAsDataURL(input.files[0]);
+    } else {
+        previewElement.style.display = 'none';
     }
 }
 
@@ -75,15 +77,9 @@ function setupCategoryForm() {
         e.preventDefault();
         
         const nameInput = document.getElementById('categoryName');
-        const imageInput = document.getElementById('categoryImage');
         
         if (!nameInput.value.trim()) {
             showNotification('Inserisci un nome per la categoria', 'error');
-            return;
-        }
-        
-        if (!imageInput.files || !imageInput.files[0]) {
-            showNotification('Seleziona un\'immagine per la categoria', 'error');
             return;
         }
         
@@ -98,7 +94,7 @@ function setupCategoryForm() {
         
         // Usa XMLHttpRequest per maggiore controllo sulla richiesta
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', '/menu_digitale/api/add_category_simple.php');
+        xhr.open('POST', '/menu_digitale/api/add_category.php');
         xhr.setRequestHeader('Authorization', 'Bearer ' + token);
         
         xhr.onreadystatechange = function() {
@@ -169,7 +165,6 @@ function setupArticleForm() {
         const nameInput = document.getElementById('articleName');
         const categoryInput = document.getElementById('articleCategory');
         const priceInput = document.getElementById('articlePrice');
-        const imageInput = document.getElementById('articleImage');
         
         if (!nameInput.value.trim()) {
             showNotification('Inserisci un nome per l\'articolo', 'error');
@@ -183,11 +178,6 @@ function setupArticleForm() {
         
         if (!priceInput.value || isNaN(priceInput.value) || parseFloat(priceInput.value) < 0) {
             showNotification('Inserisci un prezzo valido per l\'articolo', 'error');
-            return;
-        }
-        
-        if (!imageInput.files || !imageInput.files[0]) {
-            showNotification('Seleziona un\'immagine per l\'articolo', 'error');
             return;
         }
         

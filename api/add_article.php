@@ -33,57 +33,66 @@ try {
     logAuthMessage("Richiesta add_article.php ricevuta");
 
     // Validazione input
-    $requiredFields = ['category_id', 'name', 'description', 'price'];
-    foreach ($requiredFields as $field) {
-        if (!isset($_POST[$field]) || empty($_POST[$field])) {
-            logAuthMessage("Campo $field mancante per aggiunta articolo");
-            jsonResponse(false, "Campo $field richiesto");
+    if (!isset($_POST['name']) || empty($_POST['name'])) {
+        logAuthMessage("Nome articolo mancante per aggiunta articolo");
+        jsonResponse(false, 'Nome articolo richiesto');
+    }
+
+    if (!isset($_POST['category_id']) || empty($_POST['category_id'])) {
+        logAuthMessage("Categoria mancante per aggiunta articolo");
+        jsonResponse(false, 'Categoria richiesta');
+    }
+
+    if (!isset($_POST['price']) || !is_numeric($_POST['price']) || $_POST['price'] < 0) {
+        logAuthMessage("Prezzo non valido per aggiunta articolo");
+        jsonResponse(false, 'Prezzo non valido');
+    }
+
+    $imageUrl = '';  // Inizializziamo con stringa vuota invece di null
+
+    // Gestione upload immagine se presente
+    if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+        $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/menu_digitale/images/articles/';
+        
+        if (!file_exists($uploadDir)) {
+            if (!mkdir($uploadDir, 0777, true)) {
+                logAuthMessage("Errore nella creazione della directory: " . $uploadDir);
+                jsonResponse(false, 'Impossibile creare la directory per le immagini');
+            }
         }
-    }
 
-    if (!isset($_FILES['image']) || $_FILES['image']['error'] !== UPLOAD_ERR_OK) {
-        logAuthMessage("Immagine mancante per aggiunta articolo. Errore: " . (isset($_FILES['image']) ? $_FILES['image']['error'] : 'File non inviato'));
-        jsonResponse(false, 'Immagine richiesta');
-    }
-
-    // Gestione upload immagine
-    $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/menu_digitale/images/articles/';
-    
-    if (!file_exists($uploadDir)) {
-        if (!mkdir($uploadDir, 0777, true)) {
-            logAuthMessage("Errore nella creazione della directory: " . $uploadDir);
-            jsonResponse(false, 'Impossibile creare la directory per le immagini');
+        // Verifica permessi directory
+        if (!is_writable($uploadDir)) {
+            logAuthMessage("Directory non scrivibile: " . $uploadDir);
+            jsonResponse(false, 'Directory non scrivibile');
         }
-    }
 
-    // Verifica permessi directory
-    if (!is_writable($uploadDir)) {
-        logAuthMessage("Directory non scrivibile: " . $uploadDir);
-        jsonResponse(false, 'Directory non scrivibile');
-    }
+        $fileName = uniqid() . '_' . basename($_FILES['image']['name']);
+        $uploadFile = $uploadDir . $fileName;
 
-    $fileName = uniqid() . '_' . basename($_FILES['image']['name']);
-    $uploadFile = $uploadDir . $fileName;
+        if (!move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
+            logAuthMessage("Errore nel caricamento dell'immagine: " . print_r(error_get_last(), true));
+            jsonResponse(false, 'Errore nel caricamento dell\'immagine');
+        }
 
-    if (!move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
-        logAuthMessage("Errore nel caricamento dell'immagine: " . print_r(error_get_last(), true));
-        jsonResponse(false, 'Errore nel caricamento dell\'immagine');
+        $imageUrl = 'images/articles/' . $fileName;
     }
 
     // Inserimento nel database
     $pdo = getDBConnection();
-    $stmt = $pdo->prepare('INSERT INTO articles (category_id, name, description, price, image_url) VALUES (?, ?, ?, ?, ?)');
-    $imageUrl = 'images/articles/' . $fileName;
+    $stmt = $pdo->prepare('INSERT INTO articles (name, category_id, description, price, image_url) VALUES (?, ?, ?, ?, ?)');
     
     if (!$stmt->execute([
-        $_POST['category_id'],
         $_POST['name'],
-        $_POST['description'],
+        $_POST['category_id'],
+        $_POST['description'] ?? '',
         $_POST['price'],
         $imageUrl
     ])) {
-        // Rimuovi il file se l'inserimento fallisce
-        unlink($uploadFile);
+        // Rimuovi il file se l'inserimento fallisce e se esiste un'immagine
+        if ($imageUrl) {
+            @unlink($uploadFile);
+        }
         $dbError = $stmt->errorInfo();
         logAuthMessage("Errore nell'inserimento dell'articolo: " . $dbError[2]);
         jsonResponse(false, 'Errore nell\'inserimento dell\'articolo');
@@ -91,7 +100,7 @@ try {
 
     $articleId = $pdo->lastInsertId();
     logAuthMessage("Articolo ID $articleId aggiunto con successo");
-    jsonResponse(true, 'Articolo aggiunto con successo');
+    jsonResponse(true, 'Articolo aggiunto con successo', ['article_id' => $articleId]);
 
 } catch (Exception $e) {
     logAuthMessage("Errore in add_article.php: " . $e->getMessage());
