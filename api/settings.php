@@ -248,12 +248,17 @@ function updateSetting($conn, $key, $value) {
     $stmt = $conn->prepare("SELECT COUNT(*) FROM settings WHERE setting_key = ?");
     $stmt->execute([$key]);
     $exists = (int)$stmt->fetchColumn() > 0;
-    
+
     if ($exists) {
+        // Aggiorna il valore esistente
         $stmt = $conn->prepare("UPDATE settings SET setting_value = ? WHERE setting_key = ?");
         $stmt->execute([$value, $key]);
     } else {
+        // Inserisci una nuova impostazione
         $stmt = $conn->prepare("INSERT INTO settings (setting_key, setting_value) VALUES (?, ?)");
         $stmt->execute([$key, $value]);
     }
+    
+    logAuthMessage("Impostazione $key aggiornata con successo");
+    return true;
 } 

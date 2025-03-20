@@ -156,15 +156,14 @@ function saveContactInfo(e) {
     const weekendHours = document.getElementById('weekendHours').value;
     
     // Prepara i dati da inviare
-    const contactData = {
-        address: address,
-        phone: phone,
-        email: email,
-        weekdayHours: weekdayHours,
-        weekendHours: weekendHours
-    };
+    const formData = new FormData();
+    formData.append('address', address);
+    formData.append('phone', phone);
+    formData.append('email', email);
+    formData.append('weekdayHours', weekdayHours);
+    formData.append('weekendHours', weekendHours);
     
-    console.log("Dati di contatto da inviare:", contactData);
+    console.log("Dati di contatto da inviare:", Object.fromEntries(formData));
     
     // Get auth token
     const token = localStorage.getItem('auth_token');
@@ -173,10 +172,9 @@ function saveContactInfo(e) {
     fetch('/menu_digitale/api/settings.php', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + token
         },
-        body: JSON.stringify(contactData)
+        body: formData
     })
     .then(response => {
         console.log("Risposta ricevuta:", response.status, response.statusText);
@@ -191,6 +189,8 @@ function saveContactInfo(e) {
             const data = JSON.parse(text);
             if (data.success) {
                 showNotification('Informazioni di contatto salvate con successo!', 'success');
+                // Ricarica le impostazioni per aggiornare l'interfaccia
+                loadSettings();
             } else {
                 showNotification('Errore: ' + data.message, 'error');
             }

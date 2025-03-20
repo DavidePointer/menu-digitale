@@ -18,6 +18,7 @@ class MenuUI {
             await this.loadCategories();
             await this.loadAllMenuItems();
             this.initializeSearch();
+            await this.loadSettings();
         } catch (error) {
             console.error('Initialization error:', error);
         }
@@ -392,6 +393,74 @@ class MenuUI {
                 modal.remove();
             }
         });
+    }
+
+    // Carica le impostazioni dal server
+    async loadSettings() {
+        console.log("Caricamento impostazioni...");
+        
+        try {
+            const response = await fetch('/menu_digitale/api/settings.php');
+            const data = await response.json();
+            if (data.success) {
+                await this.applySettings(data.data);
+            } else {
+                console.error('Errore nel caricamento delle impostazioni:', data.message);
+            }
+        } catch (error) {
+            console.error('Errore nel caricamento delle impostazioni:', error);
+        }
+    }
+
+    // Applica le impostazioni alla pagina
+    async applySettings(settings) {
+        if (settings.general) {
+            // Applica il nome del sito
+            const siteNameElement = document.querySelector('.site-name');
+            if (siteNameElement && settings.general.siteName) {
+                siteNameElement.textContent = settings.general.siteName;
+                document.title = settings.general.siteName;
+            }
+
+            // Applica il tagline
+            const taglineElement = document.querySelector('.site-tagline');
+            if (taglineElement && settings.general.siteTagline) {
+                taglineElement.textContent = settings.general.siteTagline;
+            }
+
+            // Applica il logo
+            const logoElement = document.querySelector('.site-logo');
+            if (logoElement && settings.general.logoUrl) {
+                logoElement.src = settings.general.logoUrl;
+                logoElement.style.display = 'block';
+            }
+
+            // Applica i colori personalizzati
+            if (settings.general.primaryColor) {
+                document.documentElement.style.setProperty('--primary-color', settings.general.primaryColor);
+            }
+            if (settings.general.accentColor) {
+                document.documentElement.style.setProperty('--accent-color', settings.general.accentColor);
+            }
+        }
+
+        if (settings.contact) {
+            // Applica le informazioni di contatto
+            const contactElements = {
+                address: document.querySelector('.contact-address'),
+                phone: document.querySelector('.contact-phone'),
+                email: document.querySelector('.contact-email'),
+                weekdayHours: document.querySelector('.weekday-hours'),
+                weekendHours: document.querySelector('.weekend-hours')
+            };
+
+            for (const [key, element] of Object.entries(contactElements)) {
+                if (element && settings.contact[key]) {
+                    element.textContent = settings.contact[key];
+                    element.style.display = 'block';
+                }
+            }
+        }
     }
 }
 

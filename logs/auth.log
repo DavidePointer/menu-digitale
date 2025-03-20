@@ -3908,3 +3908,2259 @@ Stack trace:
 )
 
 2025-03-19 15:12:16 - Utente autenticato: admin
+2025-03-19 18:49:54 - Verifica token richiesta - Metodo: POST
+2025-03-19 18:49:54 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:49:54 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 18:49:54 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:49:54 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:49:54 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:49:54 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406296
+)
+
+2025-03-19 18:49:54 - Utente autenticato: admin
+2025-03-19 18:49:54 - verifyToken: token valido
+2025-03-19 18:49:54 - Token valido per utente: admin
+2025-03-19 18:49:54 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:49:54 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:49:54 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406594
+)
+
+2025-03-19 18:49:54 - Utente autenticato: admin
+2025-03-19 18:49:54 - Verifica token richiesta - Metodo: POST
+2025-03-19 18:49:54 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:49:54 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 18:49:54 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:49:54 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:49:54 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:49:54 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406594
+)
+
+2025-03-19 18:49:54 - Utente autenticato: admin
+2025-03-19 18:49:54 - verifyToken: token valido
+2025-03-19 18:49:54 - Token valido per utente: admin
+2025-03-19 18:49:54 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:49:54 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:49:54 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406594
+)
+
+2025-03-19 18:49:54 - Utente autenticato: admin
+2025-03-19 18:49:54 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:49:54 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:49:54 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406594
+)
+
+2025-03-19 18:49:54 - Utente autenticato: admin
+2025-03-19 18:50:01 - Verifica token richiesta - Metodo: POST
+2025-03-19 18:50:01 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:50:01 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 18:50:01 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:50:01 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:50:01 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:50:01 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406594
+)
+
+2025-03-19 18:50:01 - Utente autenticato: admin
+2025-03-19 18:50:01 - verifyToken: token valido
+2025-03-19 18:50:01 - Token valido per utente: admin
+2025-03-19 18:50:01 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:50:01 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:50:01 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406601
+)
+
+2025-03-19 18:50:01 - Utente autenticato: admin
+2025-03-19 18:50:01 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:50:01 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:50:01 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406601
+)
+
+2025-03-19 18:50:01 - Utente autenticato: admin
+2025-03-19 18:50:01 - Verifica token richiesta - Metodo: POST
+2025-03-19 18:50:01 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:50:01 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 18:50:01 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:50:01 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:50:01 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:50:01 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406601
+)
+
+2025-03-19 18:50:01 - Utente autenticato: admin
+2025-03-19 18:50:01 - verifyToken: token valido
+2025-03-19 18:50:01 - Token valido per utente: admin
+2025-03-19 18:50:01 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:50:01 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:50:01 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406601
+)
+
+2025-03-19 18:50:01 - Utente autenticato: admin
+2025-03-19 18:52:21 - Verifica token richiesta - Metodo: POST
+2025-03-19 18:52:21 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:52:21 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 18:52:21 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:52:21 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:21 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:21 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406601
+)
+
+2025-03-19 18:52:21 - Utente autenticato: admin
+2025-03-19 18:52:21 - verifyToken: token valido
+2025-03-19 18:52:21 - Token valido per utente: admin
+2025-03-19 18:52:21 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:21 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:21 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406741
+)
+
+2025-03-19 18:52:21 - Utente autenticato: admin
+2025-03-19 18:52:21 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:21 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:21 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406741
+)
+
+2025-03-19 18:52:21 - Utente autenticato: admin
+2025-03-19 18:52:21 - Verifica token richiesta - Metodo: POST
+2025-03-19 18:52:21 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:52:21 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 18:52:21 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:52:21 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:21 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:21 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406741
+)
+
+2025-03-19 18:52:21 - Utente autenticato: admin
+2025-03-19 18:52:21 - verifyToken: token valido
+2025-03-19 18:52:21 - Token valido per utente: admin
+2025-03-19 18:52:21 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:21 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:21 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406741
+)
+
+2025-03-19 18:52:21 - Utente autenticato: admin
+2025-03-19 18:52:28 - Verifica token richiesta - Metodo: POST
+2025-03-19 18:52:28 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:52:28 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 18:52:28 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:52:28 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:28 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:28 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406741
+)
+
+2025-03-19 18:52:28 - Utente autenticato: admin
+2025-03-19 18:52:28 - verifyToken: token valido
+2025-03-19 18:52:28 - Token valido per utente: admin
+2025-03-19 18:52:28 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:28 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:28 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406748
+)
+
+2025-03-19 18:52:28 - Utente autenticato: admin
+2025-03-19 18:52:28 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:28 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:28 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406748
+)
+
+2025-03-19 18:52:28 - Utente autenticato: admin
+2025-03-19 18:52:28 - Verifica token richiesta - Metodo: POST
+2025-03-19 18:52:28 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:52:28 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 18:52:28 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:52:28 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:28 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:28 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406748
+)
+
+2025-03-19 18:52:28 - Utente autenticato: admin
+2025-03-19 18:52:28 - verifyToken: token valido
+2025-03-19 18:52:28 - Token valido per utente: admin
+2025-03-19 18:52:28 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:28 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:28 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406748
+)
+
+2025-03-19 18:52:28 - Utente autenticato: admin
+2025-03-19 18:52:32 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:32 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:32 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406748
+)
+
+2025-03-19 18:52:32 - Utente autenticato: admin
+2025-03-19 18:52:32 - Dati ricevuti (FORM): Array
+(
+    [siteName] => Ristorante Pointer
+    [siteTagline] =>  
+    [primaryColor] => #2005f0
+    [accentColor] => #56ae58
+)
+
+2025-03-19 18:52:32 - Impostazioni salvate con successo
+2025-03-19 18:52:32 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:32 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:32 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406748
+)
+
+2025-03-19 18:52:32 - Utente autenticato: admin
+2025-03-19 18:52:33 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:33 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:33 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406748
+)
+
+2025-03-19 18:52:33 - Utente autenticato: admin
+2025-03-19 18:52:33 - Dati ricevuti (FORM): Array
+(
+    [siteName] => Ristorante Pointer
+    [siteTagline] =>  
+    [primaryColor] => #2005f0
+    [accentColor] => #56ae58
+)
+
+2025-03-19 18:52:33 - Impostazioni salvate con successo
+2025-03-19 18:52:33 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:33 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:33 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406748
+)
+
+2025-03-19 18:52:33 - Utente autenticato: admin
+2025-03-19 18:52:46 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:46 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:46 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406748
+)
+
+2025-03-19 18:52:46 - Utente autenticato: admin
+2025-03-19 18:52:46 - Dati ricevuti (FORM): Array
+(
+    [siteName] => Ristorante Pointer
+    [siteTagline] =>  
+    [primaryColor] => #2005f0
+    [accentColor] => #56ae58
+)
+
+2025-03-19 18:52:46 - Impostazioni salvate con successo
+2025-03-19 18:52:46 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:46 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:46 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406748
+)
+
+2025-03-19 18:52:46 - Utente autenticato: admin
+2025-03-19 18:52:54 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:54 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:54 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406748
+)
+
+2025-03-19 18:52:54 - Utente autenticato: admin
+2025-03-19 18:52:54 - Dati ricevuti (FORM): Array
+(
+    [siteName] => Ristorante Pointerrrr
+    [siteTagline] =>  
+    [primaryColor] => #2005f0
+    [accentColor] => #56ae58
+)
+
+2025-03-19 18:52:54 - Impostazioni salvate con successo
+2025-03-19 18:52:54 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:52:54 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:52:54 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406748
+)
+
+2025-03-19 18:52:54 - Utente autenticato: admin
+2025-03-19 18:53:03 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:53:03 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:53:03 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406748
+)
+
+2025-03-19 18:53:03 - Utente autenticato: admin
+2025-03-19 18:53:03 - Dati ricevuti (JSON): {"address":"Via della Repubblica 23, 42123- Reggio Emilia (RE)rrre","phone":"cell. 333 829 3334","email":"info@pointer.re.it","weekdayHours":"9:00-13:00, 15:00-19:00","weekendHours":"Chiuso"}
+2025-03-19 18:53:03 - Impostazioni salvate con successo
+2025-03-19 18:53:03 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:53:03 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:53:03 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406748
+)
+
+2025-03-19 18:53:03 - Utente autenticato: admin
+2025-03-19 18:54:04 - Verifica token richiesta - Metodo: POST
+2025-03-19 18:54:04 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:54:04 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 18:54:04 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:54:04 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:54:04 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:54:04 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406748
+)
+
+2025-03-19 18:54:04 - Utente autenticato: admin
+2025-03-19 18:54:04 - verifyToken: token valido
+2025-03-19 18:54:04 - Token valido per utente: admin
+2025-03-19 18:54:04 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:54:04 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:54:04 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406844
+)
+
+2025-03-19 18:54:04 - Utente autenticato: admin
+2025-03-19 18:54:04 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:54:04 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:54:04 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406844
+)
+
+2025-03-19 18:54:04 - Utente autenticato: admin
+2025-03-19 18:54:04 - Verifica token richiesta - Metodo: POST
+2025-03-19 18:54:04 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:54:04 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 18:54:04 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:54:04 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:54:04 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:54:04 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406844
+)
+
+2025-03-19 18:54:04 - Utente autenticato: admin
+2025-03-19 18:54:04 - verifyToken: token valido
+2025-03-19 18:54:04 - Token valido per utente: admin
+2025-03-19 18:54:04 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:54:04 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:54:04 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406844
+)
+
+2025-03-19 18:54:04 - Utente autenticato: admin
+2025-03-19 18:59:51 - Verifica token richiesta - Metodo: POST
+2025-03-19 18:59:51 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:59:51 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 18:59:51 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:59:51 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:59:51 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:59:51 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742406844
+)
+
+2025-03-19 18:59:51 - Utente autenticato: admin
+2025-03-19 18:59:51 - verifyToken: token valido
+2025-03-19 18:59:51 - Token valido per utente: admin
+2025-03-19 18:59:51 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:59:51 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:59:51 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407191
+)
+
+2025-03-19 18:59:51 - Utente autenticato: admin
+2025-03-19 18:59:51 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:59:51 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:59:51 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407191
+)
+
+2025-03-19 18:59:51 - Utente autenticato: admin
+2025-03-19 18:59:51 - Verifica token richiesta - Metodo: POST
+2025-03-19 18:59:51 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:59:51 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 18:59:51 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:59:51 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:59:51 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:59:51 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407191
+)
+
+2025-03-19 18:59:51 - Utente autenticato: admin
+2025-03-19 18:59:51 - verifyToken: token valido
+2025-03-19 18:59:51 - Token valido per utente: admin
+2025-03-19 18:59:51 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:59:51 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:59:51 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407191
+)
+
+2025-03-19 18:59:51 - Utente autenticato: admin
+2025-03-19 18:59:55 - Verifica token richiesta - Metodo: POST
+2025-03-19 18:59:55 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:59:55 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 18:59:55 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:59:55 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:59:55 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:59:55 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407191
+)
+
+2025-03-19 18:59:55 - Utente autenticato: admin
+2025-03-19 18:59:55 - verifyToken: token valido
+2025-03-19 18:59:55 - Token valido per utente: admin
+2025-03-19 18:59:55 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:59:55 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:59:55 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407195
+)
+
+2025-03-19 18:59:55 - Utente autenticato: admin
+2025-03-19 18:59:55 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:59:55 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:59:55 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407195
+)
+
+2025-03-19 18:59:55 - Utente autenticato: admin
+2025-03-19 18:59:55 - Verifica token richiesta - Metodo: POST
+2025-03-19 18:59:55 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:59:55 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 18:59:55 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 18:59:55 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:59:55 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:59:55 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407195
+)
+
+2025-03-19 18:59:55 - Utente autenticato: admin
+2025-03-19 18:59:55 - verifyToken: token valido
+2025-03-19 18:59:55 - Token valido per utente: admin
+2025-03-19 18:59:55 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 18:59:55 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 18:59:55 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407195
+)
+
+2025-03-19 18:59:55 - Utente autenticato: admin
+2025-03-19 19:00:04 - Verifica token richiesta - Metodo: POST
+2025-03-19 19:00:04 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:00:04 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 19:00:04 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:00:04 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:00:04 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:00:04 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407195
+)
+
+2025-03-19 19:00:04 - Utente autenticato: admin
+2025-03-19 19:00:04 - verifyToken: token valido
+2025-03-19 19:00:04 - Token valido per utente: admin
+2025-03-19 19:00:04 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:00:04 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:00:04 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407204
+)
+
+2025-03-19 19:00:04 - Utente autenticato: admin
+2025-03-19 19:00:04 - Verifica token richiesta - Metodo: POST
+2025-03-19 19:00:04 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:00:04 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 19:00:04 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:00:04 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:00:04 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:00:04 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407204
+)
+
+2025-03-19 19:00:04 - Utente autenticato: admin
+2025-03-19 19:00:04 - verifyToken: token valido
+2025-03-19 19:00:04 - Token valido per utente: admin
+2025-03-19 19:00:04 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:00:04 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:00:04 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407204
+)
+
+2025-03-19 19:00:04 - Utente autenticato: admin
+2025-03-19 19:00:04 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:00:04 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:00:04 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407204
+)
+
+2025-03-19 19:00:04 - Utente autenticato: admin
+2025-03-19 19:00:06 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:00:06 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:00:06 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407204
+)
+
+2025-03-19 19:00:06 - Utente autenticato: admin
+2025-03-19 19:00:06 - Dati ricevuti (FORM): Array
+(
+    [siteName] => Ristorante Pointerrrr
+    [siteTagline] =>  
+    [primaryColor] => #2005f0
+    [accentColor] => #56ae58
+)
+
+2025-03-19 19:00:06 - Impostazione site_name aggiornata con successo
+2025-03-19 19:00:06 - Impostazione site_tagline aggiornata con successo
+2025-03-19 19:00:06 - Impostazione primary_color aggiornata con successo
+2025-03-19 19:00:06 - Impostazione accent_color aggiornata con successo
+2025-03-19 19:00:06 - Impostazioni salvate con successo
+2025-03-19 19:00:06 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:00:06 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:00:06 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407204
+)
+
+2025-03-19 19:00:06 - Utente autenticato: admin
+2025-03-19 19:02:03 - Verifica token richiesta - Metodo: POST
+2025-03-19 19:02:03 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:02:03 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 19:02:03 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:02:03 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:03 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:03 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407204
+)
+
+2025-03-19 19:02:03 - Utente autenticato: admin
+2025-03-19 19:02:03 - verifyToken: token valido
+2025-03-19 19:02:03 - Token valido per utente: admin
+2025-03-19 19:02:03 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:03 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:03 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407323
+)
+
+2025-03-19 19:02:03 - Utente autenticato: admin
+2025-03-19 19:02:03 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:03 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:03 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407323
+)
+
+2025-03-19 19:02:03 - Utente autenticato: admin
+2025-03-19 19:02:03 - Verifica token richiesta - Metodo: POST
+2025-03-19 19:02:03 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:02:03 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 19:02:03 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:02:03 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:03 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:03 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407323
+)
+
+2025-03-19 19:02:03 - Utente autenticato: admin
+2025-03-19 19:02:03 - verifyToken: token valido
+2025-03-19 19:02:03 - Token valido per utente: admin
+2025-03-19 19:02:03 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:03 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:03 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407323
+)
+
+2025-03-19 19:02:03 - Utente autenticato: admin
+2025-03-19 19:02:04 - Verifica token richiesta - Metodo: POST
+2025-03-19 19:02:04 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:02:04 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 19:02:04 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:02:04 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:04 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:04 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407323
+)
+
+2025-03-19 19:02:04 - Utente autenticato: admin
+2025-03-19 19:02:04 - verifyToken: token valido
+2025-03-19 19:02:04 - Token valido per utente: admin
+2025-03-19 19:02:04 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:04 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:04 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407324
+)
+
+2025-03-19 19:02:04 - Utente autenticato: admin
+2025-03-19 19:02:04 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:04 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:04 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407324
+)
+
+2025-03-19 19:02:04 - Utente autenticato: admin
+2025-03-19 19:02:04 - Verifica token richiesta - Metodo: POST
+2025-03-19 19:02:04 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:02:04 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 19:02:04 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:02:04 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:04 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:04 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407324
+)
+
+2025-03-19 19:02:04 - Utente autenticato: admin
+2025-03-19 19:02:04 - verifyToken: token valido
+2025-03-19 19:02:04 - Token valido per utente: admin
+2025-03-19 19:02:04 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:04 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:04 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407324
+)
+
+2025-03-19 19:02:04 - Utente autenticato: admin
+2025-03-19 19:02:10 - Verifica token richiesta - Metodo: POST
+2025-03-19 19:02:10 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:02:10 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 19:02:10 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:02:10 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:10 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:10 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407324
+)
+
+2025-03-19 19:02:10 - Utente autenticato: admin
+2025-03-19 19:02:10 - verifyToken: token valido
+2025-03-19 19:02:10 - Token valido per utente: admin
+2025-03-19 19:02:10 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:10 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:10 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407330
+)
+
+2025-03-19 19:02:10 - Utente autenticato: admin
+2025-03-19 19:02:10 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:10 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:10 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407330
+)
+
+2025-03-19 19:02:10 - Utente autenticato: admin
+2025-03-19 19:02:10 - Verifica token richiesta - Metodo: POST
+2025-03-19 19:02:10 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:02:10 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 19:02:10 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:02:10 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:10 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:10 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407330
+)
+
+2025-03-19 19:02:10 - Utente autenticato: admin
+2025-03-19 19:02:10 - verifyToken: token valido
+2025-03-19 19:02:10 - Token valido per utente: admin
+2025-03-19 19:02:10 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:10 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:10 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407330
+)
+
+2025-03-19 19:02:10 - Utente autenticato: admin
+2025-03-19 19:02:14 - Verifica token richiesta - Metodo: POST
+2025-03-19 19:02:14 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:02:14 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 19:02:14 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:02:14 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:14 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:14 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407330
+)
+
+2025-03-19 19:02:14 - Utente autenticato: admin
+2025-03-19 19:02:14 - verifyToken: token valido
+2025-03-19 19:02:14 - Token valido per utente: admin
+2025-03-19 19:02:14 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:14 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:14 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407334
+)
+
+2025-03-19 19:02:14 - Utente autenticato: admin
+2025-03-19 19:02:14 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:14 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:14 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407334
+)
+
+2025-03-19 19:02:14 - Utente autenticato: admin
+2025-03-19 19:02:14 - Verifica token richiesta - Metodo: POST
+2025-03-19 19:02:14 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:02:14 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 19:02:14 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:02:14 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:14 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:14 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407334
+)
+
+2025-03-19 19:02:14 - Utente autenticato: admin
+2025-03-19 19:02:14 - verifyToken: token valido
+2025-03-19 19:02:14 - Token valido per utente: admin
+2025-03-19 19:02:14 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:14 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:14 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407334
+)
+
+2025-03-19 19:02:14 - Utente autenticato: admin
+2025-03-19 19:02:20 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:20 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:20 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407334
+)
+
+2025-03-19 19:02:20 - Utente autenticato: admin
+2025-03-19 19:02:20 - Dati ricevuti (FORM): Array
+(
+    [siteName] => Ristorante PointerrrrEREEE
+    [siteTagline] =>  
+    [primaryColor] => #2005f0
+    [accentColor] => #56ae58
+)
+
+2025-03-19 19:02:20 - Impostazione site_name aggiornata con successo
+2025-03-19 19:02:20 - Impostazione site_tagline aggiornata con successo
+2025-03-19 19:02:20 - Impostazione primary_color aggiornata con successo
+2025-03-19 19:02:20 - Impostazione accent_color aggiornata con successo
+2025-03-19 19:02:20 - Impostazioni salvate con successo
+2025-03-19 19:02:20 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:20 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:20 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407334
+)
+
+2025-03-19 19:02:20 - Utente autenticato: admin
+2025-03-19 19:02:22 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:22 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:22 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407334
+)
+
+2025-03-19 19:02:22 - Utente autenticato: admin
+2025-03-19 19:02:31 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:31 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:31 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407334
+)
+
+2025-03-19 19:02:31 - Utente autenticato: admin
+2025-03-19 19:02:31 - Dati ricevuti (FORM): Array
+(
+    [siteName] => Ristorante PointerrrrEREEE
+    [siteTagline] =>  
+    [primaryColor] => #2e2a4b
+    [accentColor] => #56ae58
+)
+
+2025-03-19 19:02:31 - Impostazione site_name aggiornata con successo
+2025-03-19 19:02:31 - Impostazione site_tagline aggiornata con successo
+2025-03-19 19:02:31 - Impostazione primary_color aggiornata con successo
+2025-03-19 19:02:31 - Impostazione accent_color aggiornata con successo
+2025-03-19 19:02:31 - Impostazioni salvate con successo
+2025-03-19 19:02:31 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:31 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:31 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407334
+)
+
+2025-03-19 19:02:31 - Utente autenticato: admin
+2025-03-19 19:02:34 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:34 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:34 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407334
+)
+
+2025-03-19 19:02:34 - Utente autenticato: admin
+2025-03-19 19:02:40 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:40 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:40 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407334
+)
+
+2025-03-19 19:02:40 - Utente autenticato: admin
+2025-03-19 19:02:40 - Dati ricevuti (FORM): Array
+(
+    [siteName] => Ristorante PointerrrrEREEE
+    [siteTagline] =>  
+    [primaryColor] => #2e2a4b
+    [accentColor] => #56ae58
+)
+
+2025-03-19 19:02:40 - Impostazione logo_url aggiornata con successo
+2025-03-19 19:02:40 - Impostazione site_name aggiornata con successo
+2025-03-19 19:02:40 - Impostazione site_tagline aggiornata con successo
+2025-03-19 19:02:40 - Impostazione primary_color aggiornata con successo
+2025-03-19 19:02:40 - Impostazione accent_color aggiornata con successo
+2025-03-19 19:02:40 - Impostazioni salvate con successo
+2025-03-19 19:02:40 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:40 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:40 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407334
+)
+
+2025-03-19 19:02:40 - Utente autenticato: admin
+2025-03-19 19:02:42 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:42 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:42 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407334
+)
+
+2025-03-19 19:02:42 - Utente autenticato: admin
+2025-03-19 19:02:53 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:02:53 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:02:53 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407334
+)
+
+2025-03-19 19:02:53 - Utente autenticato: admin
+2025-03-19 19:34:35 - Verifica token richiesta - Metodo: POST
+2025-03-19 19:34:35 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:34:35 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 19:34:35 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:34:35 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:34:35 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:34:35 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742407334
+)
+
+2025-03-19 19:34:35 - Utente autenticato: admin
+2025-03-19 19:34:35 - verifyToken: token valido
+2025-03-19 19:34:35 - Token valido per utente: admin
+2025-03-19 19:34:35 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:34:35 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:34:35 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409275
+)
+
+2025-03-19 19:34:35 - Utente autenticato: admin
+2025-03-19 19:34:35 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:34:35 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:34:35 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409275
+)
+
+2025-03-19 19:34:35 - Utente autenticato: admin
+2025-03-19 19:34:35 - Verifica token richiesta - Metodo: POST
+2025-03-19 19:34:35 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:34:35 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 19:34:35 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:34:35 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:34:35 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:34:35 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409275
+)
+
+2025-03-19 19:34:35 - Utente autenticato: admin
+2025-03-19 19:34:35 - verifyToken: token valido
+2025-03-19 19:34:35 - Token valido per utente: admin
+2025-03-19 19:34:35 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:34:35 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:34:35 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409275
+)
+
+2025-03-19 19:34:35 - Utente autenticato: admin
+2025-03-19 19:34:41 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:34:41 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:34:41 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409275
+)
+
+2025-03-19 19:34:41 - Utente autenticato: admin
+2025-03-19 19:34:42 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:34:42 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:34:42 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409275
+)
+
+2025-03-19 19:34:42 - Utente autenticato: admin
+2025-03-19 19:34:53 - Verifica token richiesta - Metodo: POST
+2025-03-19 19:34:53 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:34:53 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 19:34:53 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:34:53 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:34:53 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:34:53 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409275
+)
+
+2025-03-19 19:34:53 - Utente autenticato: admin
+2025-03-19 19:34:53 - verifyToken: token valido
+2025-03-19 19:34:53 - Token valido per utente: admin
+2025-03-19 19:34:53 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:34:53 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:34:53 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409293
+)
+
+2025-03-19 19:34:53 - Utente autenticato: admin
+2025-03-19 19:34:53 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:34:53 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:34:53 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409293
+)
+
+2025-03-19 19:34:53 - Utente autenticato: admin
+2025-03-19 19:34:53 - Verifica token richiesta - Metodo: POST
+2025-03-19 19:34:53 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:34:53 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-19 19:34:53 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-19 19:34:53 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:34:53 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:34:53 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409293
+)
+
+2025-03-19 19:34:53 - Utente autenticato: admin
+2025-03-19 19:34:53 - verifyToken: token valido
+2025-03-19 19:34:53 - Token valido per utente: admin
+2025-03-19 19:34:53 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:34:53 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:34:53 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409293
+)
+
+2025-03-19 19:34:53 - Utente autenticato: admin
+2025-03-19 19:34:56 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:34:56 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:34:56 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409293
+)
+
+2025-03-19 19:34:56 - Utente autenticato: admin
+2025-03-19 19:34:56 - Dati ricevuti (FORM): Array
+(
+    [siteName] => Ristorante PointerrrrEREEE
+    [siteTagline] =>  
+    [primaryColor] => #2e2a4b
+    [accentColor] => #56ae58
+)
+
+2025-03-19 19:34:56 - Impostazione site_name aggiornata con successo
+2025-03-19 19:34:56 - Impostazione site_tagline aggiornata con successo
+2025-03-19 19:34:56 - Impostazione primary_color aggiornata con successo
+2025-03-19 19:34:56 - Impostazione accent_color aggiornata con successo
+2025-03-19 19:34:56 - Impostazioni salvate con successo
+2025-03-19 19:34:56 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:34:56 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:34:56 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409293
+)
+
+2025-03-19 19:34:56 - Utente autenticato: admin
+2025-03-19 19:34:58 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:34:58 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:34:58 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409293
+)
+
+2025-03-19 19:34:58 - Utente autenticato: admin
+2025-03-19 19:35:20 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:35:20 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:35:20 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409293
+)
+
+2025-03-19 19:35:20 - Utente autenticato: admin
+2025-03-19 19:35:21 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-19 19:35:21 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-19 19:35:21 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409293
+)
+
+2025-03-19 19:35:21 - Utente autenticato: admin
+2025-03-20 02:51:16 - Verifica token richiesta - Metodo: POST
+2025-03-20 02:51:16 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-20 02:51:16 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-20 02:51:16 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-20 02:51:16 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:51:16 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:51:16 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742409293
+)
+
+2025-03-20 02:51:16 - Utente autenticato: admin
+2025-03-20 02:51:16 - verifyToken: token valido
+2025-03-20 02:51:16 - Token valido per utente: admin
+2025-03-20 02:51:16 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:51:16 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:51:16 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435476
+)
+
+2025-03-20 02:51:16 - Utente autenticato: admin
+2025-03-20 02:51:16 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:51:16 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:51:16 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435476
+)
+
+2025-03-20 02:51:16 - Utente autenticato: admin
+2025-03-20 02:51:16 - Verifica token richiesta - Metodo: POST
+2025-03-20 02:51:16 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-20 02:51:16 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-20 02:51:16 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-20 02:51:16 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:51:16 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:51:16 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435476
+)
+
+2025-03-20 02:51:16 - Utente autenticato: admin
+2025-03-20 02:51:16 - verifyToken: token valido
+2025-03-20 02:51:16 - Token valido per utente: admin
+2025-03-20 02:51:16 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:51:16 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:51:16 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435476
+)
+
+2025-03-20 02:51:16 - Utente autenticato: admin
+2025-03-20 02:51:34 - Verifica token richiesta - Metodo: POST
+2025-03-20 02:51:34 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-20 02:51:34 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-20 02:51:34 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-20 02:51:34 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:51:34 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:51:34 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435476
+)
+
+2025-03-20 02:51:34 - Utente autenticato: admin
+2025-03-20 02:51:34 - verifyToken: token valido
+2025-03-20 02:51:34 - Token valido per utente: admin
+2025-03-20 02:51:34 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:51:34 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:51:34 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435494
+)
+
+2025-03-20 02:51:34 - Utente autenticato: admin
+2025-03-20 02:51:34 - Verifica token richiesta - Metodo: POST
+2025-03-20 02:51:34 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-20 02:51:34 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-20 02:51:34 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-20 02:51:34 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:51:34 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:51:34 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435494
+)
+
+2025-03-20 02:51:34 - Utente autenticato: admin
+2025-03-20 02:51:34 - verifyToken: token valido
+2025-03-20 02:51:34 - Token valido per utente: admin
+2025-03-20 02:51:34 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:51:34 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:51:34 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435494
+)
+
+2025-03-20 02:51:34 - Utente autenticato: admin
+2025-03-20 02:51:34 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:51:34 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:51:34 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435494
+)
+
+2025-03-20 02:51:34 - Utente autenticato: admin
+2025-03-20 02:51:38 - Verifica token richiesta - Metodo: POST
+2025-03-20 02:51:38 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-20 02:51:38 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-20 02:51:38 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-20 02:51:38 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:51:38 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:51:38 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435494
+)
+
+2025-03-20 02:51:38 - Utente autenticato: admin
+2025-03-20 02:51:38 - verifyToken: token valido
+2025-03-20 02:51:38 - Token valido per utente: admin
+2025-03-20 02:51:38 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:51:38 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:51:38 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:51:38 - Utente autenticato: admin
+2025-03-20 02:51:38 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:51:38 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:51:38 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:51:38 - Utente autenticato: admin
+2025-03-20 02:51:38 - Verifica token richiesta - Metodo: POST
+2025-03-20 02:51:38 - Header Authorization: Bearer 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-20 02:51:38 - Body richiesta POST: {"token":"062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16"}
+2025-03-20 02:51:38 - Token ricevuto: 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+2025-03-20 02:51:38 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:51:38 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:51:38 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:51:38 - Utente autenticato: admin
+2025-03-20 02:51:38 - verifyToken: token valido
+2025-03-20 02:51:38 - Token valido per utente: admin
+2025-03-20 02:51:38 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:51:38 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:51:38 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:51:38 - Utente autenticato: admin
+2025-03-20 02:51:42 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:51:42 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:51:42 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:51:42 - Utente autenticato: admin
+2025-03-20 02:52:15 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:52:15 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:52:15 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:52:15 - Utente autenticato: admin
+2025-03-20 02:52:15 - Dati ricevuti (FORM): Array
+(
+    [siteName] => Ristorante PointerrrrEREEE
+    [siteTagline] =>  
+    [primaryColor] => #2e2a4b
+    [accentColor] => #ae7156
+)
+
+2025-03-20 02:52:15 - Impostazione logo_url aggiornata con successo
+2025-03-20 02:52:15 - Impostazione site_name aggiornata con successo
+2025-03-20 02:52:15 - Impostazione site_tagline aggiornata con successo
+2025-03-20 02:52:15 - Impostazione primary_color aggiornata con successo
+2025-03-20 02:52:15 - Impostazione accent_color aggiornata con successo
+2025-03-20 02:52:15 - Impostazioni salvate con successo
+2025-03-20 02:52:15 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:52:15 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:52:15 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:52:15 - Utente autenticato: admin
+2025-03-20 02:52:23 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:52:23 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:52:23 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:52:23 - Utente autenticato: admin
+2025-03-20 02:52:45 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:52:45 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:52:45 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:52:45 - Utente autenticato: admin
+2025-03-20 02:52:45 - Richiesta add_category.php ricevuta
+2025-03-20 02:52:45 - Categoria ID 14 aggiunta con successo
+2025-03-20 02:52:45 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:52:45 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:52:45 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:52:45 - Utente autenticato: admin
+2025-03-20 02:53:00 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:53:00 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:53:00 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:53:00 - Utente autenticato: admin
+2025-03-20 02:53:00 - Richiesta add_article.php ricevuta
+2025-03-20 02:53:00 - Articolo ID 12 aggiunto con successo
+2025-03-20 02:53:00 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:53:00 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:53:00 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:53:00 - Utente autenticato: admin
+2025-03-20 02:53:09 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:53:09 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:53:09 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:53:09 - Utente autenticato: admin
+2025-03-20 02:53:09 - Articolo eliminato con successo: 12
+2025-03-20 02:53:09 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:53:09 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:53:09 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:53:09 - Utente autenticato: admin
+2025-03-20 02:53:12 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:53:12 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:53:12 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:53:12 - Utente autenticato: admin
+2025-03-20 02:53:19 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:53:19 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:53:19 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:53:19 - Utente autenticato: admin
+2025-03-20 02:53:19 - Richiesta update_article.php ricevuta
+2025-03-20 02:53:19 - Articolo ID 3 aggiornato con successo
+2025-03-20 02:53:19 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:53:19 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:53:19 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:53:19 - Utente autenticato: admin
+2025-03-20 02:53:26 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:53:26 - ID Sessione: f3d2sol68gok6akc24mgbr45p2
+2025-03-20 02:53:26 - Dati sessione: Array
+(
+    [logged_in] => 1
+    [user_id] => 1
+    [username] => admin
+    [email] => 
+    [role] => admin
+    [login_time] => 1742406268
+    [auth_token] => 062d31567b660eed654f232f7a5d67a4d68cceeb077d0108f98f1b16f5c96d16
+    [last_activity] => 1742435498
+)
+
+2025-03-20 02:53:26 - Utente autenticato: admin
+2025-03-20 02:54:02 - Stato sessione: Le sessioni sono abilitate e una sessione è attiva (2)
+2025-03-20 02:54:02 - ID Sessione: vdd3q8ggf4ilm66usdrmlgbimm
+2025-03-20 02:54:02 - Dati sessione: Array
+(
+)
+
+2025-03-20 02:54:02 - Utente non autenticato: variabile logged_in non presente o non true
