@@ -225,11 +225,11 @@ header h1 {
 /* Navigazione rapida categorie */
 .quick-categories {
     position: sticky;
-    top: 93px; /* Aumentato per dare più spazio */
+    top: 93px;
     z-index: 90;
     background: white;
     padding: 0.8rem 2rem;
-    margin-top: 0.5rem; /* Aggiunto margin-top */
+    margin-top: 0.5rem;
     box-shadow: var(--shadow-sm);
     display: flex;
     gap: 0.8rem;
@@ -237,6 +237,28 @@ header h1 {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     transition: var(--transition);
+    align-items: center;
+}
+
+/* Stile specifico per il pulsante back nella quick-categories */
+.quick-categories .back-button {
+    padding: 0.6rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    min-width: auto;
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+.quick-categories .back-button:hover {
+    background: var(--accent-color);
+    transform: translateY(-1px);
+}
+
+.quick-categories .back-button svg {
+    width: 16px;
+    height: 16px;
 }
 
 /* Effetto shadow quando si scrolla */
@@ -493,53 +515,40 @@ header h1 {
 }
 
 /* Stile per il back button */
-.back-button-container {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    position: sticky;
-    top: 76px;
-    background: white;
-    z-index: 89;
-    padding: 1rem;
-}
-
 .back-button {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 0.8rem 1.5rem;
+    padding: 0.6rem 1rem;
     font-weight: 500;
-    color: var(--primary-color);
-    background: white;
-    border: 2px solid var(--primary-color);
+    color: white;
+    background: var(--primary-color);
+    border: none;
     border-radius: var(--border-radius);
     transition: var(--transition);
     text-decoration: none;
-    box-shadow: var(--shadow-sm);
+    min-width: auto;
+    white-space: nowrap;
+    font-size: 0.9rem;
 }
 
 .back-button:hover {
-    background: var(--primary-color);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    background: var(--accent-color);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
 }
 
 .back-button svg {
-    transition: var(--transition);
-}
-
-.back-button:hover svg {
-    color: white;
+    width: 16px;
+    height: 16px;
 }
 
 #categoryTitle {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     color: var(--primary-color);
-    margin: 0; /* Rimuovi il margin per allinearlo con il pulsante */
+    margin: 0;
     font-weight: 600;
+    flex-grow: 1;
 }
 
 /* Animazioni fluide */
