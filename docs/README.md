@@ -52,4 +52,4 @@ La seguente documentazione è pianificata per sviluppi futuri:
 
 Per domande o suggerimenti sulla documentazione:
 - Email: info@pointer.it
-- Telefono: 0432 111111 
+- Telefono: 333 829 3334

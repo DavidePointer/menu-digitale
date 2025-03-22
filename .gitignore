@@ -20,6 +20,7 @@ vendor/
 *.swp
 *.swo
 *.new
+*.ripristinato
 gitlog_dates.txt
 
 # File di configurazione IDE
