@@ -18,6 +18,11 @@ function loadExistingCategories() {
     const token = localStorage.getItem('auth_token');
     const container = document.getElementById('existingCategories');
     
+    if (!container) {
+        console.error("Container 'existingCategories' non trovato!");
+        return;
+    }
+    
     // Mostro il loader
     container.innerHTML = `
         <div class="loader-container">
@@ -41,37 +46,25 @@ function loadExistingCategories() {
     })
     .then(data => {
         console.log("Dati categorie ricevuti:", data);
+        
+        if (!Array.isArray(data)) {
+            console.error("I dati ricevuti non sono un array:", data);
+            throw new Error('Formato dati non valido');
+        }
+        
         if (data.length === 0) {
             container.innerHTML = '<div class="no-items">Nessuna categoria trovata</div>';
             return;
         }
         
-        // Creo il layout grid per le categorie
-        let html = '<div class="categories-grid">';
+        // Genero l'HTML per ogni categoria
+        const categoriesHTML = data.map(category => {
+            console.log("Elaborazione categoria:", category);
+            return generateCategoryHTML(category);
+        }).join('');
         
-        // Aggiungo ciascuna categoria alla grid
-        data.forEach(category => {
-            const imageUrl = category.image_url || '/menu_digitale/images/placeholder.jpg';
-            
-            html += `
-                <div class="category-card" data-id="${category.category_id}">
-                    <div class="category-image">
-                        <img src="${imageUrl}" alt="${category.name}">
-                    </div>
-                    <div class="category-info">
-                        <h3>${category.name}</h3>
-                        <p>Articoli: ${category.article_count || 0}</p>
-                        <div class="category-actions">
-                            <button class="edit-btn" data-id="${category.category_id}">Modifica</button>
-                            <button class="delete-btn" data-id="${category.category_id}">Elimina</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        });
-        
-        html += '</div>';
-        container.innerHTML = html;
+        console.log("HTML generato:", categoriesHTML);
+        container.innerHTML = categoriesHTML;
         
         // Aggiungo gli event listener ai pulsanti
         setupCategoryButtons();
@@ -84,6 +77,49 @@ function loadExistingCategories() {
             </div>
         `;
     });
+}
+
+function generateCategoryHTML(category) {
+    if (!category || typeof category !== 'object') {
+        console.error("Categoria non valida:", category);
+        return '';
+    }
+
+    const {
+        category_id,
+        name = 'Categoria senza nome',
+        image_url = '/menu_digitale/images/placeholder.jpg',
+        article_count = 0
+    } = category;
+
+    if (!category_id) {
+        console.error("ID categoria mancante:", category);
+        return '';
+    }
+
+    console.log(`Generazione HTML per categoria: ID=${category_id}, Nome=${name}`);
+
+    return `
+        <div class="category-item" data-id="${category_id}">
+            <div class="category-info">
+                <div class="category-image">
+                    <img src="${image_url}" alt="${name}" onerror="this.src='/menu_digitale/images/placeholder.jpg'">
+                </div>
+                <div class="category-details">
+                    <h3>${name}</h3>
+                    <p>Articoli associati: ${article_count}</p>
+                </div>
+            </div>
+            <div class="category-actions">
+                <button class="edit-btn" onclick="editCategory(${category_id})">
+                    <i class="fas fa-edit"></i> Modifica
+                </button>
+                <button class="delete-btn" onclick="deleteCategory(${category_id})">
+                    <i class="fas fa-trash"></i> Elimina
+                </button>
+            </div>
+        </div>
+    `;
 }
 
 /**

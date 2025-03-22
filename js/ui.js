@@ -6,11 +6,18 @@ class MenuUI {
         this.utils = MenuUtils;
         this.currentCategory = '';
         this.currentCategoryName = '';
+        this.currentViewMode = localStorage.getItem('articleViewMode') || 'card';
         this.initializeEventListeners();
     }
 
     initializeEventListeners() {
         document.addEventListener('DOMContentLoaded', () => this.initialize());
+        window.addEventListener('viewModeChanged', (e) => {
+            this.currentViewMode = e.detail.mode;
+            if (this.currentCategory) {
+                this.loadMenuItems(this.currentCategory);
+            }
+        });
     }
 
     async initialize() {
@@ -154,12 +161,10 @@ class MenuUI {
             
             // Assicurati che ci sia sempre un'immagine per ogni articolo
             const processedItems = items.map(item => {
-                // Se l'URL dell'immagine è vuoto o undefined, usa un placeholder
                 if (!item.image_url) {
                     item.image_url = '/menu_digitale/images/placeholder.jpg';
                     console.log('Immagine mancante per:', item.name);
                 } else {
-                    // In caso di errore nell'immagine, verrà gestito dall'attributo onerror nell'HTML
                     console.log('Immagine per:', item.name, '=', item.image_url);
                 }
                 return item;
@@ -170,38 +175,59 @@ class MenuUI {
                 ? this.utils.encodeForHTML 
                 : (str => str ? String(str) : '');
             
+            // Rimuovi le classi di vista precedenti
+            menuItems.classList.remove('view-card', 'view-list');
+            // Aggiungi la classe di vista corrente
+            menuItems.classList.add(`view-${this.currentViewMode}`);
+            
             menuItems.innerHTML = processedItems
                 .map((item, index) => {
-                    // Converti caratteri problematici in una forma sicura per gli attributi HTML
                     const safeItemName = encodeForHTML(item.name);
                     const safeItemDesc = item.description ? encodeForHTML(item.description) : '';
                     const safeItemImageUrl = encodeForHTML(item.image_url);
-                    
-                    // Aggiunta classe animation solo se non stiamo caricando da una ricerca
                     const animationClass = isFromSearch ? '' : 'with-animation';
                     
-                    return `
-                    <div class="menu-item ${animationClass}" style="--item-index: ${index}" 
-                         data-name="${safeItemName}" 
-                         data-description="${safeItemDesc}" 
-                         data-price="${item.price}" 
-                         data-image="${safeItemImageUrl}"
-                         onclick="ui.showItemDetailFromAttributes(this)">
-                        <div class="item-content">
-                            <div class="item-name">${item.name}</div>
-                            ${item.description ? 
-                                `<div class="item-description">${item.description}</div>` : 
-                                ''}
-                            <div class="item-price">${this.utils.formatPrice(item.price)}</div>
+                    if (this.currentViewMode === 'list') {
+                        return `
+                        <div class="list-item ${animationClass}" style="--item-index: ${index}" 
+                             data-name="${safeItemName}" 
+                             data-description="${safeItemDesc}" 
+                             data-price="${item.price}" 
+                             data-image="${safeItemImageUrl}"
+                             onclick="ui.showItemDetailFromAttributes(this)">
+                            <div class="list-item-main">
+                                <div class="list-item-header">
+                                    <div class="list-item-name">${item.name}</div>
+                                    <div class="list-item-price">${this.utils.formatPrice(item.price)}</div>
+                                </div>
+                                ${item.description ? 
+                                    `<div class="list-item-description">${item.description}</div>` : 
+                                    ''}
+                            </div>
                         </div>
-                        <div class="item-image-container">
+                        `;
+                    } else {
+                        return `
+                        <div class="card-item ${animationClass}" style="--item-index: ${index}" 
+                             data-name="${safeItemName}" 
+                             data-description="${safeItemDesc}" 
+                             data-price="${item.price}" 
+                             data-image="${safeItemImageUrl}"
+                             onclick="ui.showItemDetailFromAttributes(this)">
+                            <div class="card-item-content">
+                                <div class="card-item-name">${item.name}</div>
+                                ${item.description ? 
+                                    `<div class="card-item-description">${item.description}</div>` : 
+                                    ''}
+                                <div class="card-item-price">${this.utils.formatPrice(item.price)}</div>
+                            </div>
                             <img src="${item.image_url}" 
                                  alt="${safeItemName}" 
-                                 class="item-image" 
-                                 onerror="this.onerror=null; this.src='/menu_digitale/images/placeholder.jpg'; console.error('Errore caricamento immagine:', this.src);">
+                                 class="card-item-image" 
+                                 onerror="this.onerror=null; this.src='/menu_digitale/images/placeholder.jpg'">
                         </div>
-                    </div>
-                    `;
+                        `;
+                    }
                 }).join('');
         } catch (error) {
             menuItems.innerHTML = this.utils.showError(error.message);

@@ -255,21 +255,29 @@ function initializeLogoPreview() {
 
 // Mostra una notifica all'utente
 function showNotification(message, type = 'info') {
+    // Verifica se esiste già una funzione globale showNotification
+    if (typeof window.showNotification === 'function' && window.showNotification !== showNotification) {
+        window.showNotification(message, type);
+        return;
+    }
+    
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
     notification.textContent = message;
     
     document.body.appendChild(notification);
     
+    // Aggiungi la classe show dopo un breve delay per attivare l'animazione
     setTimeout(() => {
         notification.classList.add('show');
         
+        // Rimuovi la notifica dopo 5 secondi
         setTimeout(() => {
             notification.classList.remove('show');
             setTimeout(() => {
                 notification.remove();
             }, 300);
-        }, 3000);
+        }, 5000);
     }, 10);
 }
 

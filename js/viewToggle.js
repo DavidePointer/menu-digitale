@@ -8,8 +8,12 @@ console.log('ViewToggle.js v3.0 caricato!');
 // Salva la modalità di visualizzazione in localStorage
 function saveViewMode(viewMode) {
     if (viewMode === 'card' || viewMode === 'list') {
-        localStorage.setItem('articleViewMode', viewMode);
-        console.log('Modalità di visualizzazione salvata:', viewMode);
+        try {
+            localStorage.setItem('articleViewMode', viewMode);
+            console.log('Modalità di visualizzazione salvata:', viewMode);
+        } catch (error) {
+            console.warn('Errore nel salvataggio della modalità:', error);
+        }
         return viewMode;
     }
     return null;
@@ -17,8 +21,13 @@ function saveViewMode(viewMode) {
 
 // Legge la modalità di visualizzazione da localStorage
 function getViewMode() {
-    const viewMode = localStorage.getItem('articleViewMode');
-    return (viewMode === 'card' || viewMode === 'list') ? viewMode : 'card';
+    try {
+        const viewMode = localStorage.getItem('articleViewMode');
+        return (viewMode === 'card' || viewMode === 'list') ? viewMode : 'card';
+    } catch (error) {
+        console.warn('Errore nella lettura della modalità:', error);
+        return 'card';
+    }
 }
 
 // Applica la modalità di visualizzazione
@@ -88,4 +97,4 @@ window.viewToggle = {
     save: saveViewMode,
     get: getViewMode,
     apply: applyViewMode
-}; 
+};

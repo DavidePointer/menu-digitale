@@ -1,40 +1,40 @@
+# File di log
+logs/*.log
+
 # File di sistema
 .DS_Store
 Thumbs.db
 
+# File di ambiente
+.env
+
+# Directory di dipendenze
+node_modules/
+vendor/
+
+# File temporanei
+*.tmp
+*.temp
+*.swp
+*.swo
+
 # File di configurazione IDE
-.vscode/
 .idea/
+.vscode/
 *.sublime-project
 *.sublime-workspace
 
-# File di log
-logs/
-*.log
-
-# File temporanei
-tmp/
-temp/
-*.tmp
+# File di cache
+*.cache
+.sass-cache/
 
 # File di configurazione locali
 config.local.php
-
-# Directory delle dipendenze
-vendor/
-node_modules/
-
-# File di cache
-*.cache
 
 # File di backup
 *.bak
 *.backup
 *~
-
-# File di ambiente
-.env
-.env.local
 
 # Directory di upload
 images/articles/*
