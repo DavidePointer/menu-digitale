@@ -2,898 +2,237 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Digitale - Pannello Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Menu Digitale</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/admin.css">
     <script src="js/auth.js"></script>
     <script src="js/admin.js"></script>
     <script src="js/settings.js"></script>
     <script src="js/loadExistingCategories.js"></script>
     <script src="js/loadExistingArticles.js"></script>
-    <style>
-        :root {
-            --admin-bg: #f9f9f9;
-            --card-bg: #ffffff;
-            --input-border: #e1e1e1;
-            --input-focus: #3498db;
-            --button-bg: #3498db;
-            --button-hover: #2980b9;
-            --button-danger: #e74c3c;
-            --button-danger-hover: #c0392b;
-            --text-color: #333;
-            --success-color: #2ecc71;
-            --warning-color: #f39c12;
-            --error-color: #e74c3c;
-            --tab-inactive: #ecf0f1;
-            --tab-hover: #e0e6e8;
-            --bg-color: #f8f9fa;
-            --primary-color: #1A3C40;
-            --accent-color: #E76F51;
-        }
-
-        body {
-            background-color: var(--admin-bg);
-            font-family: 'Rubik', sans-serif;
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-        }
-
-        .admin-header {
-            background-color: var(--card-bg);
-            padding: 15px 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .admin-header h1 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-
-        .admin-header .logo {
-            height: 40px;
-        }
-
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .user-name {
-            font-weight: 500;
-        }
-
-        .logout-button {
-            padding: 8px 15px;
-            background-color: var(--button-danger);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: background-color 0.3s;
-        }
-
-        .logout-button:hover {
-            background-color: var(--button-danger-hover);
-        }
-
-        .admin-container {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-        
-        /* Tab navigation */
-        .tab-navigation {
-            display: flex;
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--input-border);
-        }
-        
-        .tab-button {
-            padding: 12px 24px;
-            font-size: 1rem;
-            font-weight: 500;
-            background-color: var(--tab-inactive);
-            border: 1px solid var(--input-border);
-            border-bottom: none;
-            border-radius: 4px 4px 0 0;
-            margin-right: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .tab-button:hover {
-            background-color: var(--tab-hover);
-        }
-        
-        .tab-button.active {
-            background-color: var(--card-bg);
-            border-bottom: 1px solid var(--card-bg);
-            margin-bottom: -1px;
-        }
-        
-        /* Tab content */
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-
-        .admin-card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 25px;
-            margin-bottom: 30px;
-        }
-
-        .admin-card h2 {
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-            border-bottom: 1px solid var(--input-border);
-            padding-bottom: 10px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        input[type="text"], 
-        input[type="number"], 
-        input[type="password"],
-        textarea, 
-        select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--input-border);
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-            font-family: 'Rubik', sans-serif;
-        }
-
-        input:focus, 
-        textarea:focus, 
-        select:focus {
-            border-color: var(--input-focus);
-            outline: none;
-        }
-
-        .preview-image {
-            max-width: 200px;
-            margin-top: 10px;
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: none;
-        }
-
-        button[type="submit"] {
-            padding: 12px 20px;
-            background-color: var(--button-bg);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button[type="submit"]:hover {
-            background-color: var(--button-hover);
-        }
-
-        .auth-loader {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
-
-        .auth-loader p {
-            margin-top: 20px;
-            font-size: 1.1rem;
-        }
-
-        .spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            border-radius: 50%;
-            border-top: 4px solid var(--button-bg);
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .alert {
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-        }
-
-        .alert-success {
-            background-color: rgba(46, 204, 113, 0.1);
-            border: 1px solid var(--success-color);
-            color: var(--success-color);
-        }
-
-        .alert-error {
-            background-color: rgba(231, 76, 60, 0.1);
-            border: 1px solid var(--error-color);
-            color: var(--error-color);
-        }
-
-        /* Stili per le liste di elementi */
-        .items-list {
-            margin-top: 20px;
-        }
-
-        .item-card {
-            background-color: #f5f7f8;
-            border-radius: 6px;
-            padding: 15px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .item-info {
-            display: flex;
-            align-items: center;
-            flex: 1;
-        }
-
-        .item-image {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-right: 15px;
-        }
-
-        .item-details {
-            flex: 1;
-        }
-
-        .item-name {
-            font-weight: 500;
-            margin-bottom: 5px;
-        }
-
-        .item-description {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-        }
-
-        .item-price {
-            font-weight: 500;
-            color: var(--button-bg);
-        }
-
-        .item-category {
-            font-size: 0.85rem;
-            background-color: #eaeaea;
-            padding: 3px 8px;
-            border-radius: 10px;
-            display: inline-block;
-            margin-top: 5px;
-        }
-
-        .item-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .edit-btn, .delete-btn {
-            padding: 6px 12px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: background-color 0.3s;
-        }
-
-        .edit-btn {
-            background-color: var(--button-bg);
-            color: white;
-        }
-
-        .edit-btn:hover {
-            background-color: var(--button-hover);
-        }
-
-        .delete-btn {
-            background-color: var(--button-danger);
-            color: white;
-        }
-
-        .delete-btn:hover {
-            background-color: var(--button-danger-hover);
-        }
-
-        .loader-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 30px 0;
-        }
-
-        .loader-container p {
-            margin-top: 15px;
-            color: #666;
-        }
-
-        /* Stili per il modal di modifica */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            overflow: auto;
-        }
-
-        .modal-content {
-            background-color: var(--card-bg);
-            margin: 10% auto;
-            padding: 25px;
-            border-radius: 8px;
-            width: 80%;
-            max-width: 600px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            animation: modalFadeIn 0.3s;
-        }
-
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--input-border);
-        }
-
-        .modal-header h3 {
-            margin: 0;
-            font-size: 1.3rem;
-        }
-
-        .close-modal {
-            font-size: 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            color: #aaa;
-            transition: color 0.3s;
-        }
-
-        .close-modal:hover {
-            color: var(--text-color);
-        }
-
-        .no-items {
-            text-align: center;
-            padding: 30px 0;
-            color: #666;
-            font-style: italic;
-        }
-
-        .color-picker-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .color-hex-input {
-            width: 80px;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        
-        .preview-image {
-            display: block;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 5px;
-            background-color: white;
-        }
-        
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 15px 20px;
-            border-radius: 4px;
-            color: white;
-            font-weight: 500;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: opacity 0.3s, transform 0.3s;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .notification.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .notification.success {
-            background-color: var(--success-color);
-        }
-        
-        .notification.error {
-            background-color: var(--error-color);
-        }
-        
-        .notification.info {
-            background-color: var(--primary-color);
-        }
-    </style>
 </head>
-<body>
-    <header class="admin-header">
-        <div class="logo-container">
-            <h1>Menu Digitale - Pannello Admin</h1>
-        </div>
-        <div class="user-info">
-            <span class="user-name">Admin</span>
-            <button class="logout-button" id="logoutButton">Logout</button>
-        </div>
-    </header>
+<body class="admin-page">
+    <div id="authLoader" style="display: none;" class="loader-container">
+        <div class="spinner"></div>
+        <p>Verifica autenticazione...</p>
+    </div>
 
-    <div class="admin-container">
-        <div class="tab-navigation">
-            <button class="tab-button active" data-tab="categories">Categorie</button>
-            <button class="tab-button" data-tab="articles">Articoli</button>
-            <button class="tab-button" data-tab="settings">Impostazioni</button>
-        </div>
+    <div id="adminContent" style="display: none;">
+        <header class="admin-header">
+            <div class="logo-container">
+                <h1>Menu Digitale</h1>
+            </div>
+            <div class="user-info">
+                <span id="userName" class="user-name">Admin</span>
+                <button class="logout-button" id="logoutButton">Logout</button>
+            </div>
+        </header>
 
-        <div id="categories" class="tab-content active">
-            <div class="admin-card">
-                <h2>Aggiungi Nuova Categoria</h2>
-                <form id="addCategoryForm">
-                    <div class="form-group">
-                        <label for="categoryName">Nome Categoria:</label>
-                        <input type="text" id="categoryName" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="categoryImage">Immagine Categoria (opzionale):</label>
-                        <input type="file" id="categoryImage" name="image" accept="image/*">
-                        <p class="form-hint">Scegli un'immagine rappresentativa per la categoria (formato: JPG, PNG)</p>
-                        <img id="categoryImagePreview" class="preview-image" alt="Anteprima immagine">
-                    </div>
-                    <button type="submit" class="submit-btn">Aggiungi Categoria</button>
-                </form>
+        <div class="admin-container">
+            <div class="tab-navigation">
+                <button class="tab-button active" data-tab="categories">Categorie</button>
+                <button class="tab-button" data-tab="articles">Articoli</button>
+                <button class="tab-button" data-tab="settings">Impostazioni</button>
             </div>
 
-            <div class="admin-card">
-                <h2>Categorie Esistenti</h2>
-                <div id="existingCategories">
-                    <div class="loader-container">
-                        <div class="spinner"></div>
-                        <p>Caricamento categorie in corso...</p>
-                    </div>
+            <div id="categories" class="tab-content active">
+                <div class="admin-card">
+                    <h2>Aggiungi Nuova Categoria</h2>
+                    <form id="addCategoryForm" class="modal-form">
+                        <div class="form-group">
+                            <label for="categoryName">Nome Categoria:</label>
+                            <input type="text" id="categoryName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="categoryImage">Immagine Categoria:</label>
+                            <div class="image-preview-container" onclick="document.getElementById('categoryImage').click()">
+                                <img id="categoryImagePreview" class="image-preview" src="/menu_digitale/images/placeholder.jpg" alt="Anteprima">
+                                <input type="file" id="categoryImage" name="image" accept="image/*" style="display: none;">
+                            </div>
+                            <p class="form-hint">Clicca sull'area per selezionare un'immagine (JPG, PNG)</p>
+                        </div>
+                        <button type="submit" class="save-btn">Aggiungi Categoria</button>
+                    </form>
                 </div>
-            </div>
-        </div>
 
-        <div id="articles" class="tab-content">
-            <div class="admin-card">
-                <h2>Aggiungi Nuovo Articolo</h2>
-                <form id="addArticleForm">
-                    <div class="form-group">
-                        <label for="articleName">Nome Articolo:</label>
-                        <input type="text" id="articleName" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="articleCategory">Categoria:</label>
-                        <select id="articleCategory" name="category_id" required>
-                            <option value="">Seleziona una categoria</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="articleDescription">Descrizione:</label>
-                        <textarea id="articleDescription" name="description" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="articlePrice">Prezzo (€):</label>
-                        <input type="number" id="articlePrice" name="price" step="0.01" min="0" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="articleImage">Immagine Articolo (opzionale):</label>
-                        <input type="file" id="articleImage" name="image" accept="image/*">
-                        <p class="form-hint">Scegli un'immagine rappresentativa per l'articolo (formato: JPG, PNG)</p>
-                        <img id="articleImagePreview" class="preview-image" alt="Anteprima immagine">
-                    </div>
-                    <button type="submit" class="submit-btn">Aggiungi Articolo</button>
-                </form>
-            </div>
-
-            <div class="admin-card">
-                <h2>Articoli Esistenti</h2>
-                <div class="filter-container">
-                    <label for="categoryFilter">Filtra per categoria:</label>
-                    <select id="categoryFilter">
-                        <option value="all">Tutti gli articoli</option>
-                    </select>
-                </div>
-                <div id="existingArticles">
-                    <div class="loader-container">
-                        <div class="spinner"></div>
-                        <p>Caricamento articoli in corso...</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Settings Tab Content -->
-        <div id="settings" class="tab-content">
-            <div class="admin-card">
-                <h2>Informazioni Generali</h2>
-                <form id="generalInfoForm">
-                    <div class="form-group">
-                        <label for="siteName">Nome Attività:</label>
-                        <input type="text" id="siteName" placeholder="Es: Pointer - Menu Digitale">
-                    </div>
-                    <div class="form-group">
-                        <label for="siteTagline">Motto/Descrizione:</label>
-                        <input type="text" id="siteTagline" placeholder="Es: Soluzioni evolute per il punto cassa">
-                    </div>
-                    <div class="form-group">
-                        <label for="siteLogo">Logo (immagine):</label>
-                        <input type="file" id="siteLogo" accept="image/*">
-                        <p class="form-hint">Formato consigliato: PNG con sfondo trasparente</p>
-                        <img id="logoPreview" class="preview-image">
-                    </div>
-                    <div class="form-group">
-                        <label for="primaryColor">Colore Primario:</label>
-                        <div class="color-picker-container">
-                            <input type="color" id="primaryColor" value="#1A3C40">
-                            <input type="text" id="primaryColorHex" value="#1A3C40" class="color-hex-input">
+                <div class="admin-card">
+                    <h2>Categorie Esistenti</h2>
+                    <div id="existingCategories">
+                        <div class="loader-container">
+                            <div class="spinner"></div>
+                            <p>Caricamento categorie in corso...</p>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="accentColor">Colore Accent:</label>
-                        <div class="color-picker-container">
-                            <input type="color" id="accentColor" value="#E76F51">
-                            <input type="text" id="accentColorHex" value="#E76F51" class="color-hex-input">
+                </div>
+            </div>
+
+            <div id="articles" class="tab-content">
+                <div class="admin-card">
+                    <h2>Aggiungi Nuovo Articolo</h2>
+                    <form id="addArticleForm" class="modal-form">
+                        <div class="form-group">
+                            <label for="articleName">Nome Articolo:</label>
+                            <input type="text" id="articleName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="articleCategory">Categoria:</label>
+                            <select id="articleCategory" name="category_id" required>
+                                <option value="">Seleziona una categoria</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="articleDescription">Descrizione:</label>
+                            <textarea id="articleDescription" name="description" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="articlePrice">Prezzo (€):</label>
+                            <input type="number" id="articlePrice" name="price" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="articleImage">Immagine Articolo:</label>
+                            <div class="image-preview-container" onclick="document.getElementById('articleImage').click()">
+                                <img id="articleImagePreview" class="image-preview" src="/menu_digitale/images/placeholder.jpg" alt="Anteprima">
+                                <input type="file" id="articleImage" name="image" accept="image/*" style="display: none;">
+                            </div>
+                            <p class="form-hint">Clicca sull'area per selezionare un'immagine (JPG, PNG)</p>
+                        </div>
+                        <button type="submit" class="save-btn">Aggiungi Articolo</button>
+                    </form>
+                </div>
+
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h2>Articoli Esistenti</h2>
+                        <div class="filter-container">
+                            <label for="categoryFilter">Filtra per categoria:</label>
+                            <select id="categoryFilter" class="filter-select">
+                                <option value="all">Tutti gli articoli</option>
+                            </select>
                         </div>
                     </div>
-                    <button type="submit" class="submit-btn">Salva Informazioni</button>
-                </form>
+                    <div id="existingArticles" class="menu-items">
+                        <div class="loader-container">
+                            <div class="spinner"></div>
+                            <p>Caricamento articoli in corso...</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="admin-card">
-                <h2>Informazioni di Contatto</h2>
-                <form id="contactInfoForm">
-                    <h3>Dove Siamo</h3>
-                    <div class="form-group">
-                        <label for="address">Indirizzo:</label>
-                        <input type="text" id="address" placeholder="Es: Via Trieste 42, Udine">
-                    </div>
-                    
-                    <h3>Contatti</h3>
-                    <div class="form-group">
-                        <label for="phone">Telefono:</label>
-                        <input type="text" id="phone" placeholder="Es: 0432 111111">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" placeholder="Es: info@pointer.it">
-                    </div>
-                    
-                    <h3>Orari</h3>
-                    <div class="form-group">
-                        <label for="weekdayHours">Lun-Ven:</label>
-                        <input type="text" id="weekdayHours" placeholder="Es: 8:30-12:30, 14:30-18:30">
-                    </div>
-                    <div class="form-group">
-                        <label for="weekendHours">Sab-Dom:</label>
-                        <input type="text" id="weekendHours" placeholder="Es: Chiuso">
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Salva Contatti</button>
-                </form>
-            </div>
+            <div id="settings" class="tab-content">
+                <div class="admin-card">
+                    <h2>Impostazioni Generali</h2>
+                    <form id="generalInfoForm" class="modal-form">
+                        <div class="form-group">
+                            <label for="siteName">Nome del Sito:</label>
+                            <input type="text" id="siteName" name="siteName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="siteTagline">Tagline del Sito:</label>
+                            <input type="text" id="siteTagline" name="siteTagline">
+                        </div>
+                        <div class="form-group">
+                            <label for="siteLogo">Logo del Sito:</label>
+                            <div class="image-preview-container" onclick="document.getElementById('siteLogo').click()">
+                                <img id="logoPreview" class="image-preview" src="/menu_digitale/images/placeholder.jpg" alt="Logo preview">
+                                <input type="file" id="siteLogo" name="logo" accept="image/*" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="primaryColor">Colore Primario:</label>
+                            <div class="color-picker-container">
+                                <input type="color" id="primaryColor" name="primaryColor">
+                                <input type="text" class="color-hex-input" id="primaryColorHex">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="accentColor">Colore Accent:</label>
+                            <div class="color-picker-container">
+                                <input type="color" id="accentColor" name="accentColor">
+                                <input type="text" class="color-hex-input" id="accentColorHex">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="articleView">Visualizzazione Articoli:</label>
+                            <select id="articleView" name="articleView">
+                                <option value="card">Card</option>
+                                <option value="list">Lista</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="save-btn">Salva Impostazioni</button>
+                    </form>
+                </div>
 
-            <div class="admin-card">
-                <h2>Gestione Account</h2>
-                <form id="passwordForm">
-                    <div class="form-group">
-                        <label for="currentPassword">Password attuale:</label>
-                        <input type="password" id="currentPassword" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="newPassword">Nuova password:</label>
-                        <input type="password" id="newPassword" required minlength="8">
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmPassword">Conferma password:</label>
-                        <input type="password" id="confirmPassword" required minlength="8">
-                    </div>
-                    <button type="submit" class="submit-btn">Aggiorna Password</button>
-                </form>
+                <div class="admin-card">
+                    <h2>Informazioni di Contatto</h2>
+                    <form id="contactInfoForm" class="modal-form">
+                        <h3>Dove Siamo</h3>
+                        <div class="form-group">
+                            <label for="address">Indirizzo:</label>
+                            <input type="text" id="address" placeholder="Es: Via Trieste 42, Udine">
+                        </div>
+                        
+                        <h3>Contatti</h3>
+                        <div class="form-group">
+                            <label for="phone">Telefono:</label>
+                            <input type="text" id="phone" placeholder="Es: 0432 111111">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" placeholder="Es: info@pointer.it">
+                        </div>
+                        
+                        <h3>Orari</h3>
+                        <div class="form-group">
+                            <label for="weekdayHours">Lun-Ven:</label>
+                            <input type="text" id="weekdayHours" placeholder="Es: 8:30-12:30, 14:30-18:30">
+                        </div>
+                        <div class="form-group">
+                            <label for="weekendHours">Sab-Dom:</label>
+                            <input type="text" id="weekendHours" placeholder="Es: Chiuso">
+                        </div>
+                        
+                        <button type="submit" class="save-btn">Salva Contatti</button>
+                    </form>
+                </div>
+
+                <div class="admin-card">
+                    <h2>Gestione Account</h2>
+                    <form id="passwordForm" class="modal-form">
+                        <div class="form-group">
+                            <label for="currentPassword">Password attuale:</label>
+                            <input type="password" id="currentPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">Nuova password:</label>
+                            <input type="password" id="newPassword" required minlength="8">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Conferma password:</label>
+                            <input type="password" id="confirmPassword" required minlength="8">
+                        </div>
+                        <button type="submit" class="save-btn">Aggiorna Password</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Check authentication
             checkAuth();
-            
-            // Setup tabs
             setupTabs();
-            
-            // Logout functionality
             document.getElementById('logoutButton').addEventListener('click', logout);
-            
-            // Handle password update
             setupPasswordUpdate();
-            
-            // Handle general info update
             setupGeneralInfoUpdate();
-            
-            // Handle contact info update
             setupContactInfoUpdate();
-            
-            // Initialize color pickers
             initializeColorPickers();
-            
-            // Logo preview
             initializeLogoPreview();
-            
-            // Load saved settings
             loadSavedSettings();
         });
-        
-        function setupTabs() {
-            const tabButtons = document.querySelectorAll('.tab-button');
-            const tabContents = document.querySelectorAll('.tab-content');
-            
-            tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Get tab id
-                    const tabId = this.getAttribute('data-tab');
-                    
-                    // Remove active class from all buttons and tabs
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    tabContents.forEach(tab => tab.classList.remove('active'));
-                    
-                    // Add active class to current button and tab
-                    this.classList.add('active');
-                    document.getElementById(tabId).classList.add('active');
-                });
-            });
-        }
-        
-        function setupPasswordUpdate() {
-            const passwordForm = document.getElementById('passwordForm');
-            if (passwordForm) {
-                passwordForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const currentPassword = document.getElementById('currentPassword').value;
-                    const newPassword = document.getElementById('newPassword').value;
-                    const confirmPassword = document.getElementById('confirmPassword').value;
-                    
-                    // Validate passwords
-                    if (newPassword !== confirmPassword) {
-                        showNotification('Le password non coincidono', 'error');
-                        return;
-                    }
-                    
-                    if (newPassword.length < 8) {
-                        showNotification('La nuova password deve essere di almeno 8 caratteri', 'error');
-                        return;
-                    }
-                    
-                    // Update password
-                    changePassword(currentPassword, newPassword)
-                        .then(data => {
-                            if (data.success) {
-                                showNotification('Password aggiornata con successo', 'success');
-                                passwordForm.reset();
-                            } else {
-                                showNotification(data.message || 'Errore durante l\'aggiornamento della password', 'error');
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Errore:', error);
-                            showNotification('Errore nella comunicazione con il server', 'error');
-                        });
-                });
-            }
-        }
-        
-        function setupGeneralInfoUpdate() {
-            const generalInfoForm = document.getElementById('generalInfoForm');
-            if (generalInfoForm) {
-                generalInfoForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const siteName = document.getElementById('siteName').value;
-                    const siteTagline = document.getElementById('siteTagline').value;
-                    const primaryColor = document.getElementById('primaryColor').value;
-                    const accentColor = document.getElementById('accentColor').value;
-                    
-                    // Logo handling
-                    const logoFileInput = document.getElementById('siteLogo');
-                    const logoFile = logoFileInput.files[0];
-                    
-                    // Create FormData for file upload
-                    const formData = new FormData();
-                    formData.append('siteName', siteName);
-                    formData.append('siteTagline', siteTagline);
-                    formData.append('primaryColor', primaryColor);
-                    formData.append('accentColor', accentColor);
-                    
-                    if (logoFile) {
-                        formData.append('logo', logoFile);
-                    }
-                    
-                    // Save to localStorage for now (replace with actual API call later)
-                    localStorage.setItem('siteName', siteName);
-                    localStorage.setItem('siteTagline', siteTagline);
-                    localStorage.setItem('primaryColor', primaryColor);
-                    localStorage.setItem('accentColor', accentColor);
-                    
-                    showNotification('Informazioni generali salvate con successo!', 'success');
-                });
-            }
-        }
-        
-        function setupContactInfoUpdate() {
-            const contactInfoForm = document.getElementById('contactInfoForm');
-            if (contactInfoForm) {
-                contactInfoForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const address = document.getElementById('address').value;
-                    const phone = document.getElementById('phone').value;
-                    const email = document.getElementById('email').value;
-                    const weekdayHours = document.getElementById('weekdayHours').value;
-                    const weekendHours = document.getElementById('weekendHours').value;
-                    
-                    // Save to localStorage for now (replace with actual API call later)
-                    localStorage.setItem('address', address);
-                    localStorage.setItem('phone', phone);
-                    localStorage.setItem('email', email);
-                    localStorage.setItem('weekdayHours', weekdayHours);
-                    localStorage.setItem('weekendHours', weekendHours);
-                    
-                    showNotification('Informazioni di contatto salvate con successo!', 'success');
-                });
-            }
-        }
-        
-        function initializeColorPickers() {
-            const colorInputs = document.querySelectorAll('input[type="color"]');
-            colorInputs.forEach(colorInput => {
-                const hexInput = colorInput.parentElement.querySelector('.color-hex-input');
-                
-                // Update hex input when color changes
-                colorInput.addEventListener('input', function() {
-                    hexInput.value = this.value;
-                });
-                
-                // Update color input when hex changes
-                hexInput.addEventListener('input', function() {
-                    // Ensure valid hex format
-                    if (/^#[0-9A-F]{6}$/i.test(this.value)) {
-                        colorInput.value = this.value;
-                    }
-                });
-            });
-        }
-        
-        function initializeLogoPreview() {
-            const logoInput = document.getElementById('siteLogo');
-            const logoPreview = document.getElementById('logoPreview');
-            
-            if (logoInput && logoPreview) {
-                logoInput.addEventListener('change', function() {
-                    if (this.files && this.files[0]) {
-                        const reader = new FileReader();
-                        
-                        reader.onload = function(e) {
-                            logoPreview.src = e.target.result;
-                            logoPreview.style.display = 'block';
-                            // Save logo to localStorage as base64 string
-                            localStorage.setItem('logoImage', e.target.result);
-                        };
-                        
-                        reader.readAsDataURL(this.files[0]);
-                    }
-                });
-            }
-        }
-        
-        function loadSavedSettings() {
-            // Load general info
-            document.getElementById('siteName').value = localStorage.getItem('siteName') || '';
-            document.getElementById('siteTagline').value = localStorage.getItem('siteTagline') || '';
-            
-            // Load colors
-            const primaryColor = localStorage.getItem('primaryColor') || '#1A3C40';
-            const accentColor = localStorage.getItem('accentColor') || '#E76F51';
-            
-            document.getElementById('primaryColor').value = primaryColor;
-            document.getElementById('primaryColorHex').value = primaryColor;
-            document.getElementById('accentColor').value = accentColor;
-            document.getElementById('accentColorHex').value = accentColor;
-            
-            // Load logo
-            const logoPreview = document.getElementById('logoPreview');
-            const savedLogo = localStorage.getItem('logoImage');
-            
-            if (savedLogo && logoPreview) {
-                logoPreview.src = savedLogo;
-                logoPreview.style.display = 'block';
-            } else if (logoPreview) {
-                logoPreview.style.display = 'none';
-            }
-            
-            // Load contact info
-            document.getElementById('address').value = localStorage.getItem('address') || '';
-            document.getElementById('phone').value = localStorage.getItem('phone') || '';
-            document.getElementById('email').value = localStorage.getItem('email') || '';
-            document.getElementById('weekdayHours').value = localStorage.getItem('weekdayHours') || '';
-            document.getElementById('weekendHours').value = localStorage.getItem('weekendHours') || '';
-        }
-        
-        function showNotification(message, type = 'info') {
-            const notification = document.createElement('div');
-            notification.className = `notification ${type}`;
-            notification.textContent = message;
-            
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.classList.add('show');
-                
-                setTimeout(() => {
-                    notification.classList.remove('show');
-                    setTimeout(() => {
-                        notification.remove();
-                    }, 300);
-                }, 3000);
-            }, 10);
-        }
     </script>
 </body>
 </html> 

@@ -1,5 +1,7 @@
 # File di log
 logs/*.log
+*debug*.log
+debug_*.log
 
 # File di sistema
 .DS_Store
@@ -17,6 +19,8 @@ vendor/
 *.temp
 *.swp
 *.swo
+*.new
+gitlog_dates.txt
 
 # File di configurazione IDE
 .idea/

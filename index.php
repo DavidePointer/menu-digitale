@@ -102,13 +102,6 @@ $weekendHours = $settings['weekend_hours'] ?? 'Chiuso';
     </div>
 
     <div class="menu-list" id="menuView" style="display: none;">
-        <a href="#" class="back-button" onclick="ui.showCategories()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M19 12H5"></path>
-                <path d="M12 19l-7-7 7-7"></path>
-            </svg>
-            <span>Torna al menu</span>
-        </a>
         <h2 id="categoryTitle"></h2>
         <div id="menuItems"></div>
     </div>
