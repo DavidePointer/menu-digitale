@@ -12,6 +12,9 @@ Sistema di visualizzazione menu digitale per ristoranti/locali, personalizzato p
 - **Pannello Admin**: Interfaccia sicura per la gestione dei contenuti
 - **Gestione immagini flessibile**: Supporto per immagini opzionali in categorie e articoli
 - **Impostazioni personalizzabili**: Gestione completa di logo, colori, informazioni di contatto
+- **Sistema di logging avanzato**: Tracciamento completo delle operazioni e debugging
+- **Validazione dati**: Controlli di integrità sui dati in ingresso
+- **Gestione errori robusta**: Sistema di recovery automatico e messaggi user-friendly
 
 ### Backend
 - **PHP**: API RESTful per la gestione dei dati
@@ -65,12 +68,18 @@ menu_digitale/
 - Personalizzazione completa dell'aspetto (colori, logo)
 - Informazioni di contatto nel footer
 - Link discreto all'area amministrativa
+- Sistema di logging avanzato per debugging
+- Validazione dati in tempo reale
+- Gestione errori user-friendly
 
 ### Pannello Amministrativo
 - Autenticazione sicura con username e password
 - Gestione completa categorie e articoli (CRUD)
-- Caricamento immagini opzionale per categorie e articoli
+- Caricamento immagini opzionali per categorie e articoli
 - Modifica prezzi e descrizioni
+- Sistema di logging per tracciamento operazioni
+- Validazione dati in ingresso
+- Gestione errori avanzata
 - Gestione impostazioni del sito:
   * Logo del ristorante
   * Colori personalizzati

@@ -29,6 +29,26 @@ e questo progetto aderisce al [Semantic Versioning](https://semver.org/spec/v2.0
 - Migliorata la gestione degli errori nel caricamento delle immagini
 - Ottimizzata la visualizzazione dei contenuti su dispositivi mobili
 
+## [1.1.1] - 2024-03-20
+
+### Aggiunto
+- Sistema di logging avanzato per tracciamento operazioni
+- Validazione dati in tempo reale per categorie e articoli
+- Gestione errori user-friendly con messaggi personalizzati
+- Controlli di integrità sui dati in ingresso
+- Sistema di recovery automatico per errori comuni
+
+### Modificato
+- Migliorata la gestione delle categorie con validazione avanzata
+- Ottimizzato il sistema di caricamento immagini
+- Aggiornata l'interfaccia utente per mostrare messaggi di errore più chiari
+- Migliorata la gestione degli errori nel pannello admin
+
+### Corretto
+- Risolto il problema di validazione delle categorie
+- Migliorata la gestione degli errori durante il caricamento delle immagini
+- Ottimizzata la visualizzazione dei messaggi di errore su dispositivi mobili
+
 ## [1.0.0] - 2024-03-01
 
 ### Aggiunto

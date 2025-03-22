@@ -13,6 +13,9 @@ Questo documento delinea il piano di sviluppo per il progetto Menu Digitale, org
 - ✅ Gestione password amministratore
 - ✅ Correzione bug di visualizzazione dati nei form di modifica
 - ✅ Sistema completo di personalizzazione (colori, logo, informazioni)
+- ✅ Sistema di logging avanzato per tracciamento operazioni
+- ✅ Validazione dati in tempo reale
+- ✅ Gestione errori user-friendly
 - Dashboard per visualizzazione rapida stato menu
 
 ### 2. ✅ Miglioramento UX/UI Menu Utente
@@ -20,6 +23,8 @@ Questo documento delinea il piano di sviluppo per il progetto Menu Digitale, org
 - ✅ Ottimizzazione layout responsive per tutti i dispositivi
 - ✅ Ottimizzazione animazioni e transizioni
 - ✅ Gestione dinamica delle informazioni di contatto
+- ✅ Sistema di validazione dati avanzato
+- ✅ Gestione errori migliorata
 - Aggiunta filtri avanzati per il menu (prezzo, allergenici, etc.)
 
 ### 3. Infrastruttura Cloud
@@ -108,16 +113,47 @@ Questo documento delinea il piano di sviluppo per il progetto Menu Digitale, org
 
 ## Priorità Immediate (Prossimi 30 giorni)
 
-### 1. Ottimizzazione Performance
+### 1. Nuove Funzionalità Core
+- Sistema di notifiche real-time per errori e operazioni
+  - Integrazione con WebSocket per notifiche istantanee
+  - UI per la gestione delle notifiche
+  - Storico notifiche e errori
+- Sistema di backup automatico
+  - Backup periodico del database
+  - Backup delle immagini
+  - UI per gestione backup
+- Sistema di monitoraggio performance
+  - Dashboard con metriche chiave
+  - Analisi tempi di caricamento
+  - Ottimizzazione automatica immagini
+- Implementazione sistema allergeni
+  - Tabella master allergeni
+  - UI per associazione allergeni-articoli
+  - Visualizzazione allergeni nel menu
+- Sistema tag promozionali
+  - Gestione tag predefiniti e custom
+  - UI per associazione tag-articoli
+  - Stili differenziati per tipo tag
+- Sistema di importazione CSV
+  - Upload file CSV
+  - Mappatura colonne
+  - Validazione dati
+  - Gestione errori
+- Vista lista articoli classica
+  - Layout tabellare
+  - Ordinamento e filtri
+  - Toggle vista griglia/lista
+
+### 2. Ottimizzazione Performance
 - Implementare sistema di caching
 - Ottimizzare caricamento immagini
 - Migliorare tempi di risposta API
 
-### 2. Preparare per Multi-Tenant
+### 3. Preparare per Multi-Tenant
 - Ristrutturare database per supporto multi-tenant
 - Modificare API per filtraggio per tenant
 
-### 3. Iniziare Prototipo Flutter
+### 4. Iniziare Prototipo Flutter
 - Setup ambiente Flutter
 - Creare wireframe applicazione POS
 - Testare comunicazione con API esistenti
@@ -137,12 +173,17 @@ Questo documento delinea il piano di sviluppo per il progetto Menu Digitale, org
 - ✅ Sistema completo di personalizzazione (colori, logo, informazioni)
 - ✅ Gestione dinamica delle informazioni di contatto
 - ✅ Ottimizzazione animazioni e transizioni UI
+- ✅ Sistema di logging avanzato
+- ✅ Validazione dati in tempo reale
+- ✅ Gestione errori user-friendly
 
 ### In Corso
 - Ottimizzazione performance e caching
 - Preparazione per architettura multi-tenant
 - Test approfonditi su dispositivi multipli
 - Implementazione sistema di backup automatico
+- Sistema di notifiche real-time
+- Monitoraggio performance
 
 ## Metriche di Successo
 
